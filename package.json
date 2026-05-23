@@ -1,0 +1,14 @@
+{
+  "name": "womenrise",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm run dev",
+    "seed:admin": "cd server && node seeds/seedAdmin.js",
+    "seed:content": "cd server && node seeds/seedContent.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}
