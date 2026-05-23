@@ -7,7 +7,6 @@ const navLinks = [
   { to: '/shop', label: 'Shop' },
   { to: '/blog', label: 'Blog' },
   { to: '/about', label: 'About Us' },
-  { to: '/safety', label: 'Safety' },
 ];
 
 export default function MobileDrawer({ isOpen, onClose }) {

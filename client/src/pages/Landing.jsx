@@ -30,7 +30,7 @@ const pillars = [
 /* ── Programs ── */
 const programs = [
   { title: 'Premium Services', desc: 'Beauty services, professional mehndi art, and website designing classes.', link: '/services', emoji: '💅', bg: 'bg-[#FF6B9D]/5', border: 'hover:border-[#FF6B9D]', text: 'text-[#FF6B9D]' },
-  { title: 'Safety Hub', desc: 'Emergency helplines, safety tips, shelters, and downloadable safety plans.', link: '/safety', emoji: '🛡️', bg: 'bg-[#6BCB77]/5', border: 'hover:border-[#6BCB77]', text: 'text-[#6BCB77]' },
+  { title: 'About Us', desc: 'Learn more about our mission, our journey, and the impact we create.', link: '/about', emoji: '🤝', bg: 'bg-[#6BCB77]/5', border: 'hover:border-[#6BCB77]', text: 'text-[#6BCB77]' },
   { title: 'Artisan Shop', desc: 'Handcrafted products made by skilled women artisans to support their livelihood.', link: '/shop', emoji: '🛍️', bg: 'bg-[#FFD93D]/5', border: 'hover:border-[#FFD93D]', text: 'text-[#E8A817]' },
   { title: 'Inspiring Blog', desc: 'Explore stories of change, updates, and events about women\'s empowerment.', link: '/blog', emoji: '📝', bg: 'bg-[#A78BFA]/5', border: 'hover:border-[#A78BFA]', text: 'text-[#7C3AED]' },
 ];

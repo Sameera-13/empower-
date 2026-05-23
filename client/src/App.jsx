@@ -8,7 +8,6 @@ import Signup from './pages/Signup';
 import ForgotPassword from './pages/ForgotPassword';
 import ResetPassword from './pages/ResetPassword';
 import Services from './pages/Services';
-import SafetyHub from './pages/SafetyHub';
 import Profile from './pages/Profile';
 import Shop from './pages/Shop';
 import ProductDetail from './pages/ProductDetail';
@@ -58,7 +57,6 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Landing />} />
       <Route path="/services" element={<Services />} />
-      <Route path="/safety" element={<SafetyHub />} />
       <Route path="/shop" element={<Shop />} />
       <Route path="/shop/:id" element={<ProductDetail />} />
       <Route path="/cart" element={<Cart />} />
