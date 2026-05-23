@@ -29,10 +29,10 @@ const pillars = [
 
 /* ── Programs ── */
 const programs = [
-  { title: 'Legal Aid', desc: 'Free legal resources, know your rights, connect with professionals.', link: '/resources?category=legal', emoji: '\u2696\uFE0F', bg: 'bg-[#FF6B9D]/5', border: 'hover:border-[#FF6B9D]', text: 'text-[#FF6B9D]' },
-  { title: 'Safety Hub', desc: 'Emergency helplines, safety tips, shelters, downloadable safety plans.', link: '/safety', emoji: '\uD83D\uDEE1\uFE0F', bg: 'bg-[#6BCB77]/5', border: 'hover:border-[#6BCB77]', text: 'text-[#6BCB77]' },
-  { title: 'Career & Scholarships', desc: 'Scholarships, internships, and job openings curated for women.', link: '/opportunities', emoji: '\uD83C\uDFAF', bg: 'bg-[#FFD93D]/5', border: 'hover:border-[#FFD93D]', text: 'text-[#E8A817]' },
-  { title: 'Community', desc: 'Share stories, support each other, and grow together.', link: '/community', emoji: '\uD83D\uDCAC', bg: 'bg-[#A78BFA]/5', border: 'hover:border-[#A78BFA]', text: 'text-[#7C3AED]' },
+  { title: 'Premium Services', desc: 'Beauty services, professional mehndi art, and website designing classes.', link: '/services', emoji: '💅', bg: 'bg-[#FF6B9D]/5', border: 'hover:border-[#FF6B9D]', text: 'text-[#FF6B9D]' },
+  { title: 'Safety Hub', desc: 'Emergency helplines, safety tips, shelters, and downloadable safety plans.', link: '/safety', emoji: '🛡️', bg: 'bg-[#6BCB77]/5', border: 'hover:border-[#6BCB77]', text: 'text-[#6BCB77]' },
+  { title: 'Artisan Shop', desc: 'Handcrafted products made by skilled women artisans to support their livelihood.', link: '/shop', emoji: '🛍️', bg: 'bg-[#FFD93D]/5', border: 'hover:border-[#FFD93D]', text: 'text-[#E8A817]' },
+  { title: 'Inspiring Blog', desc: 'Explore stories of change, updates, and events about women\'s empowerment.', link: '/blog', emoji: '📝', bg: 'bg-[#A78BFA]/5', border: 'hover:border-[#A78BFA]', text: 'text-[#7C3AED]' },
 ];
 
 function HeroSection() {
@@ -139,7 +139,7 @@ function ProgramsSection() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-14">
           <h2 className="text-2xl md:text-3xl font-display gradient-text-pink-yellow mb-3 inline-block">How We Can Help</h2>
-          <p className="text-[#2D3436]/40 max-w-md mx-auto text-sm">From legal guidance to career tools — built for what women actually need.</p>
+          <p className="text-[#2D3436]/40 max-w-md mx-auto text-sm">From professional skill development to safety support — built for what women actually need.</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -176,9 +176,9 @@ function CTABanner() {
                 Shop Now
               </button>
             </Link>
-            <Link to="/signup">
+            <Link to="/services">
               <button className="h-12 px-8 rounded-full border-2 border-white/40 text-white font-semibold text-base hover:bg-white/10 transition-all">
-                Join the Community
+                Our Services
               </button>
             </Link>
           </div>
@@ -238,7 +238,7 @@ export default function Landing() {
         <div className="max-w-lg mx-auto px-4 text-center">
           <h2 className="text-2xl font-display gradient-text-green-yellow mb-2 inline-block">Stay in the loop</h2>
           <p className="text-[#2D3436]/40 text-sm mb-6">
-            New resources, opportunities, and community updates — straight to your inbox.
+            New services, articles, and safety updates — straight to your inbox.
           </p>
           {subscribed ? (
             <p className="text-sm text-[#6BCB77] font-medium py-3">Thanks for subscribing!</p>

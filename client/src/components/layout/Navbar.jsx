@@ -7,9 +7,7 @@ import MobileDrawer from './MobileDrawer';
 import NotificationBell from '../domain/NotificationBell';
 
 const navLinks = [
-  { to: '/resources', label: 'Resources' },
-  { to: '/community', label: 'Community' },
-  { to: '/opportunities', label: 'Opportunities' },
+  { to: '/services', label: 'Services' },
   { to: '/shop', label: 'Shop' },
   { to: '/blog', label: 'Blog' },
   { to: '/about', label: 'About Us' },

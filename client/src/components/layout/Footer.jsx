@@ -35,9 +35,6 @@ export default function Footer() {
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-wider text-[#FF6B9D]/60 mb-3">Platform</h4>
             <div className="flex flex-col gap-2">
-              <Link to="/resources" className="text-sm text-[#2D3436]/60 hover:text-[#FF6B9D] transition-colors">Resources</Link>
-              <Link to="/community" className="text-sm text-[#2D3436]/60 hover:text-[#6BCB77] transition-colors">Community</Link>
-              <Link to="/opportunities" className="text-sm text-[#2D3436]/60 hover:text-[#2D3436] transition-colors">Opportunities</Link>
               <Link to="/services" className="text-sm text-[#2D3436]/60 hover:text-[#ff4f8b] transition-colors">Services</Link>
               <Link to="/shop" className="text-sm text-[#2D3436]/60 hover:text-[#FF6B9D] transition-colors">Shop</Link>
               <Link to="/safety" className="text-sm text-[#2D3436]/60 hover:text-[#FF6B9D] transition-colors">Safety Hub</Link>

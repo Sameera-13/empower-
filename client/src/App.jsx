@@ -7,11 +7,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import ForgotPassword from './pages/ForgotPassword';
 import ResetPassword from './pages/ResetPassword';
-import ResourceHub from './pages/ResourceHub';
-import PostFeed from './pages/PostFeed';
-import PostDetail from './pages/PostDetail';
-import OpportunityBoard from './pages/OpportunityBoard';
-import OpportunityDetail from './pages/OpportunityDetail';
+import Services from './pages/Services';
 import SafetyHub from './pages/SafetyHub';
 import Profile from './pages/Profile';
 import Shop from './pages/Shop';
@@ -61,11 +57,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Landing />} />
-      <Route path="/resources" element={<ResourceHub />} />
-      <Route path="/community" element={<PostFeed />} />
-      <Route path="/community/:id" element={<PostDetail />} />
-      <Route path="/opportunities" element={<OpportunityBoard />} />
-      <Route path="/opportunities/:id" element={<OpportunityDetail />} />
+      <Route path="/services" element={<Services />} />
       <Route path="/safety" element={<SafetyHub />} />
       <Route path="/shop" element={<Shop />} />
       <Route path="/shop/:id" element={<ProductDetail />} />

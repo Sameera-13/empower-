@@ -118,7 +118,7 @@ export default function Services() {
         'Business Website Training'
       ],
       buttonText: 'Start Learning',
-      buttonLink: '/opportunities?category=training',
+      buttonLink: '/contact?inquiry=webdesign',
       accentColor: 'border-[#6BCB77]/20 hover:border-[#6BCB77]/50 hover:shadow-[#6BCB77]/10'
     }
   ];

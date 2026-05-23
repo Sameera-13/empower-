@@ -3,9 +3,7 @@ import { useAuth } from '../../context/AuthContext';
 import Button from '../common/Button';
 
 const navLinks = [
-  { to: '/resources', label: 'Resources' },
-  { to: '/community', label: 'Community' },
-  { to: '/opportunities', label: 'Opportunities' },
+  { to: '/services', label: 'Services' },
   { to: '/shop', label: 'Shop' },
   { to: '/blog', label: 'Blog' },
   { to: '/about', label: 'About Us' },
