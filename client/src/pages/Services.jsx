@@ -357,7 +357,7 @@ export default function Services() {
   return (
     <PageContainer>
       {/* SECTION 1 — HERO SECTION */}
-      <section className="py-8 md:py-12 px-4 relative overflow-hidden bg-gradient-to-b from-[#FFFDF7] to-white">
+      <section className="pt-4 pb-8 md:pt-6 md:pb-10 px-4 relative overflow-hidden bg-gradient-to-b from-[#FFFDF7] to-white">
         {/* Floating background blur shapes for SaaS aesthetic */}
         <div className="absolute top-10 left-10 w-44 h-44 rounded-full bg-[#FF6B9D]/5 blur-3xl -z-10 animate-pulse" />
         <div className="absolute bottom-10 right-1/3 w-64 h-64 rounded-full bg-[#6BCB77]/5 blur-3xl -z-10" />
@@ -368,17 +368,17 @@ export default function Services() {
             {/* Sparkle Star icon decoration */}
             <div className="absolute -top-10 -left-6 text-[#FFD93D] text-2xl select-none animate-pulse">✦</div>
             
-            <span className="inline-block text-[10px] md:text-xs font-extrabold tracking-[0.2em] uppercase text-[#B8860B] bg-[#FFD93D]/10 px-4 py-1.5 rounded-full border border-[#FFD93D]/20 backdrop-blur-sm mb-3">
+            <span className="inline-block text-[10px] md:text-xs font-extrabold tracking-[0.2em] uppercase text-[#B8860B] bg-[#FFD93D]/10 px-4 py-1.5 rounded-full border border-[#FFD93D]/20 backdrop-blur-sm mb-2">
               EMPOWERSTOP SERVICES
             </span>
             
-            <h1 className="font-display text-[#2D3436] mb-2.5 leading-[1.08] text-4xl md:text-5xl lg:text-[56px] font-normal tracking-tight">
+            <h1 className="font-display text-[#2D3436] mb-2 leading-[1.08] text-4xl md:text-5xl lg:text-[56px] font-normal tracking-tight">
               Empowering Women <br />
               Through <span className="text-[#ff4f8b] font-bold">Skills &</span> <br />
               <span className="text-[#ff4f8b] font-bold">Creativity</span>
             </h1>
 
-            <p className="text-sm md:text-base text-[#2D3436]/65 max-w-md leading-relaxed mb-5">
+            <p className="text-sm md:text-base text-[#2D3436]/65 max-w-md leading-relaxed mb-4">
               Helping women grow through beauty, traditional art, digital opportunities, and professional services.
             </p>
 
@@ -401,7 +401,7 @@ export default function Services() {
             </div>
             
             {/* dot matrix pattern decoration */}
-            <div className="pt-4 text-[#F0E6F6] select-none text-xl font-mono opacity-50 tracking-[0.3em] flex flex-col gap-1.5">
+            <div className="pt-3 text-[#F0E6F6] select-none text-xl font-mono opacity-50 tracking-[0.3em] flex flex-col gap-1.5">
               <div>••••••</div>
               <div>••••••</div>
             </div>
@@ -421,7 +421,7 @@ export default function Services() {
             </div>
             
             {/* Floating Glassmorphic Badge */}
-            <div className="absolute bottom-6 -left-6 bg-white border border-[#F0E6F6] rounded-2xl p-4 shadow-lg shadow-black/5 flex items-center gap-3.5 animate-bounce-slow">
+            <div className="absolute bottom-4 -left-6 bg-white border border-[#F0E6F6] rounded-2xl p-4 shadow-lg shadow-black/5 flex items-center gap-3.5 animate-bounce-slow">
               <div className="w-11 h-11 rounded-xl bg-[#ff4f8b]/10 flex items-center justify-center shrink-0">
                 <svg className="w-5 h-5 text-[#ff4f8b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
