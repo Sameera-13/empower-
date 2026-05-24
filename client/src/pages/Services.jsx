@@ -289,22 +289,16 @@ export default function Services() {
 
                   {/* Title & Description */}
                   <h3 className="font-display text-2xl text-[#2D3436] mb-3">{service.title}</h3>
-                  <p className="text-xs text-[#2D3436]/60 leading-relaxed mb-6">{service.description}</p>
+                  <p className="text-xs text-[#2D3436]/60 leading-relaxed mb-6 pb-6 border-b border-[#F0E6F6]">{service.description}</p>
                   
-                  {/* Pricing Header */}
-                  <div className="flex items-baseline gap-1.5 mb-6 pb-6 border-b border-[#F0E6F6]">
-                    <span className="text-[10px] font-bold text-[#2D3436]/40 uppercase tracking-wider">Starting From</span>
-                    <span className="text-3xl font-extrabold text-[#2D3436] tracking-tight">{service.startingPrice}</span>
-                  </div>
-
                   {/* Popular Packages */}
                   <div className="mb-6">
                     <h4 className="text-[10px] font-extrabold uppercase tracking-wider text-[#2D3436]/40 mb-3">Popular Packages</h4>
                     <div className="space-y-2 bg-[#FFFDF7]/50 rounded-2xl p-4 border border-[#F0E6F6]">
                       {service.packages.map((pkg, i) => (
-                        <div key={i} className="flex justify-between items-center text-xs">
-                          <span className="font-semibold text-[#2D3436]/80">{pkg.name}</span>
-                          <span className="font-bold text-[#FF6B9D]">{pkg.price}</span>
+                        <div key={i} className="flex items-center gap-2.5 text-xs text-[#2D3436]/80 font-semibold">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B9D]" />
+                          {pkg.name}
                         </div>
                       ))}
                     </div>
