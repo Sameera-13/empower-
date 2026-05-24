@@ -27,6 +27,73 @@ function useCountUp(end, duration = 2000, trigger = true) {
   return count;
 }
 
+// Inline SVG Icon Selector for Category Filter Pills
+function getCategoryIcon(catId, isActive) {
+  const colorClass = isActive ? 'text-white' : {
+    all: 'text-[#ff4f8b]',
+    personal: 'text-[#FF6B9D]',
+    web: 'text-[#6BCB77]',
+    docs: 'text-[#3B82F6]',
+    social: 'text-[#A855F7]',
+    business: 'text-[#FFD93D]',
+    ngo: 'text-[#4F46E5]',
+    digital: 'text-[#EC4899]'
+  }[catId] || 'text-[#ff4f8b]';
+
+  switch (catId) {
+    case 'all':
+      return (
+        <svg className={`w-4.5 h-4.5 ${colorClass}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+        </svg>
+      );
+    case 'personal':
+      return (
+        <svg className={`w-4.5 h-4.5 ${colorClass}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+        </svg>
+      );
+    case 'web':
+      return (
+        <svg className={`w-4.5 h-4.5 ${colorClass}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      );
+    case 'docs':
+      return (
+        <svg className={`w-4.5 h-4.5 ${colorClass}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+      );
+    case 'social':
+      return (
+        <svg className={`w-4.5 h-4.5 ${colorClass}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+        </svg>
+      );
+    case 'business':
+      return (
+        <svg className={`w-4.5 h-4.5 ${colorClass}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4.674 12.03a2.007 2.007 0 001.326-.79l.526-.656a2.007 2.007 0 012.336-.572M16 8H8m0 0v10m0-10H6a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V10a2 2 0 00-2-2h-2" />
+        </svg>
+      );
+    case 'ngo':
+      return (
+        <svg className={`w-4.5 h-4.5 ${colorClass}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+        </svg>
+      );
+    case 'digital':
+      return (
+        <svg className={`w-4.5 h-4.5 ${colorClass}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+        </svg>
+      );
+    default:
+      return null;
+  }
+}
+
 export default function Services() {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [statsTriggered, setStatsTriggered] = useState(false);
@@ -42,7 +109,7 @@ export default function Services() {
           setStatsTriggered(true);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.1 }
     );
     
     if (statsRef.current) {
@@ -61,14 +128,14 @@ export default function Services() {
   const [activeCategory, setActiveCategory] = useState('all');
 
   const categories = [
-    { id: 'all', label: 'All Services', icon: '✨', services: ['mehndi', 'beauty', 'webdev', 'docs', 'social'], color: 'from-[#ff4f8b] to-[#ff8e71]' },
-    { id: 'personal', label: 'Personal Care', icon: '🌸', services: ['mehndi', 'beauty'], color: 'from-[#FF6B9D] to-[#EC4899]' },
-    { id: 'web', label: 'Web Development', icon: '💻', services: ['webdev'], color: 'from-[#6BCB77] to-[#4CAF50]' },
-    { id: 'docs', label: 'Documentation & Registration', icon: '📄', services: ['docs'], color: 'from-[#3B82F6] to-[#2563EB]' },
-    { id: 'social', label: 'Social Media Management', icon: '📱', services: ['social'], color: 'from-[#A855F7] to-[#EC4899]' },
-    { id: 'business', label: 'Business Solutions', icon: '💼', services: ['webdev', 'docs'], color: 'from-[#3B82F6] to-[#6BCB77]' },
-    { id: 'ngo', label: 'NGO Services', icon: '🤝', services: ['docs'], color: 'from-[#4F46E5] to-[#3B82F6]' },
-    { id: 'digital', label: 'Digital Marketing', icon: '🚀', services: ['social'], color: 'from-[#EC4899] to-[#8B5CF6]' }
+    { id: 'all', label: 'All Services', services: ['mehndi', 'beauty', 'webdev', 'docs', 'social'], color: 'from-[#ff4f8b] to-[#ff8e71]' },
+    { id: 'personal', label: 'Personal Care', services: ['mehndi', 'beauty'], color: 'from-[#FF6B9D] to-[#EC4899]' },
+    { id: 'web', label: 'Web Development', services: ['webdev'], color: 'from-[#6BCB77] to-[#4CAF50]' },
+    { id: 'docs', label: 'Documentation & Registration', services: ['docs'], color: 'from-[#3B82F6] to-[#2563EB]' },
+    { id: 'social', label: 'Social Media Management', services: ['social'], color: 'from-[#A855F7] to-[#EC4899]' },
+    { id: 'business', label: 'Business Solutions', services: ['webdev', 'docs'], color: 'from-[#FFD93D] to-[#FF8E71]' },
+    { id: 'ngo', label: 'NGO Services', services: ['docs'], color: 'from-[#4F46E5] to-[#3B82F6]' },
+    { id: 'digital', label: 'Digital Marketing', services: ['social'], color: 'from-[#EC4899] to-[#8B5CF6]' }
   ];
 
   const services = [
@@ -76,7 +143,6 @@ export default function Services() {
       id: 'mehndi',
       title: 'Mehndi Services',
       description: 'We provide professional mehndi application services for weddings, festivals, parties, and special occasions with elegant and customized designs.',
-      startingPrice: '₹999',
       icon: (
         <svg className="w-9 h-9 text-[#D4AF37]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
@@ -85,11 +151,11 @@ export default function Services() {
         </svg>
       ),
       packages: [
-        { name: 'Bridal Mehndi', price: '₹5,000+' },
-        { name: 'Arabic Mehndi', price: '₹1,500+' },
-        { name: 'Festival Mehndi', price: '₹799+' },
-        { name: 'Custom Designs', price: '₹2,000+' },
-        { name: 'Home Service Available', price: 'Free' }
+        { name: 'Bridal Mehndi' },
+        { name: 'Arabic Mehndi' },
+        { name: 'Festival Mehndi' },
+        { name: 'Custom Designs' },
+        { name: 'Home Service Available' }
       ],
       features: [
         'Bridal Mehndi',
@@ -109,7 +175,6 @@ export default function Services() {
       id: 'beauty',
       title: 'Beauty & Personal Care',
       description: 'We provide professional salon and self-care services that help women feel confident, stylish, and beautiful with expert treatments.',
-      startingPrice: '₹499',
       icon: (
         <svg className="w-9 h-9 text-[#FF6B9D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 9.5a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0z" />
@@ -119,11 +184,11 @@ export default function Services() {
         </svg>
       ),
       packages: [
-        { name: 'Facial Treatment', price: '₹999+' },
-        { name: 'Hair Spa', price: '₹1,499+' },
-        { name: 'Hair Coloring', price: '₹2,500+' },
-        { name: 'Bleach & Cleanup', price: '₹699+' },
-        { name: 'Bridal Makeup', price: '₹8,000+' }
+        { name: 'Facial Treatment' },
+        { name: 'Hair Spa' },
+        { name: 'Hair Coloring' },
+        { name: 'Bleach & Cleanup' },
+        { name: 'Bridal Makeup' }
       ],
       features: [
         'Facial Treatment',
@@ -145,7 +210,6 @@ export default function Services() {
       id: 'webdev',
       title: 'Full Stack Web Dev',
       description: 'We create responsive, SEO-friendly, and modern websites for businesses, startups, personal brands, and online services.',
-      startingPrice: '₹9,999',
       icon: (
         <svg className="w-9 h-9 text-[#6BCB77]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25" />
@@ -153,11 +217,11 @@ export default function Services() {
         </svg>
       ),
       packages: [
-        { name: 'Portfolio Website', price: '₹9,999+' },
-        { name: 'Business Website', price: '₹15,000+' },
-        { name: 'E-Commerce Website', price: '₹25,000+' },
-        { name: 'Custom Web App', price: '₹40,000+' },
-        { name: 'Website Maintenance', price: '₹2,000/mo' }
+        { name: 'Portfolio Website' },
+        { name: 'Business Website' },
+        { name: 'E-Commerce Website' },
+        { name: 'Custom Web App' },
+        { name: 'Website Maintenance' }
       ],
       features: [
         'Responsive Design',
@@ -177,7 +241,7 @@ export default function Services() {
     },
     {
       id: 'docs',
-      title: 'Documentation & Registration',
+      title: 'Documentation & Registration Services',
       description: 'We provide reliable documentation, online registration, NGO compliance, and government support services for individuals, startups, NGOs, and businesses with fast processing and professional assistance.',
       icon: (
         <svg className="w-9 h-9 text-[#3B82F6]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -185,11 +249,20 @@ export default function Services() {
         </svg>
       ),
       packages: [
-        { name: 'Online & NGO Registration' },
-        { name: 'GST & PAN Applications' },
-        { name: '80G & 12A Compliance' },
+        { name: 'Online Registration' },
+        { name: 'GST Registration' },
+        { name: 'NGO Registration' },
+        { name: 'Business Registration' },
+        { name: '80G Registration' },
+        { name: 'MSME/Udyam Registration' },
+        { name: '12A Registration' },
+        { name: 'Income Certificate' },
+        { name: 'PAN Card Application' },
+        { name: 'Online Form Filling' },
         { name: 'Food License (FSSAI)' },
-        { name: 'MSME & Scheme Applications' }
+        { name: 'Government Scheme Applications' },
+        { name: 'CSR Registration Support' },
+        { name: 'Document Verification Support' }
       ],
       features: [
         'Fast Processing',
@@ -216,11 +289,15 @@ export default function Services() {
         </svg>
       ),
       packages: [
-        { name: 'Instagram & Facebook Handling' },
+        { name: 'Instagram Management' },
+        { name: 'Brand Promotion' },
+        { name: 'Facebook Page Handling' },
+        { name: 'Content Creation' },
         { name: 'Post & Reel Designing' },
+        { name: 'Audience Engagement' },
         { name: 'Content Planning' },
-        { name: 'Brand Promotion & Marketing' },
-        { name: 'Monthly Growth Strategy' }
+        { name: 'Monthly Growth Strategy' },
+        { name: 'Social Media Marketing' }
       ],
       features: [
         'Daily Post Uploads',
@@ -237,33 +314,6 @@ export default function Services() {
       accentColor: 'border-[#A855F7]/25 hover:border-[#A855F7] hover:shadow-[0_20px_40px_rgba(168,85,247,0.12)] hover:shadow-[#A855F7]/10 bg-white/70 backdrop-blur-md',
       tagColor: 'bg-[#A855F7]/10 text-[#7E22CE] border border-[#A855F7]/20',
       btnVariant: 'purple'
-    }
-  ];
-
-  const features = [
-    {
-      title: 'Women Empowerment',
-      description: 'Fostering financial independence and leadership capacity to elevate women in society.',
-      icon: '✊',
-      bg: 'bg-gradient-to-br from-[#ff4f8b]/5 to-[#ff4f8b]/15'
-    },
-    {
-      title: 'Skill Development',
-      description: 'Hands-on practical training that matches both local artistry and global digital needs.',
-      icon: '🧠',
-      bg: 'bg-gradient-to-br from-[#FFD93D]/5 to-[#FFD93D]/20'
-    },
-    {
-      title: 'Creative Opportunities',
-      description: 'A platform to launch creative services, showcase portfolios, and connect with clients.',
-      icon: '🎨',
-      bg: 'bg-gradient-to-br from-[#6BCB77]/5 to-[#6BCB77]/15'
-    },
-    {
-      title: 'Supportive Community',
-      description: 'A secure, collaborative circle where women share experiences and grow together.',
-      icon: '🤝',
-      bg: 'bg-gradient-to-br from-purple-500/5 to-purple-500/15'
     }
   ];
 
@@ -295,42 +345,91 @@ export default function Services() {
   const activeCategoryData = categories.find(c => c.id === activeCategory);
   const filteredServices = services.filter(service => activeCategoryData.services.includes(service.id));
 
+  const getGridSpan = (serviceId, index, total) => {
+    if (total === 1) return 'lg:col-span-6 max-w-2xl mx-auto';
+    if (total === 2) return 'lg:col-span-3';
+    if (total === 3) return 'lg:col-span-2';
+    // For all 5 cards: 3 on first row, 2 on second row
+    if (index < 3) return 'lg:col-span-2';
+    return 'lg:col-span-3';
+  };
+
   return (
     <PageContainer>
       {/* SECTION 1 — HERO SECTION */}
-      <section className="py-6 px-4">
-        <div className="max-w-5xl mx-auto relative h-[400px] md:h-[480px] rounded-[2.5rem] overflow-hidden ring-[6px] ring-[#2D3436]/5 shadow-[0_20px_50px_rgba(0,0,0,0.12)]">
-          {/* Background Image */}
-          <img
-            src="/services_hero.png"
-            alt="Women learning skills together"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+      <section className="py-12 md:py-16 px-4 relative overflow-hidden bg-gradient-to-b from-[#FFFDF7] to-white">
+        {/* Floating background blur shapes for SaaS aesthetic */}
+        <div className="absolute top-10 left-10 w-44 h-44 rounded-full bg-[#FF6B9D]/5 blur-3xl -z-10 animate-pulse" />
+        <div className="absolute bottom-10 right-1/3 w-64 h-64 rounded-full bg-[#6BCB77]/5 blur-3xl -z-10" />
 
-          {/* Hero Content */}
-          <div className="relative z-10 h-full flex items-center px-6 md:px-16">
-            <div className="max-w-2xl text-white">
-              <span className="inline-block text-[10px] md:text-xs font-semibold tracking-[0.2em] uppercase text-[#FFD93D] mb-4 bg-[#FFD93D]/20 px-3 py-1 rounded-full border border-[#FFD93D]/30 backdrop-blur-sm">
-                EmpowerStop Services
-              </span>
-              <h1 className="font-display text-3xl md:text-5xl lg:text-6xl mb-4 leading-tight">
-                Empowering Women Through <span className="text-[#FFD93D]">Skills & Creativity</span>
-              </h1>
-              <p className="text-sm md:text-base text-white/80 mb-8 max-w-lg leading-relaxed">
-                Helping women grow through beauty, traditional art, and digital opportunities.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button onClick={handleScrollToServices} className="h-11 md:h-12 px-7 text-sm font-semibold rounded-full shadow-lg shadow-[#ff4f8b]/30">
-                  Explore Services
-                </Button>
-                <Link to="/signup">
-                  <button className="h-11 md:h-12 px-7 text-sm font-semibold rounded-full border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm transition-all duration-200">
-                    Join Community
-                  </button>
-                </Link>
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          {/* Left Column: Text & Content */}
+          <div className="lg:col-span-6 relative z-10 text-left">
+            {/* Sparkle Star icon decoration */}
+            <div className="absolute -top-10 -left-6 text-[#FFD93D] text-2xl select-none animate-pulse">✦</div>
+            
+            <span className="inline-block text-[10px] md:text-xs font-extrabold tracking-[0.2em] uppercase text-[#B8860B] bg-[#FFD93D]/10 px-4 py-1.5 rounded-full border border-[#FFD93D]/20 backdrop-blur-sm mb-5">
+              EMPOWERSTOP SERVICES
+            </span>
+            
+            <h1 className="font-display text-[#2D3436] mb-4 leading-[1.12] text-4xl md:text-5xl lg:text-[56px] font-normal tracking-tight">
+              Empowering Women <br />
+              Through <span className="text-[#ff4f8b] font-bold">Skills &</span> <br />
+              <span className="text-[#ff4f8b] font-bold">Creativity</span>
+            </h1>
+
+            <p className="text-sm md:text-base text-[#2D3436]/65 max-w-md leading-relaxed mb-8">
+              Helping women grow through beauty, traditional art, digital opportunities, and professional services.
+            </p>
+
+            <div className="flex flex-wrap gap-4 items-center">
+              <button
+                onClick={handleScrollToServices}
+                className="h-12 px-8 text-xs font-bold rounded-full text-white bg-gradient-to-r from-[#ff4f8b] to-[#ff8e71] shadow-lg shadow-[#ff4f8b]/20 hover:shadow-xl hover:shadow-[#ff4f8b]/30 transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 flex items-center justify-center gap-1.5 cursor-pointer"
+              >
+                Explore Services <span className="text-sm">→</span>
+              </button>
+              
+              <Link to="/signup">
+                <button className="h-12 px-8 text-xs font-bold rounded-full border border-[#F0E6F6] text-[#2D3436]/80 bg-white hover:bg-[#F0E6F6]/10 hover:border-[#ff4f8b]/30 transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 shadow-sm flex items-center gap-2 cursor-pointer">
+                  <svg className="w-4 h-4 text-[#ff4f8b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+                  </svg>
+                  Join Community
+                </button>
+              </Link>
+            </div>
+            
+            {/* dot matrix pattern decoration */}
+            <div className="pt-8 text-[#F0E6F6] select-none text-xl font-mono opacity-50 tracking-[0.3em] flex flex-col gap-1.5">
+              <div>••••••</div>
+              <div>••••••</div>
+            </div>
+          </div>
+
+          {/* Right Column: Beautiful Banner Image with floating badge */}
+          <div className="lg:col-span-6 relative flex justify-center items-center">
+            {/* Outer pink sparkle decorator */}
+            <div className="absolute top-1/2 -right-8 text-[#ff4f8b] text-2xl select-none animate-pulse">✦</div>
+            
+            <div className="relative rounded-[2.5rem] overflow-hidden p-1 bg-white shadow-xl shadow-black/5 ring-1 ring-black/5">
+              <img
+                src="/services_hero.png"
+                alt="Women learning skills together"
+                className="w-full max-w-[500px] h-[360px] md:h-[400px] object-cover rounded-[2.3rem] ring-4 ring-white"
+              />
+            </div>
+            
+            {/* Floating Glassmorphic Badge */}
+            <div className="absolute bottom-6 -left-6 bg-white border border-[#F0E6F6] rounded-2xl p-4 shadow-lg shadow-black/5 flex items-center gap-3.5 animate-bounce-slow">
+              <div className="w-11 h-11 rounded-xl bg-[#ff4f8b]/10 flex items-center justify-center shrink-0">
+                <svg className="w-5 h-5 text-[#ff4f8b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div className="text-left leading-none">
+                <span className="block text-xl font-extrabold text-[#2D3436] mb-0.5">1200+</span>
+                <span className="text-[9px] font-bold text-[#2D3436]/40 uppercase tracking-wider">Women Empowered</span>
               </div>
             </div>
           </div>
@@ -338,51 +437,57 @@ export default function Services() {
       </section>
 
       {/* SECTION 2 — SERVICES CARDS */}
-      <section id="services-section" className="py-24 px-4 bg-gradient-to-b from-[#FFFDF7] via-[#FDF8FF] to-[#FFFDF7] relative overflow-hidden">
+      <section id="services-section" className="py-20 px-4 bg-gradient-to-b from-[#FFFDF7] via-[#FDF8FF] to-[#FFFDF7] relative overflow-hidden">
         {/* Floating background blur shapes for SaaS aesthetic */}
         <div className="absolute top-20 -left-20 w-80 h-80 rounded-full bg-[#FF6B9D]/5 blur-3xl -z-10" />
         <div className="absolute bottom-20 -right-20 w-80 h-80 rounded-full bg-[#6BCB77]/5 blur-3xl -z-10" />
 
         <div className="max-w-6xl mx-auto">
+          {/* Centered Heading */}
           <div className="text-center mb-12">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#FF6B9D] bg-[#FF6B9D]/15 px-4 py-1.5 rounded-full border border-[#FF6B9D]/20">
-              Our Offerings
+            <span className="text-xs font-bold uppercase tracking-widest text-[#ff4f8b] bg-[#ff4f8b]/10 px-4 py-1.5 rounded-full border border-[#ff4f8b]/20">
+              BROWSE BY CATEGORY
             </span>
-            <h2 className="font-display text-4xl md:text-5xl text-[#2D3436] mt-5 mb-5 leading-[1.15]">
+            <h2 className="font-display text-4xl md:text-5xl text-[#2D3436] mt-5 mb-3 font-normal leading-[1.15]">
               Professional Services We Offer
             </h2>
+            <div className="text-center text-xs text-[#ff4f8b]/60 tracking-widest mb-6 font-semibold select-none flex items-center justify-center gap-1">
+              <span className="w-12 h-px bg-gradient-to-r from-transparent to-[#ff4f8b]/30"></span>
+              <span>💖</span>
+              <span className="w-12 h-px bg-gradient-to-l from-transparent to-[#ff4f8b]/30"></span>
+            </div>
             <p className="text-[#2D3436]/50 max-w-xl mx-auto text-sm leading-relaxed md:text-base">
               We provide premium beauty care, professional mehndi artistry, and modern website development solutions at affordable pricing.
             </p>
           </div>
 
           {/* Interactive Category Filter Pill Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-3 mb-16 max-w-4xl mx-auto px-2">
-            {categories.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => setActiveCategory(cat.id)}
-                className={`relative flex items-center gap-2 px-5 py-3 rounded-full text-xs font-bold transition-all duration-300 transform active:scale-95 cursor-pointer backdrop-blur-md border ${
-                  activeCategory === cat.id
-                    ? `bg-gradient-to-r ${cat.color} text-white border-transparent shadow-lg shadow-black/15 scale-[1.03]`
-                    : 'bg-white/50 hover:bg-white/95 text-[#2D3436]/65 border-[#F0E6F6] hover:border-[#FF6B9D]/30 shadow-sm'
-                }`}
-              >
-                <span>{cat.icon}</span>
-                <span>{cat.label}</span>
-                {activeCategory === cat.id && (
-                  <span className="absolute -inset-0.5 rounded-full bg-gradient-to-r from-[#FF6B9D] to-[#6BCB77] opacity-20 blur-sm -z-10 animate-pulse" />
-                )}
-              </button>
-            ))}
+          <div className="flex flex-wrap items-center justify-center gap-3 mb-16 max-w-5xl mx-auto px-2">
+            {categories.map((cat) => {
+              const isActive = activeCategory === cat.id;
+              return (
+                <button
+                  key={cat.id}
+                  onClick={() => setActiveCategory(cat.id)}
+                  className={`relative flex items-center gap-2.5 px-5 py-3 rounded-full text-[11px] font-bold transition-all duration-300 transform active:scale-95 cursor-pointer border ${
+                    isActive
+                      ? `bg-gradient-to-r ${cat.color} text-white border-transparent shadow-md shadow-black/10 scale-[1.02]`
+                      : 'bg-white hover:bg-white/95 text-[#2D3436]/65 border-[#F0E6F6] hover:border-[#ff4f8b]/30 shadow-sm'
+                  }`}
+                >
+                  {getCategoryIcon(cat.id, isActive)}
+                  <span>{cat.label}</span>
+                </button>
+              );
+            })}
           </div>
 
           {/* Filtered Services Grid Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[450px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 min-h-[450px]">
             {filteredServices.map((service, index) => (
               <div
                 key={service.id}
-                className={`rounded-[2.25rem] p-8 border ${service.accentColor} transition-all duration-500 hover:-translate-y-2.5 flex flex-col justify-between h-full bg-white/60 backdrop-blur-md shadow-sm hover:shadow-xl hover:scale-[1.01] animate-scale-in`}
+                className={`rounded-[2.25rem] p-8 border ${service.accentColor} transition-all duration-500 hover:-translate-y-2.5 flex flex-col justify-between h-full bg-white/60 backdrop-blur-md shadow-sm hover:shadow-xl hover:scale-[1.01] animate-scale-in col-span-1 md:col-span-2 ${getGridSpan(service.id, index, filteredServices.length)}`}
                 style={{ animationDelay: `${index * 80}ms` }}
               >
                 <div>
@@ -391,7 +496,7 @@ export default function Services() {
                     <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center shadow-md shadow-[#F0E6F6] border border-[#F0E6F6]">
                       {service.icon}
                     </div>
-                    <span className={`text-[10px] font-bold uppercase tracking-wider px-3.5 py-1 rounded-full ${service.tagColor}`}>
+                    <span className={`text-[9px] font-bold uppercase tracking-widest px-3 py-1 rounded-full ${service.tagColor}`}>
                       Premium
                     </span>
                   </div>
@@ -402,12 +507,18 @@ export default function Services() {
                   
                   {/* Popular Packages */}
                   <div className="mb-6">
-                    <h4 className="text-[10px] font-extrabold uppercase tracking-wider text-[#2D3436]/40 mb-3">Popular Packages</h4>
-                    <div className="space-y-2 bg-[#FFFDF7]/50 rounded-2xl p-4 border border-[#F0E6F6]">
+                    <h4 className="text-[10px] font-extrabold uppercase tracking-wider text-[#2D3436]/40 mb-3">
+                      {service.id === 'social' ? 'Popular Services' : 'Popular Packages'}
+                    </h4>
+                    <div className={`bg-[#FFFDF7]/50 rounded-2xl p-4 border border-[#F0E6F6] ${
+                      service.packages.length > 5 
+                        ? 'grid grid-cols-2 gap-x-4 gap-y-2' 
+                        : 'space-y-2'
+                    }`}>
                       {service.packages.map((pkg, i) => (
-                        <div key={i} className="flex items-center gap-2.5 text-xs text-[#2D3436]/80 font-semibold">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B9D]" />
-                          {pkg.name}
+                        <div key={i} className="flex items-center gap-2.5 text-[11px] text-[#2D3436]/80 font-bold truncate">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#ff4f8b] shrink-0" />
+                          <span className="truncate">{pkg.name}</span>
                         </div>
                       ))}
                     </div>
@@ -418,7 +529,7 @@ export default function Services() {
                     <h4 className="text-[10px] font-extrabold uppercase tracking-wider text-[#2D3436]/40 mb-3">Included Features</h4>
                     <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5">
                       {service.features.map((feat, i) => (
-                        <li key={i} className="flex items-center gap-2 text-[11px] text-[#2D3436]/70 font-medium">
+                        <li key={i} className="flex items-center gap-2 text-[11px] text-[#2D3436]/70 font-semibold">
                           <span className="w-4 h-4 rounded-full bg-[#6BCB77]/15 flex items-center justify-center shrink-0 border border-[#6BCB77]/20">
                             <svg className="w-2.5 h-2.5 text-[#6BCB77]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}>
                               <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -434,7 +545,7 @@ export default function Services() {
                 {/* CTA Button */}
                 <Link to={service.buttonLink} className="w-full">
                   <button
-                    className={`w-full py-3.5 px-6 rounded-2xl text-xs font-bold transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer ${
+                    className={`w-full py-3.5 px-6 rounded-2xl text-xs font-bold transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center justify-center gap-1.5 ${
                       service.btnVariant === 'golden'
                         ? 'bg-[#FFD93D] text-[#2D3436] hover:bg-[#FFD93D]/90 shadow-md shadow-[#FFD93D]/25'
                         : service.btnVariant === 'pink'
@@ -447,125 +558,164 @@ export default function Services() {
                     }`}
                   >
                     {service.buttonText}
+                    <span className="text-sm">→</span>
                   </button>
                 </Link>
               </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* SECTION 3 — WHY CHOOSE EMPOWERSTOP */}
-      <section ref={statsRef} className="py-20 bg-gradient-to-b from-[#FFFDF7] to-white border-t border-b border-[#F0E6F6] px-4">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="text-sm font-bold uppercase tracking-widest text-[#FFD93D]">Why Choose Us</span>
-            <h2 className="font-display text-3xl md:text-4xl text-[#2D3436] mt-2 mb-4">Dedicated to Uplifting Lives</h2>
-            <p className="text-[#2D3436]/50 max-w-lg mx-auto text-sm leading-relaxed">
-              We provide the tools, support, and networks to bridge the gap between creative skill development and financial freedom.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
-            {features.map((feature, index) => (
-              <div key={index} className={`rounded-2xl p-6 ${feature.bg} border border-[#F0E6F6]/50 shadow-sm hover:shadow-md transition-all duration-300`}>
-                <span className="text-3xl mb-4 block">{feature.icon}</span>
-                <h3 className="font-semibold text-sm text-[#2D3436] mb-2">{feature.title}</h3>
-                <p className="text-xs text-[#2D3436]/60 leading-relaxed">{feature.description}</p>
+          {/* Dedicated Horizontal Stats Divider Bar */}
+          <div className="mt-20 max-w-6xl mx-auto bg-white border border-[#F0E6F6] rounded-3xl p-8 shadow-sm hover:shadow-md transition-all duration-300">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {/* Stat 1 */}
+              <div className="flex items-center gap-4 px-2">
+                <div className="w-12 h-12 rounded-full bg-[#ff4f8b]/10 flex items-center justify-center shrink-0 border border-[#ff4f8b]/20">
+                  <svg className="w-5 h-5 text-[#ff4f8b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div className="text-left leading-none">
+                  <span className="block font-display text-2xl md:text-3xl text-[#ff4f8b] font-bold mb-1">
+                    {statsTriggered ? `${womenCount}+` : '0+'}
+                  </span>
+                  <span className="text-[9px] text-[#2D3436]/40 uppercase font-extrabold tracking-wider">Women Empowered</span>
+                </div>
               </div>
-            ))}
-          </div>
 
-          {/* Interactive Counters Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 bg-[#FFFDF7] border border-[#F0E6F6] rounded-3xl p-8 shadow-sm">
-            <div className="text-center">
-              <span className="block font-display text-3xl md:text-4xl text-[#ff4f8b] font-bold">
-                {statsTriggered ? `${womenCount}+` : '0+'}
-              </span>
-              <span className="text-xs text-[#2D3436]/50 uppercase font-semibold tracking-wider">Women Empowered</span>
-            </div>
-            <div className="text-center border-l border-[#F0E6F6]">
-              <span className="block font-display text-3xl md:text-4xl text-[#FFD93D] font-bold">
-                {statsTriggered ? `${workshopCount}+` : '0+'}
-              </span>
-              <span className="text-xs text-[#2D3436]/50 uppercase font-semibold tracking-wider">Skill Workshops</span>
-            </div>
-            <div className="text-center border-l border-[#F0E6F6]">
-              <span className="block font-display text-3xl md:text-4xl text-[#6BCB77] font-bold">
-                {statsTriggered ? `${successRate}%` : '0%'}
-              </span>
-              <span className="text-xs text-[#2D3436]/50 uppercase font-semibold tracking-wider">Success Rate</span>
-            </div>
-            <div className="text-center border-l border-[#F0E6F6]">
-              <span className="block font-display text-3xl md:text-4xl text-purple-600 font-bold">
-                {statsTriggered ? `${livelihoodCount}+` : '0+'}
-              </span>
-              <span className="text-xs text-[#2D3436]/50 uppercase font-semibold tracking-wider">Livelihoods Created</span>
+              {/* Stat 2 */}
+              <div className="flex items-center gap-4 px-2 border-t sm:border-t-0 sm:border-l border-[#F0E6F6] pt-4 sm:pt-0">
+                <div className="w-12 h-12 rounded-full bg-[#FFD93D]/10 flex items-center justify-center shrink-0 border border-[#FFD93D]/20">
+                  <svg className="w-5 h-5 text-[#B8860B]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222 4 2.222V20" />
+                  </svg>
+                </div>
+                <div className="text-left leading-none">
+                  <span className="block font-display text-2xl md:text-3xl text-[#B8860B] font-bold mb-1">
+                    {statsTriggered ? `${workshopCount}+` : '0+'}
+                  </span>
+                  <span className="text-[9px] text-[#2D3436]/40 uppercase font-extrabold tracking-wider">Skill Workshops</span>
+                </div>
+              </div>
+
+              {/* Stat 3 */}
+              <div className="flex items-center gap-4 px-2 border-t lg:border-t-0 lg:border-l border-[#F0E6F6] pt-4 lg:pt-0">
+                <div className="w-12 h-12 rounded-full bg-[#6BCB77]/10 flex items-center justify-center shrink-0 border border-[#6BCB77]/20">
+                  <svg className="w-5 h-5 text-[#2E7D32]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div className="text-left leading-none">
+                  <span className="block font-display text-2xl md:text-3xl text-[#2E7D32] font-bold mb-1">
+                    {statsTriggered ? `${successRate}%` : '0%'}
+                  </span>
+                  <span className="text-[9px] text-[#2D3436]/40 uppercase font-extrabold tracking-wider">Success Rate</span>
+                </div>
+              </div>
+
+              {/* Stat 4 */}
+              <div className="flex items-center gap-4 px-2 border-t lg:border-t-0 lg:border-l border-[#F0E6F6] pt-4 lg:pt-0">
+                <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center shrink-0 border border-purple-200">
+                  <svg className="w-5 h-5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                </div>
+                <div className="text-left leading-none">
+                  <span className="block font-display text-2xl md:text-3xl text-purple-600 font-bold mb-1">
+                    {statsTriggered ? `${livelihoodCount}+` : '0+'}
+                  </span>
+                  <span className="text-[9px] text-[#2D3436]/40 uppercase font-extrabold tracking-wider">Livelihoods Created</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 4 — TESTIMONIALS */}
-      <section className="py-20 px-4">
+      {/* SECTION 3 — TESTIMONIALS */}
+      <section ref={statsRef} className="py-20 px-4 bg-gradient-to-b from-[#FFFDF7] to-white border-t border-[#F0E6F6]">
         <div className="max-w-4xl mx-auto">
+          {/* Centered Heading */}
           <div className="text-center mb-12">
-            <span className="text-sm font-bold uppercase tracking-widest text-[#6BCB77]">Impact Stories</span>
-            <h2 className="font-display text-3xl md:text-4xl text-[#2D3436] mt-2 mb-4">Stories of Change</h2>
+            <span className="text-xs font-bold uppercase tracking-widest text-[#ff4f8b] bg-[#ff4f8b]/10 px-4 py-1.5 rounded-full border border-[#ff4f8b]/20">
+              IMPACT STORIES
+            </span>
+            <h2 className="font-display text-4xl text-[#2D3436] mt-4 mb-3 font-normal">Stories of Change</h2>
+            <div className="text-center text-xs text-[#ff4f8b]/60 tracking-widest mb-6 font-semibold select-none flex items-center justify-center gap-1">
+              <span className="w-12 h-px bg-gradient-to-r from-transparent to-[#ff4f8b]/30"></span>
+              <span>💖</span>
+              <span className="w-12 h-px bg-gradient-to-l from-transparent to-[#ff4f8b]/30"></span>
+            </div>
           </div>
 
-          {/* Testimonial card slider */}
-          <div className="relative bg-white border border-[#F0E6F6] rounded-3xl p-8 md:p-12 shadow-sm max-w-3xl mx-auto overflow-hidden">
-            <div className="flex flex-col items-center text-center">
-              <span className="text-5xl text-[#ff4f8b]/20 mb-6">“</span>
-              <p className="font-display text-lg md:text-xl text-[#2D3436] mb-8 italic leading-relaxed">
-                {testimonials[activeTestimonial].quote}
-              </p>
-              
-              <div className="flex items-center gap-4">
+          {/* Testimonial slider */}
+          <div className="relative max-w-3xl mx-auto flex items-center gap-4">
+            {/* Left Button */}
+            <button
+              onClick={() => setActiveTestimonial((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1))}
+              className="w-10 h-10 rounded-full bg-white border border-[#F0E6F6] hover:bg-[#ff4f8b]/10 hover:text-[#ff4f8b] hover:border-[#ff4f8b]/20 flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95 shrink-0"
+              aria-label="Previous story"
+            >
+              <svg className="w-5 h-5 text-[#2D3436]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            {/* Testimonial Card */}
+            <div className="flex-1 bg-white border border-[#F0E6F6] rounded-3xl p-8 md:p-10 shadow-sm relative overflow-hidden">
+              {/* Background quotes */}
+              <span className="absolute top-2 left-6 text-7xl font-serif text-[#ff4f8b]/10 select-none">“</span>
+              <span className="absolute bottom-2 right-6 text-7xl font-serif text-[#ff4f8b]/10 select-none">”</span>
+
+              <div className="relative z-10 flex flex-col md:flex-row items-center gap-6 md:gap-8 text-center md:text-left">
                 <img
                   src={testimonials[activeTestimonial].image}
                   alt={testimonials[activeTestimonial].author}
-                  className="w-14 h-14 rounded-full object-cover ring-4 ring-[#ff4f8b]/15"
+                  className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover ring-4 ring-[#ff4f8b]/10 shrink-0 shadow-sm"
                 />
-                <div className="text-left">
-                  <h4 className="font-bold text-sm text-[#2D3436]">{testimonials[activeTestimonial].author}</h4>
-                  <span className="text-xs text-[#2D3436]/50 font-medium">{testimonials[activeTestimonial].role}</span>
+                <div className="flex-1">
+                  <p className="font-display text-base md:text-lg text-[#2D3436] mb-4 italic leading-relaxed">
+                    "{testimonials[activeTestimonial].quote}"
+                  </p>
+                  <div>
+                    <h4 className="font-bold text-sm text-[#2D3436]">{testimonials[activeTestimonial].author}</h4>
+                    <span className="text-xs text-[#ff4f8b] font-semibold">{testimonials[activeTestimonial].role}</span>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Slider Navigation Controls */}
-            <div className="flex justify-between items-center mt-10 max-w-xs mx-auto">
-              <button
-                onClick={() => setActiveTestimonial((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1))}
-                className="w-9 h-9 rounded-full bg-[#FFFDF7] border border-[#F0E6F6] hover:bg-[#ff4f8b]/10 hover:text-[#ff4f8b] hover:border-[#ff4f8b]/20 flex items-center justify-center transition-all cursor-pointer"
-                aria-label="Previous story"
-              >
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-              
+            {/* Right Button */}
+            <button
+              onClick={() => setActiveTestimonial((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))}
+              className="w-10 h-10 rounded-full bg-white border border-[#F0E6F6] hover:bg-[#ff4f8b]/10 hover:text-[#ff4f8b] hover:border-[#ff4f8b]/20 flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95 shrink-0"
+              aria-label="Next story"
+            >
+              <svg className="w-5 h-5 text-[#2D3436]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
 
-
+          {/* Dots Pagination */}
+          <div className="flex justify-center gap-2 mt-6">
+            {testimonials.map((_, i) => (
               <button
-                onClick={() => setActiveTestimonial((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))}
-                className="w-9 h-9 rounded-full bg-[#FFFDF7] border border-[#F0E6F6] hover:bg-[#ff4f8b]/10 hover:text-[#ff4f8b] hover:border-[#ff4f8b]/20 flex items-center justify-center transition-all cursor-pointer"
-                aria-label="Next story"
-              >
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-            </div>
+                key={i}
+                onClick={() => setActiveTestimonial(i)}
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                  activeTestimonial === i ? 'bg-[#ff4f8b] w-6' : 'bg-[#F0E6F6] hover:bg-[#ff4f8b]/40'
+                }`}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
           </div>
         </div>
       </section>
 
-      {/* SECTION 5 — CALL TO ACTION */}
-      <section className="relative overflow-hidden mb-12">
-        <div className="max-w-5xl mx-auto px-4">
+      {/* SECTION 4 — CALL TO ACTION */}
+      <section className="relative overflow-hidden mb-12 px-4">
+        <div className="max-w-5xl mx-auto">
           <div className="relative bg-gradient-to-r from-[#ff4f8b] to-[#FF8E71] rounded-[2.5rem] py-16 px-8 md:px-16 text-center text-white overflow-hidden shadow-xl shadow-[#ff4f8b]/15">
             {/* Background elements */}
             <div className="absolute -left-12 -top-12 w-48 h-48 rounded-full bg-white/5 blur-2xl" />
@@ -580,12 +730,12 @@ export default function Services() {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link to="/signup">
-                  <button className="h-12 px-8 rounded-full bg-white text-[#ff4f8b] font-semibold text-sm hover:bg-white/95 hover:shadow-xl transition-all duration-200 cursor-pointer">
+                  <button className="h-12 px-8 rounded-full bg-white text-[#ff4f8b] font-semibold text-xs hover:bg-white/95 hover:shadow-xl transition-all duration-200 cursor-pointer">
                     Join Now
                   </button>
                 </Link>
                 <Link to="/contact">
-                  <button className="h-12 px-8 rounded-full border-2 border-white/40 text-white font-semibold text-sm hover:bg-white/10 transition-all duration-200 cursor-pointer">
+                  <button className="h-12 px-8 rounded-full border-2 border-white/40 text-white font-semibold text-xs hover:bg-white/10 transition-all duration-200 cursor-pointer">
                     Contact Us
                   </button>
                 </Link>
