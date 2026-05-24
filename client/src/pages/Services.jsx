@@ -60,66 +60,104 @@ export default function Services() {
 
   const services = [
     {
-      title: 'Beauty Services',
-      description: 'Professional beauty and grooming services that help women build confidence, personality, and self-care awareness.',
+      title: 'Mehndi Services',
+      description: 'We provide professional mehndi application services for weddings, festivals, parties, and special occasions with elegant and customized designs.',
+      startingPrice: '₹999',
       icon: (
-        <svg className="w-10 h-10 text-[#ff4f8b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122A3 3 0 00.1 16.122a3 3 0 004.83 2.527c.108-.075.242-.09.362-.039a4.5 4.5 0 012.386 2.386c.05.12.036.254-.039.362a3 3 0 105.105-3.083l-.337-.338z" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M11.5 14.5L20.5 5.5M16.5 13.5L21.5 8.5M13.5 10.5L18.5 5.5" />
-          <circle cx="9" cy="9" r="4" stroke="currentColor" strokeWidth={1.5} />
-        </svg>
-      ),
-      items: [
-        'Makeup Guidance',
-        'Skincare Tips',
-        'Hair Styling',
-        'Grooming Workshops',
-        'Bridal Beauty Sessions'
-      ],
-      buttonText: 'Learn More',
-      buttonLink: '/contact?inquiry=beauty',
-      accentColor: 'border-[#ff4f8b]/20 hover:border-[#ff4f8b]/50 hover:shadow-[#ff4f8b]/10'
-    },
-    {
-      title: 'Mehndi Art',
-      description: 'Creative mehndi services and training programs designed for women interested in traditional art and business opportunities.',
-      icon: (
-        <svg className="w-10 h-10 text-[#FFD93D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <svg className="w-9 h-9 text-[#D4AF37]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 5.5a2.5 2.5 0 110 5M12 13.5a2.5 2.5 0 110 5" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 9.5a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0zM11.5 16.5a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15M7.5 7.5L16.5 16.5M16.5 7.5L7.5 16.5" />
+          <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth={1} strokeDasharray="2 2" />
         </svg>
       ),
-      items: [
+      packages: [
+        { name: 'Bridal Mehndi', price: '₹5,000+' },
+        { name: 'Arabic Mehndi', price: '₹1,500+' },
+        { name: 'Festival Mehndi', price: '₹799+' },
+        { name: 'Custom Designs', price: '₹2,000+' },
+        { name: 'Home Service Available', price: 'Free' }
+      ],
+      features: [
         'Bridal Mehndi',
         'Arabic Mehndi',
         'Festival Designs',
-        'Mehndi Workshops',
-        'Professional Mehndi Classes'
+        'Custom Mehndi Art',
+        'Home Service',
+        'Mehndi Classes'
       ],
-      buttonText: 'Explore Designs',
-      buttonLink: '/shop?category=mehndi',
-      accentColor: 'border-[#FFD93D]/30 hover:border-[#FFD93D]/60 hover:shadow-[#FFD93D]/10'
+      buttonText: 'Book Mehndi Now',
+      buttonLink: '/contact?inquiry=mehndi',
+      accentColor: 'border-[#FFD93D]/25 hover:border-[#FFD93D] hover:shadow-[0_20px_40px_rgba(255,217,61,0.12)] hover:shadow-[#FFD93D]/10 bg-white/70 backdrop-blur-md',
+      tagColor: 'bg-[#FFD93D]/10 text-[#B8860B] border border-[#FFD93D]/20',
+      btnVariant: 'golden'
     },
     {
-      title: 'Website Designing',
-      description: 'Digital skill development programs that teach women how to design modern and responsive websites.',
+      title: 'Beauty & Personal Care',
+      description: 'We provide professional salon and self-care services that help women feel confident, stylish, and beautiful with expert treatments.',
+      startingPrice: '₹499',
       icon: (
-        <svg className="w-10 h-10 text-[#6BCB77]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M8 8.25l-2.25 2.25L8 12.75M16 8.25l2.25 2.25-2.25 2.25M11.25 6.75l1.5 7.5" />
+        <svg className="w-9 h-9 text-[#FF6B9D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 9.5a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 16.5a4.5 4.5 0 100-9 4.5 4.5 0 000 9z" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M14.5 12h5.5m-5.5 2.5h3.5" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M5.5 19.5v-3a1.5 1.5 0 011.5-1.5h4a1.5 1.5 0 011.5 1.5v3" />
         </svg>
       ),
-      items: [
-        'Basic Web Design',
-        'HTML & CSS',
-        'Responsive Websites',
-        'Portfolio Creation',
-        'Business Website Training'
+      packages: [
+        { name: 'Facial Treatment', price: '₹999+' },
+        { name: 'Hair Spa', price: '₹1,499+' },
+        { name: 'Hair Coloring', price: '₹2,500+' },
+        { name: 'Bleach & Cleanup', price: '₹699+' },
+        { name: 'Bridal Makeup', price: '₹8,000+' }
       ],
-      buttonText: 'Start Learning',
+      features: [
+        'Facial Treatment',
+        'Bleach & Cleanup',
+        'Hair Spa',
+        'Hair Coloring',
+        'Bridal Makeup',
+        'Makeup Services',
+        'Skin Care Guidance',
+        'Home Beauty Service'
+      ],
+      buttonText: 'Book Beauty Service',
+      buttonLink: '/contact?inquiry=beauty',
+      accentColor: 'border-[#FF6B9D]/25 hover:border-[#FF6B9D] hover:shadow-[0_20px_40px_rgba(255,107,157,0.12)] hover:shadow-[#FF6B9D]/10 bg-white/70 backdrop-blur-md',
+      tagColor: 'bg-[#FF6B9D]/10 text-[#FF6B9D] border border-[#FF6B9D]/20',
+      btnVariant: 'pink'
+    },
+    {
+      title: 'Full Stack Web Dev',
+      description: 'We create responsive, SEO-friendly, and modern websites for businesses, startups, personal brands, and online services.',
+      startingPrice: '₹9,999',
+      icon: (
+        <svg className="w-9 h-9 text-[#6BCB77]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M8 8.25l-2.25 2.25L8 12.75M16 8.25l2.25 2.25-2.25 2.25" />
+        </svg>
+      ),
+      packages: [
+        { name: 'Portfolio Website', price: '₹9,999+' },
+        { name: 'Business Website', price: '₹15,000+' },
+        { name: 'E-Commerce Website', price: '₹25,000+' },
+        { name: 'Custom Web App', price: '₹40,000+' },
+        { name: 'Website Maintenance', price: '₹2,000/mo' }
+      ],
+      features: [
+        'Responsive Design',
+        'Frontend Development',
+        'Backend Development',
+        'Full Stack Solutions',
+        'SEO Friendly',
+        'Admin Dashboard',
+        'Website Maintenance',
+        'Fast Performance'
+      ],
+      buttonText: 'Create Your Website',
       buttonLink: '/contact?inquiry=webdesign',
-      accentColor: 'border-[#6BCB77]/20 hover:border-[#6BCB77]/50 hover:shadow-[#6BCB77]/10'
+      accentColor: 'border-[#6BCB77]/25 hover:border-[#6BCB77] hover:shadow-[0_20px_40px_rgba(107,203,119,0.12)] hover:shadow-[#6BCB77]/10 bg-white/70 backdrop-blur-md',
+      tagColor: 'bg-[#6BCB77]/10 text-[#2E7D32] border border-[#6BCB77]/20',
+      btnVariant: 'green'
     }
   ];
 
@@ -218,13 +256,17 @@ export default function Services() {
       </section>
 
       {/* SECTION 2 — SERVICES CARDS */}
-      <section id="services-section" className="py-20 px-4">
+      <section id="services-section" className="py-24 px-4 bg-gradient-to-b from-[#FFFDF7] via-[#FDF8FF] to-[#FFFDF7]">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="text-sm font-bold uppercase tracking-widest text-[#ff4f8b]">Our Offerings</span>
-            <h2 className="font-display text-3xl md:text-4xl text-[#2D3436] mt-2 mb-4">Professional Creative & Digital Skills</h2>
-            <p className="text-[#2D3436]/50 max-w-lg mx-auto text-sm leading-relaxed">
-              Explore our premium services and hands-on training courses designed to help women build real-world capabilities.
+          <div className="text-center mb-20">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#FF6B9D] bg-[#FF6B9D]/15 px-4 py-1.5 rounded-full border border-[#FF6B9D]/20">
+              Our Offerings
+            </span>
+            <h2 className="font-display text-4xl md:text-5xl text-[#2D3436] mt-5 mb-5 leading-[1.15]">
+              Professional Services We Offer
+            </h2>
+            <p className="text-[#2D3436]/50 max-w-xl mx-auto text-sm leading-relaxed md:text-base">
+              We provide premium beauty care, professional mehndi artistry, and modern website development solutions at affordable pricing.
             </p>
           </div>
 
@@ -232,33 +274,73 @@ export default function Services() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`bg-white rounded-3xl p-8 border ${service.accentColor} transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex flex-col justify-between h-full`}
+                className={`rounded-[2.25rem] p-8 border ${service.accentColor} transition-all duration-300 hover:-translate-y-2.5 flex flex-col justify-between h-full`}
               >
                 <div>
-                  <div className="w-16 h-16 rounded-2xl bg-[#FFFDF7] flex items-center justify-center shadow-sm mb-6 border border-[#F0E6F6]">
-                    {service.icon}
+                  {/* Top Line & Icon */}
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center shadow-md shadow-[#F0E6F6] border border-[#F0E6F6]">
+                      {service.icon}
+                    </div>
+                    <span className={`text-[10px] font-bold uppercase tracking-wider px-3.5 py-1 rounded-full ${service.tagColor}`}>
+                      Premium
+                    </span>
                   </div>
+
+                  {/* Title & Description */}
                   <h3 className="font-display text-2xl text-[#2D3436] mb-3">{service.title}</h3>
                   <p className="text-xs text-[#2D3436]/60 leading-relaxed mb-6">{service.description}</p>
                   
-                  <ul className="space-y-3 mb-8">
-                    {service.items.map((item, i) => (
-                      <li key={i} className="flex items-center gap-3 text-xs text-[#2D3436]/80 font-medium">
-                        <span className="w-5 h-5 rounded-full bg-[#ff4f8b]/10 flex items-center justify-center shrink-0">
-                          <svg className="w-3.5 h-3.5 text-[#ff4f8b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                          </svg>
-                        </span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Pricing Header */}
+                  <div className="flex items-baseline gap-1.5 mb-6 pb-6 border-b border-[#F0E6F6]">
+                    <span className="text-[10px] font-bold text-[#2D3436]/40 uppercase tracking-wider">Starting From</span>
+                    <span className="text-3xl font-extrabold text-[#2D3436] tracking-tight">{service.startingPrice}</span>
+                  </div>
+
+                  {/* Popular Packages */}
+                  <div className="mb-6">
+                    <h4 className="text-[10px] font-extrabold uppercase tracking-wider text-[#2D3436]/40 mb-3">Popular Packages</h4>
+                    <div className="space-y-2 bg-[#FFFDF7]/50 rounded-2xl p-4 border border-[#F0E6F6]">
+                      {service.packages.map((pkg, i) => (
+                        <div key={i} className="flex justify-between items-center text-xs">
+                          <span className="font-semibold text-[#2D3436]/80">{pkg.name}</span>
+                          <span className="font-bold text-[#FF6B9D]">{pkg.price}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Included Features */}
+                  <div className="mb-8">
+                    <h4 className="text-[10px] font-extrabold uppercase tracking-wider text-[#2D3436]/40 mb-3">Included Features</h4>
+                    <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5">
+                      {service.features.map((feat, i) => (
+                        <li key={i} className="flex items-center gap-2 text-[11px] text-[#2D3436]/70 font-medium">
+                          <span className="w-4 h-4 rounded-full bg-[#6BCB77]/15 flex items-center justify-center shrink-0 border border-[#6BCB77]/20">
+                            <svg className="w-2.5 h-2.5 text-[#6BCB77]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                          </span>
+                          <span className="truncate">{feat}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
                 
+                {/* CTA Button */}
                 <Link to={service.buttonLink} className="w-full">
-                  <Button variant="ghost" className="w-full border border-[#F0E6F6] text-xs hover:border-[#ff4f8b]/40 hover:bg-[#ff4f8b]/5">
+                  <button
+                    className={`w-full py-3.5 px-6 rounded-2xl text-xs font-bold transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] ${
+                      service.btnVariant === 'golden'
+                        ? 'bg-[#FFD93D] text-[#2D3436] hover:bg-[#FFD93D]/90 shadow-md shadow-[#FFD93D]/25'
+                        : service.btnVariant === 'pink'
+                        ? 'bg-[#FF6B9D] text-white hover:bg-[#FF6B9D]/90 shadow-md shadow-[#FF6B9D]/25'
+                        : 'bg-[#6BCB77] text-white hover:bg-[#6BCB77]/90 shadow-md shadow-[#6BCB77]/25'
+                    }`}
+                  >
                     {service.buttonText}
-                  </Button>
+                  </button>
                 </Link>
               </div>
             ))}
