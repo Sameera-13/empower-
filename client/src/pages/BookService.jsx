@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import PageContainer from '../components/layout/PageContainer';
 import Button from '../components/common/Button';
+import { useSubmitContact } from '../hooks/useContact';
+
 
 const SERVICE_DATA = {
   mehndi: {
@@ -142,6 +144,7 @@ const SERVICE_OPTIONS = [
 
 export default function BookService() {
   const location = useLocation();
+  const submitContact = useSubmitContact();
   const [selectedService, setSelectedService] = useState('mehndi');
   const [selectedPackage, setSelectedPackage] = useState('');
   
@@ -210,11 +213,34 @@ export default function BookService() {
     if (!validate()) return;
 
     setLoading(true);
-    // Simulate database API submission
-    setTimeout(() => {
-      setLoading(false);
-      setSuccess(true);
-    }, 1500);
+    
+    const serviceLabel = SERVICE_OPTIONS.find(o => o.value === selectedService)?.label || selectedService;
+    
+    const payload = {
+      name: form.name,
+      phone: form.phone,
+      email: form.email,
+      subject: `Service Booking: ${serviceLabel}`,
+      message: `Booking Request Details:
+-------------------------
+Service: ${serviceLabel}
+Selected Package: ${selectedPackage}
+Preferred Date: ${form.date}
+Preferred Time: ${form.time}
+Location Address: ${form.address}
+Notes/Requirements: ${form.notes || 'None provided'}`
+    };
+
+    submitContact.mutate(payload, {
+      onSuccess: () => {
+        setLoading(false);
+        setSuccess(true);
+      },
+      onError: (err) => {
+        setLoading(false);
+        alert(err?.response?.data?.message || 'Failed to submit booking request. Please try again.');
+      }
+    });
   };
 
   const handlePopupConfirm = () => {
