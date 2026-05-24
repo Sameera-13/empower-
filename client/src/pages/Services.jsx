@@ -483,86 +483,93 @@ export default function Services() {
           </div>
 
           {/* Filtered Services Grid Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 min-h-[450px]">
-            {filteredServices.map((service, index) => (
-              <div
-                key={service.id}
-                className={`rounded-[2.25rem] p-8 border ${service.accentColor} transition-all duration-500 hover:-translate-y-2.5 flex flex-col justify-between h-full bg-white/60 backdrop-blur-md shadow-sm hover:shadow-xl hover:scale-[1.01] animate-scale-in col-span-1 md:col-span-2 ${getGridSpan(service.id, index, filteredServices.length)}`}
-                style={{ animationDelay: `${index * 80}ms` }}
-              >
-                <div>
-                  {/* Top Line & Icon */}
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center shadow-md shadow-[#F0E6F6] border border-[#F0E6F6]">
-                      {service.icon}
-                    </div>
-                    <span className={`text-[9px] font-bold uppercase tracking-widest px-3 py-1 rounded-full ${service.tagColor}`}>
-                      Premium
-                    </span>
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 min-h-[400px]">
+            {filteredServices.map((service, index) => {
+              // Color-matched bullets for each service
+              const dotColorClass = {
+                mehndi: 'bg-[#FFD93D]',
+                beauty: 'bg-[#FF6B9D]',
+                webdev: 'bg-[#6BCB77]',
+                docs: 'bg-[#3B82F6]',
+                social: 'bg-[#A855F7]'
+              }[service.id] || 'bg-[#ff4f8b]';
 
-                  {/* Title & Description */}
-                  <h3 className="font-display text-2xl text-[#2D3436] mb-3">{service.title}</h3>
-                  <p className="text-xs text-[#2D3436]/60 leading-relaxed mb-6 pb-6 border-b border-[#F0E6F6]">{service.description}</p>
+              return (
+                <div
+                  key={service.id}
+                  className={`rounded-3xl p-5 md:p-6 border-2 ${service.accentColor} transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between h-full bg-white/60 backdrop-blur-md shadow-sm hover:shadow-xl hover:scale-[1.01] animate-scale-in col-span-1 md:col-span-2 ${getGridSpan(service.id, index, filteredServices.length)}`}
+                  style={{ animationDelay: `${index * 80}ms` }}
+                >
+                  <div>
+                    {/* Top Line & Icon */}
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-[#F0E6F6] border border-[#F0E6F6]">
+                        <div className="scale-90">{service.icon}</div>
+                      </div>
+                      <span className={`text-[9px] font-bold uppercase tracking-widest px-3 py-1 rounded-full ${service.tagColor}`}>
+                        Premium
+                      </span>
+                    </div>
+
+                    {/* Title & Description */}
+                    <h3 className="font-display text-lg md:text-xl font-bold text-[#2D3436] mb-1.5">{service.title}</h3>
+                    <p className="text-[11px] text-[#2D3436]/60 leading-relaxed mb-4 pb-4 border-b border-[#F0E6F6]">{service.description}</p>
+                    
+                    {/* Popular Packages */}
+                    <div className="mb-4">
+                      <h4 className="text-[9px] font-extrabold uppercase tracking-wider text-[#2D3436]/40 mb-2">
+                        {service.id === 'social' ? 'Popular Services' : 'Popular Packages'}
+                      </h4>
+                      <div className="bg-[#FFFDF7]/50 rounded-xl p-3 border border-[#F0E6F6] grid grid-cols-2 gap-x-3 gap-y-1.5">
+                        {service.packages.map((pkg, i) => (
+                          <div key={i} className="flex items-center gap-2 text-[10px] text-[#2D3436]/80 font-bold truncate">
+                            <span className={`w-1.5 h-1.5 rounded-full ${dotColorClass} shrink-0`} />
+                            <span className="truncate">{pkg.name}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Included Features */}
+                    <div className="mb-5">
+                      <h4 className="text-[9px] font-extrabold uppercase tracking-wider text-[#2D3436]/40 mb-2">Included Features</h4>
+                      <ul className="grid grid-cols-2 gap-x-3 gap-y-1.5">
+                        {service.features.map((feat, i) => (
+                          <li key={i} className="flex items-center gap-2 text-[10px] text-[#2D3436]/70 font-semibold">
+                            <span className="w-3.5 h-3.5 rounded-full bg-[#6BCB77]/15 flex items-center justify-center shrink-0 border border-[#6BCB77]/20">
+                              <svg className="w-2 h-2 text-[#6BCB77]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={5}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                              </svg>
+                            </span>
+                            <span className="truncate">{feat}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
                   
-                  {/* Popular Packages */}
-                  <div className="mb-6">
-                    <h4 className="text-[10px] font-extrabold uppercase tracking-wider text-[#2D3436]/40 mb-3">
-                      {service.id === 'social' ? 'Popular Services' : 'Popular Packages'}
-                    </h4>
-                    <div className={`bg-[#FFFDF7]/50 rounded-2xl p-4 border border-[#F0E6F6] ${
-                      service.packages.length > 5 
-                        ? 'grid grid-cols-2 gap-x-4 gap-y-2' 
-                        : 'space-y-2'
-                    }`}>
-                      {service.packages.map((pkg, i) => (
-                        <div key={i} className="flex items-center gap-2.5 text-[11px] text-[#2D3436]/80 font-bold truncate">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#ff4f8b] shrink-0" />
-                          <span className="truncate">{pkg.name}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Included Features */}
-                  <div className="mb-8">
-                    <h4 className="text-[10px] font-extrabold uppercase tracking-wider text-[#2D3436]/40 mb-3">Included Features</h4>
-                    <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5">
-                      {service.features.map((feat, i) => (
-                        <li key={i} className="flex items-center gap-2 text-[11px] text-[#2D3436]/70 font-semibold">
-                          <span className="w-4 h-4 rounded-full bg-[#6BCB77]/15 flex items-center justify-center shrink-0 border border-[#6BCB77]/20">
-                            <svg className="w-2.5 h-2.5 text-[#6BCB77]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}>
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                            </svg>
-                          </span>
-                          <span className="truncate">{feat}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  {/* CTA Button */}
+                  <Link to={service.buttonLink} className="w-full mt-2">
+                    <button
+                      className={`w-full py-2.5 px-5 rounded-xl text-xs font-bold transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center justify-center gap-1.5 ${
+                        service.btnVariant === 'golden'
+                          ? 'bg-[#FFD93D] text-[#2D3436] hover:bg-[#FFD93D]/90 shadow-md shadow-[#FFD93D]/25'
+                          : service.btnVariant === 'pink'
+                          ? 'bg-[#FF6B9D] text-white hover:bg-[#FF6B9D]/90 shadow-md shadow-[#FF6B9D]/25'
+                          : service.btnVariant === 'blue'
+                          ? 'bg-gradient-to-r from-[#3B82F6] to-[#2563EB] text-white hover:opacity-95 shadow-md shadow-[#3B82F6]/25'
+                          : service.btnVariant === 'purple'
+                          ? 'bg-gradient-to-r from-[#A855F7] to-[#EC4899] text-white hover:opacity-95 shadow-md shadow-[#A855F7]/25'
+                          : 'bg-[#6BCB77] text-white hover:bg-[#6BCB77]/90 shadow-md shadow-[#6BCB77]/25'
+                      }`}
+                    >
+                      {service.buttonText}
+                      <span className="text-sm">→</span>
+                    </button>
+                  </Link>
                 </div>
-                
-                {/* CTA Button */}
-                <Link to={service.buttonLink} className="w-full">
-                  <button
-                    className={`w-full py-3.5 px-6 rounded-2xl text-xs font-bold transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center justify-center gap-1.5 ${
-                      service.btnVariant === 'golden'
-                        ? 'bg-[#FFD93D] text-[#2D3436] hover:bg-[#FFD93D]/90 shadow-md shadow-[#FFD93D]/25'
-                        : service.btnVariant === 'pink'
-                        ? 'bg-[#FF6B9D] text-white hover:bg-[#FF6B9D]/90 shadow-md shadow-[#FF6B9D]/25'
-                        : service.btnVariant === 'blue'
-                        ? 'bg-gradient-to-r from-[#3B82F6] to-[#2563EB] text-white hover:opacity-95 shadow-md shadow-[#3B82F6]/25'
-                        : service.btnVariant === 'purple'
-                        ? 'bg-gradient-to-r from-[#A855F7] to-[#EC4899] text-white hover:opacity-95 shadow-md shadow-[#A855F7]/25'
-                        : 'bg-[#6BCB77] text-white hover:bg-[#6BCB77]/90 shadow-md shadow-[#6BCB77]/25'
-                    }`}
-                  >
-                    {service.buttonText}
-                    <span className="text-sm">→</span>
-                  </button>
-                </Link>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Dedicated Horizontal Stats Divider Bar */}
