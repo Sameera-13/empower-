@@ -357,28 +357,28 @@ export default function Services() {
   return (
     <PageContainer>
       {/* SECTION 1 — HERO SECTION */}
-      <section className="py-12 md:py-16 px-4 relative overflow-hidden bg-gradient-to-b from-[#FFFDF7] to-white">
+      <section className="py-8 md:py-12 px-4 relative overflow-hidden bg-gradient-to-b from-[#FFFDF7] to-white">
         {/* Floating background blur shapes for SaaS aesthetic */}
         <div className="absolute top-10 left-10 w-44 h-44 rounded-full bg-[#FF6B9D]/5 blur-3xl -z-10 animate-pulse" />
         <div className="absolute bottom-10 right-1/3 w-64 h-64 rounded-full bg-[#6BCB77]/5 blur-3xl -z-10" />
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Text & Content */}
           <div className="lg:col-span-6 relative z-10 text-left">
             {/* Sparkle Star icon decoration */}
             <div className="absolute -top-10 -left-6 text-[#FFD93D] text-2xl select-none animate-pulse">✦</div>
             
-            <span className="inline-block text-[10px] md:text-xs font-extrabold tracking-[0.2em] uppercase text-[#B8860B] bg-[#FFD93D]/10 px-4 py-1.5 rounded-full border border-[#FFD93D]/20 backdrop-blur-sm mb-5">
+            <span className="inline-block text-[10px] md:text-xs font-extrabold tracking-[0.2em] uppercase text-[#B8860B] bg-[#FFD93D]/10 px-4 py-1.5 rounded-full border border-[#FFD93D]/20 backdrop-blur-sm mb-3">
               EMPOWERSTOP SERVICES
             </span>
             
-            <h1 className="font-display text-[#2D3436] mb-4 leading-[1.12] text-4xl md:text-5xl lg:text-[56px] font-normal tracking-tight">
+            <h1 className="font-display text-[#2D3436] mb-2.5 leading-[1.08] text-4xl md:text-5xl lg:text-[56px] font-normal tracking-tight">
               Empowering Women <br />
               Through <span className="text-[#ff4f8b] font-bold">Skills &</span> <br />
               <span className="text-[#ff4f8b] font-bold">Creativity</span>
             </h1>
 
-            <p className="text-sm md:text-base text-[#2D3436]/65 max-w-md leading-relaxed mb-8">
+            <p className="text-sm md:text-base text-[#2D3436]/65 max-w-md leading-relaxed mb-5">
               Helping women grow through beauty, traditional art, digital opportunities, and professional services.
             </p>
 
@@ -401,7 +401,7 @@ export default function Services() {
             </div>
             
             {/* dot matrix pattern decoration */}
-            <div className="pt-8 text-[#F0E6F6] select-none text-xl font-mono opacity-50 tracking-[0.3em] flex flex-col gap-1.5">
+            <div className="pt-4 text-[#F0E6F6] select-none text-xl font-mono opacity-50 tracking-[0.3em] flex flex-col gap-1.5">
               <div>••••••</div>
               <div>••••••</div>
             </div>
