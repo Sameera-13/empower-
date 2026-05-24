@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import PageContainer from '../components/layout/PageContainer';
 import Button from '../components/common/Button';
+
 
 // Hook for simple count-up animation
 function useCountUp(end, duration = 2000, trigger = true) {
@@ -95,6 +96,7 @@ function getCategoryIcon(catId, isActive) {
 }
 
 export default function Services() {
+  const navigate = useNavigate();
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [statsTriggered, setStatsTriggered] = useState(false);
   const statsRef = useRef(null);
@@ -390,14 +392,15 @@ export default function Services() {
                 Explore Services <span className="text-sm">→</span>
               </button>
               
-              <Link to="/signup">
-                <button className="h-12 px-8 text-xs font-bold rounded-full border border-[#F0E6F6] text-[#2D3436]/80 bg-white hover:bg-[#F0E6F6]/10 hover:border-[#ff4f8b]/30 transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 shadow-sm flex items-center gap-2 cursor-pointer">
-                  <svg className="w-4 h-4 text-[#ff4f8b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
-                  </svg>
-                  Join Community
-                </button>
-              </Link>
+              <button
+                onClick={() => navigate('/signup')}
+                className="h-12 px-8 text-xs font-bold rounded-full border border-[#F0E6F6] text-[#2D3436]/80 bg-white hover:bg-[#F0E6F6]/10 hover:border-[#ff4f8b]/30 transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 shadow-sm flex items-center gap-2 cursor-pointer"
+              >
+                <svg className="w-4 h-4 text-[#ff4f8b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+                </svg>
+                Join Community
+              </button>
             </div>
             
             {/* dot matrix pattern decoration */}
@@ -549,24 +552,23 @@ export default function Services() {
                   </div>
                   
                   {/* CTA Button */}
-                  <Link to={service.buttonLink} className="w-full mt-2">
-                    <button
-                      className={`w-full py-2.5 px-5 rounded-xl text-xs font-bold transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center justify-center gap-1.5 ${
-                        service.btnVariant === 'golden'
-                          ? 'bg-[#FFD93D] text-[#2D3436] hover:bg-[#FFD93D]/90 shadow-md shadow-[#FFD93D]/25'
-                          : service.btnVariant === 'pink'
-                          ? 'bg-[#FF6B9D] text-white hover:bg-[#FF6B9D]/90 shadow-md shadow-[#FF6B9D]/25'
-                          : service.btnVariant === 'blue'
-                          ? 'bg-gradient-to-r from-[#3B82F6] to-[#2563EB] text-white hover:opacity-95 shadow-md shadow-[#3B82F6]/25'
-                          : service.btnVariant === 'purple'
-                          ? 'bg-gradient-to-r from-[#A855F7] to-[#EC4899] text-white hover:opacity-95 shadow-md shadow-[#A855F7]/25'
-                          : 'bg-[#6BCB77] text-white hover:bg-[#6BCB77]/90 shadow-md shadow-[#6BCB77]/25'
-                      }`}
-                    >
-                      {service.buttonText}
-                      <span className="text-sm">→</span>
-                    </button>
-                  </Link>
+                  <button
+                    onClick={() => navigate(service.buttonLink)}
+                    className={`w-full py-2.5 px-5 rounded-xl text-xs font-bold transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center justify-center gap-1.5 mt-2 ${
+                      service.btnVariant === 'golden'
+                        ? 'bg-[#FFD93D] text-[#2D3436] hover:bg-[#FFD93D]/90 shadow-md shadow-[#FFD93D]/25'
+                        : service.btnVariant === 'pink'
+                        ? 'bg-[#FF6B9D] text-white hover:bg-[#FF6B9D]/90 shadow-md shadow-[#FF6B9D]/25'
+                        : service.btnVariant === 'blue'
+                        ? 'bg-gradient-to-r from-[#3B82F6] to-[#2563EB] text-white hover:opacity-95 shadow-md shadow-[#3B82F6]/25'
+                        : service.btnVariant === 'purple'
+                        ? 'bg-gradient-to-r from-[#A855F7] to-[#EC4899] text-white hover:opacity-95 shadow-md shadow-[#A855F7]/25'
+                        : 'bg-[#6BCB77] text-white hover:bg-[#6BCB77]/90 shadow-md shadow-[#6BCB77]/25'
+                    }`}
+                  >
+                    {service.buttonText}
+                    <span className="text-sm">→</span>
+                  </button>
                 </div>
               );
             })}
@@ -736,16 +738,18 @@ export default function Services() {
                 Learn skills, build confidence, and create opportunities.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Link to="/signup">
-                  <button className="h-12 px-8 rounded-full bg-white text-[#ff4f8b] font-semibold text-xs hover:bg-white/95 hover:shadow-xl transition-all duration-200 cursor-pointer">
-                    Join Now
-                  </button>
-                </Link>
-                <Link to="/contact">
-                  <button className="h-12 px-8 rounded-full border-2 border-white/40 text-white font-semibold text-xs hover:bg-white/10 transition-all duration-200 cursor-pointer">
-                    Contact Us
-                  </button>
-                </Link>
+                <button
+                  onClick={() => navigate('/signup')}
+                  className="h-12 px-8 rounded-full bg-white text-[#ff4f8b] font-semibold text-xs hover:bg-white/95 hover:shadow-xl transition-all duration-200 cursor-pointer"
+                >
+                  Join Now
+                </button>
+                <button
+                  onClick={() => navigate('/contact')}
+                  className="h-12 px-8 rounded-full border-2 border-white/40 text-white font-semibold text-xs hover:bg-white/10 transition-all duration-200 cursor-pointer"
+                >
+                  Contact Us
+                </button>
               </div>
             </div>
           </div>
