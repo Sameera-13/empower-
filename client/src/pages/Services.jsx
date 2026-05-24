@@ -86,7 +86,7 @@ export default function Services() {
         'Mehndi Classes'
       ],
       buttonText: 'Book Mehndi Now',
-      buttonLink: '/contact?inquiry=mehndi',
+      buttonLink: '/book-service?service=mehndi',
       accentColor: 'border-[#FFD93D]/25 hover:border-[#FFD93D] hover:shadow-[0_20px_40px_rgba(255,217,61,0.12)] hover:shadow-[#FFD93D]/10 bg-white/70 backdrop-blur-md',
       tagColor: 'bg-[#FFD93D]/10 text-[#B8860B] border border-[#FFD93D]/20',
       btnVariant: 'golden'
@@ -121,7 +121,7 @@ export default function Services() {
         'Home Beauty Service'
       ],
       buttonText: 'Book Beauty Service',
-      buttonLink: '/contact?inquiry=beauty',
+      buttonLink: '/book-service?service=beauty',
       accentColor: 'border-[#FF6B9D]/25 hover:border-[#FF6B9D] hover:shadow-[0_20px_40px_rgba(255,107,157,0.12)] hover:shadow-[#FF6B9D]/10 bg-white/70 backdrop-blur-md',
       tagColor: 'bg-[#FF6B9D]/10 text-[#FF6B9D] border border-[#FF6B9D]/20',
       btnVariant: 'pink'
@@ -154,7 +154,7 @@ export default function Services() {
         'Fast Performance'
       ],
       buttonText: 'Create Your Website',
-      buttonLink: '/contact?inquiry=webdesign',
+      buttonLink: '/book-service?service=webdev',
       accentColor: 'border-[#6BCB77]/25 hover:border-[#6BCB77] hover:shadow-[0_20px_40px_rgba(107,203,119,0.12)] hover:shadow-[#6BCB77]/10 bg-white/70 backdrop-blur-md',
       tagColor: 'bg-[#6BCB77]/10 text-[#2E7D32] border border-[#6BCB77]/20',
       btnVariant: 'green'
