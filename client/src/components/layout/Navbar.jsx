@@ -22,7 +22,6 @@ export default function Navbar() {
     <nav className="sticky top-0 z-40 bg-[#FFFDF7]/95 backdrop-blur-md border-b border-[#F0E6F6]">
       <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
-          <img src="/logo.jpg" alt="Empower Stop" className="h-9 w-9 rounded-full object-cover" />
           <span className="text-lg font-bold text-[#2D3436]">Empower<span className="gradient-text-pink-green">Stop</span></span>
         </Link>
 

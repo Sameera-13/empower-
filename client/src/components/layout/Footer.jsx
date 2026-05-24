@@ -7,7 +7,6 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-2">
-              <img src="/logo.jpg" alt="Empower Stop" className="h-9 w-9 rounded-full object-cover" />
               <h3 className="text-base font-bold text-[#2D3436]">Empower<span className="gradient-text-pink-green">Stop</span></h3>
             </div>
             <p className="text-sm text-[#2D3436]/50 leading-relaxed mb-4">

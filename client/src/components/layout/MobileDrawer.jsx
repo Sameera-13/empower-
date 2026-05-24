@@ -19,7 +19,6 @@ export default function MobileDrawer({ isOpen, onClose }) {
       <div className="fixed left-0 top-0 bottom-0 w-72 bg-[#FFFDF7] border-r border-[#F0E6F6] flex flex-col">
         <div className="flex items-center justify-between px-5 h-14 border-b border-[#F0E6F6]">
           <span className="flex items-center gap-2">
-            <img src="/logo.jpg" alt="Empower Stop" className="h-9 w-9 rounded-full object-cover" />
             <span className="text-lg font-bold text-[#2D3436]">Empower<span className="gradient-text-pink-green">Stop</span></span>
           </span>
           <button onClick={onClose} aria-label="Close menu" className="p-1.5 rounded-md hover:bg-[#F0E6F6]">
