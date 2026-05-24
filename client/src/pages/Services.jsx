@@ -158,6 +158,67 @@ export default function Services() {
       accentColor: 'border-[#6BCB77]/25 hover:border-[#6BCB77] hover:shadow-[0_20px_40px_rgba(107,203,119,0.12)] hover:shadow-[#6BCB77]/10 bg-white/70 backdrop-blur-md',
       tagColor: 'bg-[#6BCB77]/10 text-[#2E7D32] border border-[#6BCB77]/20',
       btnVariant: 'green'
+    },
+    {
+      title: 'Documentation & Registration',
+      description: 'We provide reliable documentation, online registration, NGO compliance, and government support services for individuals, startups, NGOs, and businesses with fast processing and professional assistance.',
+      icon: (
+        <svg className="w-9 h-9 text-[#3B82F6]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+        </svg>
+      ),
+      packages: [
+        { name: 'Online & NGO Registration' },
+        { name: 'GST & PAN Applications' },
+        { name: '80G & 12A Compliance' },
+        { name: 'Food License (FSSAI)' },
+        { name: 'MSME & Scheme Applications' }
+      ],
+      features: [
+        'Fast Processing',
+        'Professional Guidance',
+        'Online & Offline Support',
+        'NGO Compliance Support',
+        'Government Registration Help',
+        'Secure Documentation',
+        'Affordable Service Packages'
+      ],
+      buttonText: 'Get Documentation Help',
+      buttonLink: '/book-service?service=docs',
+      accentColor: 'border-[#3B82F6]/25 hover:border-[#3B82F6] hover:shadow-[0_20px_40px_rgba(59,130,246,0.12)] hover:shadow-[#3B82F6]/10 bg-white/70 backdrop-blur-md',
+      tagColor: 'bg-[#3B82F6]/10 text-[#2563EB] border border-[#3B82F6]/20',
+      btnVariant: 'blue'
+    },
+    {
+      title: 'Social Media Management',
+      description: 'We help brands grow online with creative social media management, content creation, audience engagement, and marketing strategies for businesses, creators, startups, and organizations.',
+      icon: (
+        <svg className="w-9 h-9 text-[#A855F7]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+        </svg>
+      ),
+      packages: [
+        { name: 'Instagram & Facebook Handling' },
+        { name: 'Post & Reel Designing' },
+        { name: 'Content Planning' },
+        { name: 'Brand Promotion & Marketing' },
+        { name: 'Monthly Growth Strategy' }
+      ],
+      features: [
+        'Daily Post Uploads',
+        'Creative Captions',
+        'Hashtag Research',
+        'Reel Content Ideas',
+        'Audience Interaction',
+        'Monthly Analytics Report',
+        'Brand Growth Strategy',
+        'Trend-Based Content'
+      ],
+      buttonText: 'Manage My Social Media',
+      buttonLink: '/book-service?service=social',
+      accentColor: 'border-[#A855F7]/25 hover:border-[#A855F7] hover:shadow-[0_20px_40px_rgba(168,85,247,0.12)] hover:shadow-[#A855F7]/10 bg-white/70 backdrop-blur-md',
+      tagColor: 'bg-[#A855F7]/10 text-[#7E22CE] border border-[#A855F7]/20',
+      btnVariant: 'purple'
     }
   ];
 
@@ -257,7 +318,7 @@ export default function Services() {
 
       {/* SECTION 2 — SERVICES CARDS */}
       <section id="services-section" className="py-24 px-4 bg-gradient-to-b from-[#FFFDF7] via-[#FDF8FF] to-[#FFFDF7]">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20">
             <span className="text-xs font-bold uppercase tracking-widest text-[#FF6B9D] bg-[#FF6B9D]/15 px-4 py-1.5 rounded-full border border-[#FF6B9D]/20">
               Our Offerings
@@ -270,7 +331,7 @@ export default function Services() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div
                 key={index}
@@ -330,6 +391,10 @@ export default function Services() {
                         ? 'bg-[#FFD93D] text-[#2D3436] hover:bg-[#FFD93D]/90 shadow-md shadow-[#FFD93D]/25'
                         : service.btnVariant === 'pink'
                         ? 'bg-[#FF6B9D] text-white hover:bg-[#FF6B9D]/90 shadow-md shadow-[#FF6B9D]/25'
+                        : service.btnVariant === 'blue'
+                        ? 'bg-gradient-to-r from-[#3B82F6] to-[#2563EB] text-white hover:opacity-95 shadow-md shadow-[#3B82F6]/25'
+                        : service.btnVariant === 'purple'
+                        ? 'bg-gradient-to-r from-[#A855F7] to-[#EC4899] text-white hover:opacity-95 shadow-md shadow-[#A855F7]/25'
                         : 'bg-[#6BCB77] text-white hover:bg-[#6BCB77]/90 shadow-md shadow-[#6BCB77]/25'
                     }`}
                   >

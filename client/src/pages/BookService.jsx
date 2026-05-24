@@ -79,13 +79,65 @@ const SERVICE_DATA = {
       'Website Maintenance Support',
       'Ultra Fast Loading Performance'
     ]
+  },
+  docs: {
+    title: 'Documentation & Registration',
+    description: 'We provide reliable documentation, online registration, NGO compliance, and government support services for individuals, startups, NGOs, and businesses with fast processing and professional assistance.',
+    banner: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&q=80&w=600&h=400',
+    themeClass: 'from-[#3B82F6]/10 to-[#FFFDF7] border-[#3B82F6]/30',
+    accentText: 'text-[#2563EB]',
+    bulletColor: 'bg-[#3B82F6]',
+    iconColor: 'text-[#3B82F6]',
+    badgeBg: 'bg-[#3B82F6]/15 text-[#2563EB] border-[#3B82F6]/25',
+    packages: [
+      'Online & NGO Registration',
+      'GST & PAN Applications',
+      '80G & 12A Compliance',
+      'Food License (FSSAI)',
+      'MSME & Scheme Applications'
+    ],
+    features: [
+      'Fast Professional Processing',
+      'Secure & Trustworthy Documentation',
+      'Dedicated NGO Compliance Experts',
+      'Online & Offline Advisory Help',
+      'Government Registration Support',
+      'Affordable Service Packages'
+    ]
+  },
+  social: {
+    title: 'Social Media Management',
+    description: 'We help brands grow online with creative social media management, content creation, audience engagement, and marketing strategies for businesses, creators, startups, and organizations.',
+    banner: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80&w=600&h=400',
+    themeClass: 'from-[#A855F7]/10 to-[#FFFDF7] border-[#A855F7]/30',
+    accentText: 'text-[#7E22CE]',
+    bulletColor: 'bg-[#A855F7]',
+    iconColor: 'text-[#A855F7]',
+    badgeBg: 'bg-[#A855F7]/15 text-[#7E22CE] border-[#A855F7]/25',
+    packages: [
+      'Instagram & Facebook Handling',
+      'Post & Reel Designing',
+      'Content Planning',
+      'Brand Promotion & Marketing',
+      'Monthly Growth Strategy'
+    ],
+    features: [
+      'Daily Creative Post Uploads',
+      'Engaging Reels & Captions Design',
+      'In-Depth Hashtag & Trend Research',
+      'Direct Community Interaction',
+      'Transparent Monthly Analytics Report',
+      'Custom Creative Content Ideas'
+    ]
   }
 };
 
 const SERVICE_OPTIONS = [
   { value: 'mehndi', label: 'Mehndi Service' },
   { value: 'beauty', label: 'Beauty Service' },
-  { value: 'webdev', label: 'Website Development' }
+  { value: 'webdev', label: 'Website Development' },
+  { value: 'docs', label: 'Documentation & Registration' },
+  { value: 'social', label: 'Social Media Management' }
 ];
 
 export default function BookService() {
