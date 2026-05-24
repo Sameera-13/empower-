@@ -58,8 +58,22 @@ export default function Services() {
   const successRate = useCountUp(98, 1500, statsTriggered);
   const livelihoodCount = useCountUp(500, 2000, statsTriggered);
 
+  const [activeCategory, setActiveCategory] = useState('all');
+
+  const categories = [
+    { id: 'all', label: 'All Services', icon: '✨', services: ['mehndi', 'beauty', 'webdev', 'docs', 'social'], color: 'from-[#ff4f8b] to-[#ff8e71]' },
+    { id: 'personal', label: 'Personal Care', icon: '🌸', services: ['mehndi', 'beauty'], color: 'from-[#FF6B9D] to-[#EC4899]' },
+    { id: 'web', label: 'Web Development', icon: '💻', services: ['webdev'], color: 'from-[#6BCB77] to-[#4CAF50]' },
+    { id: 'docs', label: 'Documentation & Registration', icon: '📄', services: ['docs'], color: 'from-[#3B82F6] to-[#2563EB]' },
+    { id: 'social', label: 'Social Media Management', icon: '📱', services: ['social'], color: 'from-[#A855F7] to-[#EC4899]' },
+    { id: 'business', label: 'Business Solutions', icon: '💼', services: ['webdev', 'docs'], color: 'from-[#3B82F6] to-[#6BCB77]' },
+    { id: 'ngo', label: 'NGO Services', icon: '🤝', services: ['docs'], color: 'from-[#4F46E5] to-[#3B82F6]' },
+    { id: 'digital', label: 'Digital Marketing', icon: '🚀', services: ['social'], color: 'from-[#EC4899] to-[#8B5CF6]' }
+  ];
+
   const services = [
     {
+      id: 'mehndi',
       title: 'Mehndi Services',
       description: 'We provide professional mehndi application services for weddings, festivals, parties, and special occasions with elegant and customized designs.',
       startingPrice: '₹999',
@@ -92,6 +106,7 @@ export default function Services() {
       btnVariant: 'golden'
     },
     {
+      id: 'beauty',
       title: 'Beauty & Personal Care',
       description: 'We provide professional salon and self-care services that help women feel confident, stylish, and beautiful with expert treatments.',
       startingPrice: '₹499',
@@ -127,6 +142,7 @@ export default function Services() {
       btnVariant: 'pink'
     },
     {
+      id: 'webdev',
       title: 'Full Stack Web Dev',
       description: 'We create responsive, SEO-friendly, and modern websites for businesses, startups, personal brands, and online services.',
       startingPrice: '₹9,999',
@@ -160,6 +176,7 @@ export default function Services() {
       btnVariant: 'green'
     },
     {
+      id: 'docs',
       title: 'Documentation & Registration',
       description: 'We provide reliable documentation, online registration, NGO compliance, and government support services for individuals, startups, NGOs, and businesses with fast processing and professional assistance.',
       icon: (
@@ -190,6 +207,7 @@ export default function Services() {
       btnVariant: 'blue'
     },
     {
+      id: 'social',
       title: 'Social Media Management',
       description: 'We help brands grow online with creative social media management, content creation, audience engagement, and marketing strategies for businesses, creators, startups, and organizations.',
       icon: (
@@ -274,6 +292,9 @@ export default function Services() {
     document.getElementById('services-section')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const activeCategoryData = categories.find(c => c.id === activeCategory);
+  const filteredServices = services.filter(service => activeCategoryData.services.includes(service.id));
+
   return (
     <PageContainer>
       {/* SECTION 1 — HERO SECTION */}
@@ -317,9 +338,13 @@ export default function Services() {
       </section>
 
       {/* SECTION 2 — SERVICES CARDS */}
-      <section id="services-section" className="py-24 px-4 bg-gradient-to-b from-[#FFFDF7] via-[#FDF8FF] to-[#FFFDF7]">
+      <section id="services-section" className="py-24 px-4 bg-gradient-to-b from-[#FFFDF7] via-[#FDF8FF] to-[#FFFDF7] relative overflow-hidden">
+        {/* Floating background blur shapes for SaaS aesthetic */}
+        <div className="absolute top-20 -left-20 w-80 h-80 rounded-full bg-[#FF6B9D]/5 blur-3xl -z-10" />
+        <div className="absolute bottom-20 -right-20 w-80 h-80 rounded-full bg-[#6BCB77]/5 blur-3xl -z-10" />
+
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-20">
+          <div className="text-center mb-12">
             <span className="text-xs font-bold uppercase tracking-widest text-[#FF6B9D] bg-[#FF6B9D]/15 px-4 py-1.5 rounded-full border border-[#FF6B9D]/20">
               Our Offerings
             </span>
@@ -331,11 +356,34 @@ export default function Services() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
+          {/* Interactive Category Filter Pill Buttons */}
+          <div className="flex flex-wrap items-center justify-center gap-3 mb-16 max-w-4xl mx-auto px-2">
+            {categories.map((cat) => (
+              <button
+                key={cat.id}
+                onClick={() => setActiveCategory(cat.id)}
+                className={`relative flex items-center gap-2 px-5 py-3 rounded-full text-xs font-bold transition-all duration-300 transform active:scale-95 cursor-pointer backdrop-blur-md border ${
+                  activeCategory === cat.id
+                    ? `bg-gradient-to-r ${cat.color} text-white border-transparent shadow-lg shadow-black/15 scale-[1.03]`
+                    : 'bg-white/50 hover:bg-white/95 text-[#2D3436]/65 border-[#F0E6F6] hover:border-[#FF6B9D]/30 shadow-sm'
+                }`}
+              >
+                <span>{cat.icon}</span>
+                <span>{cat.label}</span>
+                {activeCategory === cat.id && (
+                  <span className="absolute -inset-0.5 rounded-full bg-gradient-to-r from-[#FF6B9D] to-[#6BCB77] opacity-20 blur-sm -z-10 animate-pulse" />
+                )}
+              </button>
+            ))}
+          </div>
+
+          {/* Filtered Services Grid Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[450px]">
+            {filteredServices.map((service, index) => (
               <div
-                key={index}
-                className={`rounded-[2.25rem] p-8 border ${service.accentColor} transition-all duration-300 hover:-translate-y-2.5 flex flex-col justify-between h-full`}
+                key={service.id}
+                className={`rounded-[2.25rem] p-8 border ${service.accentColor} transition-all duration-500 hover:-translate-y-2.5 flex flex-col justify-between h-full bg-white/60 backdrop-blur-md shadow-sm hover:shadow-xl hover:scale-[1.01] animate-scale-in`}
+                style={{ animationDelay: `${index * 80}ms` }}
               >
                 <div>
                   {/* Top Line & Icon */}
@@ -386,7 +434,7 @@ export default function Services() {
                 {/* CTA Button */}
                 <Link to={service.buttonLink} className="w-full">
                   <button
-                    className={`w-full py-3.5 px-6 rounded-2xl text-xs font-bold transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] ${
+                    className={`w-full py-3.5 px-6 rounded-2xl text-xs font-bold transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer ${
                       service.btnVariant === 'golden'
                         ? 'bg-[#FFD93D] text-[#2D3436] hover:bg-[#FFD93D]/90 shadow-md shadow-[#FFD93D]/25'
                         : service.btnVariant === 'pink'
