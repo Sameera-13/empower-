@@ -66,12 +66,12 @@ function HeroSection() {
             <span className="inline-block text-[10px] md:text-xs font-semibold tracking-[0.2em] uppercase text-[#FFD93D] mb-4 bg-[#FFD93D]/15 px-3 py-1 rounded-full border border-[#FFD93D]/30 backdrop-blur-sm">
               Empower Stop
             </span>
-            <h1 className="font-display text-2xl md:text-4xl lg:text-5xl text-white leading-[1.15] mb-3">
+            <h1 className="font-display text-5xl md:text-7xl text-white leading-[1.15] mb-3">
               Crafted with Purpose,
               <br />
               <span className="text-[#FFD93D]">Empowered</span> by Art
             </h1>
-            <p className="text-sm md:text-base text-white/70 mb-6 leading-relaxed max-w-sm">
+            <p className="text-xl md:text-2xl text-white/70 mb-6 leading-relaxed max-w-sm">
               Supporting women artisans through handcrafted products, community, and opportunities.
             </p>
             <div className="flex flex-wrap gap-3">

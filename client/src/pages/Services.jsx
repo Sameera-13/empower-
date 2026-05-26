@@ -374,13 +374,13 @@ export default function Services() {
               EMPOWERSTOP SERVICES
             </span>
             
-            <h1 className="font-display text-[#2D3436] mb-2 leading-[1.08] text-4xl md:text-5xl lg:text-[56px] font-normal tracking-tight">
+            <h1 className="font-display text-[#2D3436] mb-2 leading-[1.08] text-5xl md:text-7xl font-normal tracking-tight">
               Empowering Women <br />
               Through <span className="text-[#ff4f8b] font-bold">Skills &</span> <br />
               <span className="text-[#ff4f8b] font-bold">Creativity</span>
             </h1>
 
-            <p className="text-sm md:text-base text-[#2D3436]/65 max-w-md leading-relaxed mb-4">
+            <p className="text-xl md:text-2xl text-[#2D3436]/65 max-w-lg leading-relaxed mb-4">
               Helping women grow through beauty, traditional art, digital opportunities, and professional services.
             </p>
 
