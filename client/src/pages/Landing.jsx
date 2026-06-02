@@ -45,7 +45,7 @@ function HeroSection() {
 
   return (
     <section className="py-6 px-4">
-      <div className="max-w-5xl mx-auto relative h-[300px] md:h-[380px] rounded-[2rem] overflow-hidden ring-[6px] ring-[#2D3436]/10 shadow-[0_20px_60px_rgba(0,0,0,0.15),inset_0_2px_20px_rgba(0,0,0,0.1)]">
+      <div className="max-w-7xl mx-auto relative min-h-[400px] md:min-h-[500px] flex rounded-[2rem] overflow-hidden ring-[6px] ring-[#2D3436]/10 shadow-[0_20px_60px_rgba(0,0,0,0.15),inset_0_2px_20px_rgba(0,0,0,0.1)]">
         {/* Background images with crossfade */}
         {heroImages.map((img, idx) => (
           <img
@@ -61,17 +61,17 @@ function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-t from-[#2D3436]/50 via-transparent to-transparent" />
 
         {/* Content */}
-        <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-10 h-full flex items-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-10 md:px-16 py-12 flex-1 flex items-center">
           <div className="max-w-lg">
             <span className="inline-block text-[10px] md:text-xs font-semibold tracking-[0.2em] uppercase text-[#FFD93D] mb-4 bg-[#FFD93D]/15 px-3 py-1 rounded-full border border-[#FFD93D]/30 backdrop-blur-sm">
               Empower Stop
             </span>
-            <h1 className="font-display text-5xl md:text-7xl text-white leading-[1.15] mb-3">
+            <h1 className="font-display text-4xl md:text-6xl text-white leading-[1.15] mb-4">
               Crafted with Purpose,
               <br />
               <span className="text-[#FFD93D]">Empowered</span> by Art
             </h1>
-            <p className="text-xl md:text-2xl text-white/70 mb-6 leading-relaxed max-w-sm">
+            <p className="text-lg md:text-xl text-white/80 mb-6 leading-relaxed max-w-sm md:max-w-md">
               Supporting women artisans through handcrafted products, community, and opportunities.
             </p>
             <div className="flex flex-wrap gap-3">
@@ -90,11 +90,11 @@ function HeroSection() {
 
 
         {/* Arrows */}
-        <button onClick={() => setCurrent((p) => (p - 1 + heroImages.length) % heroImages.length)} className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/10 hover:bg-white/25 backdrop-blur-sm flex items-center justify-center transition-all" aria-label="Previous">
-          <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+        <button onClick={() => setCurrent((p) => (p - 1 + heroImages.length) % heroImages.length)} className="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 hover:bg-white/25 backdrop-blur-sm flex items-center justify-center transition-all" aria-label="Previous">
+          <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
         </button>
-        <button onClick={() => setCurrent((p) => (p + 1) % heroImages.length)} className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/10 hover:bg-white/25 backdrop-blur-sm flex items-center justify-center transition-all" aria-label="Next">
-          <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+        <button onClick={() => setCurrent((p) => (p + 1) % heroImages.length)} className="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 hover:bg-white/25 backdrop-blur-sm flex items-center justify-center transition-all" aria-label="Next">
+          <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
         </button>
       </div>
     </section>
@@ -103,28 +103,31 @@ function HeroSection() {
 
 function MissionSection() {
   return (
-    <section className="py-20">
-      <div className="max-w-5xl mx-auto px-4">
-        <div className="text-center mb-14">
-          <span className="text-4xl mb-4 block">🪔</span>
-          <h2 className="font-display text-2xl md:text-4xl text-[#2D3436] mb-3 leading-tight">
+    <section className="py-24 relative bg-gradient-to-b from-[#FFFDF7] to-white overflow-hidden">
+      {/* Decorative Blob */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#FFD93D]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
+      <div className="max-w-7xl mx-auto px-4 relative z-10">
+        <div className="text-center mb-16">
+          <span className="text-4xl mb-4 block animate-bounce-slow">🪔</span>
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-[#2D3436] mb-4 leading-tight">
             &ldquo;Crafted with Purpose,
             <br />
-            <span className="gradient-text-pink-green">Empowered by Art</span>&rdquo;
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4f8b] to-[#6BCB77]">Empowered by Art</span>&rdquo;
           </h2>
-          <p className="text-[#2D3436]/40 max-w-lg mx-auto text-sm">
+          <p className="text-[#2D3436]/50 max-w-lg mx-auto text-base">
             Every product tells a story. Every purchase creates impact.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {pillars.map((p) => (
-            <div key={p.title} className="group text-center">
-              <div className={`w-16 h-16 rounded-2xl ${p.color} mx-auto mb-5 flex items-center justify-center text-2xl`}>
+            <div key={p.title} className="group text-center bg-white/60 backdrop-blur-md border border-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgb(255,107,157,0.1)] transition-all duration-300 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              <div className={`w-20 h-20 rounded-3xl ${p.color} mx-auto mb-6 flex items-center justify-center text-3xl shadow-lg relative z-10 transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300`}>
                 {p.icon}
               </div>
-              <h3 className="font-semibold text-[#2D3436] text-lg mb-2">{p.title}</h3>
-              <p className="text-sm text-[#2D3436]/50 leading-relaxed max-w-xs mx-auto">{p.desc}</p>
+              <h3 className="font-bold text-[#2D3436] text-xl mb-3 relative z-10">{p.title}</h3>
+              <p className="text-sm text-[#2D3436]/60 leading-relaxed max-w-xs mx-auto relative z-10">{p.desc}</p>
             </div>
           ))}
         </div>
@@ -135,21 +138,25 @@ function MissionSection() {
 
 function ProgramsSection() {
   return (
-    <section className="py-20">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-14">
-          <h2 className="text-2xl md:text-3xl font-display gradient-text-pink-yellow mb-3 inline-block">How We Can Help</h2>
-          <p className="text-[#2D3436]/40 max-w-md mx-auto text-sm">From professional skill development to safety support — built for what women actually need.</p>
+    <section className="py-24 relative bg-white overflow-hidden">
+      <div className="absolute top-40 left-10 w-72 h-72 bg-[#6BCB77]/5 rounded-full blur-3xl -z-0" />
+      <div className="absolute bottom-10 right-20 w-80 h-80 bg-[#FF6B9D]/5 rounded-full blur-3xl -z-0" />
+      <div className="max-w-7xl mx-auto px-4 relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#ff4f8b] to-[#FFD93D] mb-4 inline-block">How We Can Help</h2>
+          <p className="text-[#2D3436]/50 max-w-md mx-auto text-base">From professional skill development to safety support — built for what women actually need.</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {programs.map((p) => (
-            <Link key={p.title} to={p.link} className="group block">
-              <div className={`${p.bg} border border-[#F0E6F6] ${p.border} rounded-3xl p-6 h-full transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-lg`}>
-                <span className="text-3xl mb-4 block">{p.emoji}</span>
-                <h3 className="font-semibold text-[#2D3436] text-base mb-2">{p.title}</h3>
-                <p className="text-xs text-[#2D3436]/50 leading-relaxed mb-3">{p.desc}</p>
-                <span className={`text-xs font-semibold ${p.text} group-hover:underline`}>Learn more →</span>
+            <Link key={p.title} to={p.link} className="group block relative h-full">
+              <div className={`absolute inset-0 bg-white border border-[#F0E6F6] ${p.border} rounded-3xl transition-all duration-300 group-hover:shadow-[0_20px_40px_rgb(0,0,0,0.06)] group-hover:-translate-y-1.5`} />
+              <div className={`absolute inset-0 ${p.bg} rounded-3xl opacity-50 group-hover:opacity-100 transition-opacity duration-300`} />
+              <div className="relative p-8 flex flex-col h-full transition-transform duration-300 group-hover:-translate-y-1.5">
+                <span className="text-4xl mb-6 block transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 origin-left">{p.emoji}</span>
+                <h3 className="font-bold text-[#2D3436] text-lg mb-3">{p.title}</h3>
+                <p className="text-sm text-[#2D3436]/60 leading-relaxed mb-6 flex-1">{p.desc}</p>
+                <span className={`text-sm font-bold ${p.text} group-hover:translate-x-1 transition-transform inline-flex items-center gap-1`}>Learn more <span className="text-lg leading-none">&rarr;</span></span>
               </div>
             </Link>
           ))}
@@ -162,22 +169,25 @@ function ProgramsSection() {
 function CTABanner() {
   return (
     <section className="relative overflow-hidden">
-      <div className="gradient-btn-pink py-16 md:py-20">
-        <div className="max-w-3xl mx-auto px-4 text-center relative z-10">
-          <h2 className="font-display text-2xl md:text-4xl text-white mb-4 leading-tight">
+      <div className="bg-gradient-to-br from-[#ff4f8b] via-[#E8457A] to-[#FF8E71] py-20 md:py-28 relative">
+        {/* Subtle overlay pattern */}
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent" />
+        
+        <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-6 leading-tight drop-shadow-sm">
             Buy with Purpose,<br />Empower with Love
           </h2>
-          <p className="text-white/70 mb-8 max-w-lg mx-auto text-sm">
+          <p className="text-white/80 mb-10 text-lg max-w-xl mx-auto leading-relaxed">
             Every purchase directly supports women artisans, funds community programs, and creates opportunities.
           </p>
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-4">
             <Link to="/shop">
-              <button className="h-12 px-8 rounded-full bg-white text-[#FF6B9D] font-semibold text-base hover:bg-white/90 hover:shadow-xl transition-all">
+              <button className="h-14 px-10 rounded-full bg-white text-[#ff4f8b] font-bold text-lg hover:scale-105 hover:shadow-xl hover:shadow-[#ff4f8b]/30 active:scale-95 transition-all duration-300">
                 Shop Now
               </button>
             </Link>
             <Link to="/services">
-              <button className="h-12 px-8 rounded-full border-2 border-white/40 text-white font-semibold text-base hover:bg-white/10 transition-all">
+              <button className="h-14 px-10 rounded-full border-2 border-white/60 text-white font-bold text-lg hover:bg-white/10 hover:border-white active:scale-95 transition-all duration-300">
                 Our Services
               </button>
             </Link>
@@ -234,27 +244,32 @@ export default function Landing() {
       <PartnerCarousel />
 
       {/* 11. Newsletter */}
-      <section className="border-t border-[#F0E6F6] py-16">
-        <div className="max-w-lg mx-auto px-4 text-center">
-          <h2 className="text-2xl font-display gradient-text-green-yellow mb-2 inline-block">Stay in the loop</h2>
-          <p className="text-[#2D3436]/40 text-sm mb-6">
-            New services, articles, and safety updates — straight to your inbox.
-          </p>
-          {subscribed ? (
-            <p className="text-sm text-[#6BCB77] font-medium py-3">Thanks for subscribing!</p>
-          ) : (
-            <form onSubmit={handleNewsletter} className="flex gap-2">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="your@email.com"
-                required
-                className="flex-1 h-11 px-4 rounded-full text-sm bg-white border border-[#F0E6F6] text-[#2D3436] placeholder:text-[#2D3436]/30 outline-none focus:border-[#FF6B9D] focus:ring-2 focus:ring-[#FF6B9D]/20 transition-all"
-              />
-              <Button type="submit" className="h-11 shrink-0 rounded-full">Subscribe</Button>
-            </form>
-          )}
+      <section className="py-24 relative bg-white">
+        <div className="max-w-3xl mx-auto px-4 relative">
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FFFDF7] to-white rounded-[3rem] border border-[#F0E6F6]/60 shadow-[0_8px_30px_rgb(0,0,0,0.02)] -z-10" />
+          <div className="text-center py-16 px-6">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-[#2D3436] mb-4">Stay in the loop</h2>
+            <p className="text-[#2D3436]/60 text-lg mb-10 max-w-md mx-auto leading-relaxed">
+              New services, articles, and safety updates — straight to your inbox.
+            </p>
+            {subscribed ? (
+              <div className="bg-[#6BCB77]/10 text-[#6BCB77] font-semibold py-4 px-6 rounded-full inline-block animate-fade-in">
+                🎉 Thanks for subscribing!
+              </div>
+            ) : (
+              <form onSubmit={handleNewsletter} className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email address..."
+                  required
+                  className="flex-1 h-14 px-6 rounded-full text-base bg-white border border-[#F0E6F6] text-[#2D3436] placeholder:text-[#2D3436]/30 outline-none focus:border-[#ff4f8b] focus:ring-4 focus:ring-[#ff4f8b]/10 transition-all shadow-sm"
+                />
+                <Button type="submit" className="h-14 px-10 rounded-full text-base font-bold shadow-lg shadow-[#ff4f8b]/20 hover:shadow-xl hover:shadow-[#ff4f8b]/30">Subscribe</Button>
+              </form>
+            )}
+          </div>
         </div>
       </section>
     </PageContainer>

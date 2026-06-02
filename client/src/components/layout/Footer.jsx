@@ -6,9 +6,16 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div className="col-span-2 md:col-span-1">
-            <div className="flex items-center gap-2 mb-2">
-              <h3 className="text-base font-bold text-[#2D3436]">Empower<span className="gradient-text-pink-green">Stop</span></h3>
-            </div>
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#ff4f8b] to-[#FF8E71] text-white flex items-center justify-center shadow-md shadow-[#ff4f8b]/20">
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="font-display text-lg tracking-tight font-bold text-[#2D3436]">
+                  Empower<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4f8b] to-[#FF8E71]">Stop</span>
+                </h3>
+              </div>
             <p className="text-sm text-[#2D3436]/50 leading-relaxed mb-4">
               Resources, community, and support for every woman.
             </p>

@@ -112,251 +112,158 @@ export default function Blog() {
   return (
     <PageContainer title="Blog — Empower Stop">
       {/* Full-bleed Banner */}
-      <div className="bg-gradient-to-r from-[#FFF5F8] to-[#FFFFFF] w-full border-b border-[#FDF0F4]">
-        <div className="max-w-7xl mx-auto px-4 pt-8 pb-16 md:pt-12 md:pb-24 flex items-center justify-between relative overflow-hidden">
-          <div className="max-w-lg relative z-10">
-            <div className="w-16 h-16 rounded-full border-[3px] border-[#FFE4E8] absolute -left-10 -top-8 opacity-70"></div>
-            <h1 className="text-5xl md:text-7xl font-display font-bold text-dark mb-6">Our Blog</h1>
-            <p className="text-gray-500 text-xl md:text-2xl mb-2">Inspiring stories, practical tips, and expert<br/>advice to empower your everyday.</p>
+      <div className="bg-gradient-to-br from-[#FFFDF7] to-white w-full border-b border-[#F0E6F6] relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 py-12 md:py-16 flex items-center justify-between relative z-10">
+          <div className="max-w-2xl relative z-10">
+            <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-[#ff4f8b] bg-[#ff4f8b]/10 px-3 py-1 rounded-full mb-4 border border-[#ff4f8b]/20">Stories & Tips</span>
+            <h1 className="text-4xl md:text-6xl font-display font-bold text-[#2D3436] mb-4">Our Blog</h1>
+            <p className="text-[#2D3436]/60 text-lg md:text-xl leading-relaxed">Inspiring stories, practical tips, and expert advice to empower your everyday life.</p>
           </div>
           {/* Abstract illustration elements */}
           <div className="absolute right-0 top-0 bottom-0 w-1/2 hidden md:flex items-center justify-center opacity-90 pointer-events-none">
             {/* Leaves / Notes abstract SVG */}
             <svg className="w-[400px] h-full absolute right-10" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M120 180 C100 120, 150 100, 180 150 Z" fill="#FF8DA1" opacity="0.8" />
-              <path d="M150 200 C130 140, 180 120, 210 170 Z" fill="#FFB3C1" opacity="0.6" />
-              <path d="M180 150 L200 80 L220 160 Z" fill="#FFD1DA" opacity="0.9" />
-              <circle cx="250" cy="100" r="4" fill="#FF6B9D" opacity="0.4" />
-              <circle cx="280" cy="120" r="3" fill="#FF6B9D" opacity="0.3" />
-              <circle cx="260" cy="80" r="5" fill="#FF6B9D" opacity="0.5" />
-              {/* Binder rings mock */}
-              <circle cx="200" cy="60" r="5" stroke="#FF6B9D" strokeWidth="2" />
-              <circle cx="195" cy="80" r="5" stroke="#FF6B9D" strokeWidth="2" />
-              <circle cx="190" cy="100" r="5" stroke="#FF6B9D" strokeWidth="2" />
-              <circle cx="185" cy="120" r="5" stroke="#FF6B9D" strokeWidth="2" />
-              <circle cx="180" cy="140" r="5" stroke="#FF6B9D" strokeWidth="2" />
-              <circle cx="175" cy="160" r="5" stroke="#FF6B9D" strokeWidth="2" />
-              <circle cx="170" cy="180" r="5" stroke="#FF6B9D" strokeWidth="2" />
-              <circle cx="165" cy="200" r="5" stroke="#FF6B9D" strokeWidth="2" />
-              {/* Pen mock */}
-              <rect x="250" y="70" width="10" height="120" rx="5" transform="rotate(-15 250 70)" fill="#FF8DA1" />
-              <path d="M220 182 L225 195 L230 180 Z" fill="#FF6B9D" />
+              <path d="M120 180 C100 120, 150 100, 180 150 Z" fill="#ff4f8b" opacity="0.1" />
+              <path d="M150 200 C130 140, 180 120, 210 170 Z" fill="#FF8E71" opacity="0.1" />
+              <path d="M180 150 L200 80 L220 160 Z" fill="#FFD93D" opacity="0.2" />
+              <circle cx="250" cy="100" r="4" fill="#ff4f8b" opacity="0.4" />
+              <circle cx="280" cy="120" r="3" fill="#ff4f8b" opacity="0.3" />
+              <circle cx="260" cy="80" r="5" fill="#ff4f8b" opacity="0.5" />
             </svg>
           </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="flex flex-col lg:flex-row gap-10">
-          
-          {/* Left Column: Latest Articles */}
-          <div className="flex-1">
-            <h2 className="text-2xl font-bold text-gray-800 mb-8">Latest Articles</h2>
-            
-            {/* Active filter chips inside the article column */}
-            {activeCount > 0 && (
-              <div className="flex items-center gap-2 mb-6 flex-wrap">
-                {search && (
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F0E6F6] text-xs text-[#2D3436]/70">
-                    "{search}"
-                    <button onClick={() => { setSearch(''); setSearchInput(''); setPage(1); }} className="hover:text-[#FF6B9D]">
-                      <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
-                    </button>
-                  </span>
-                )}
-                {category && (
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F0E6F6] text-xs text-[#2D3436]/70">
-                    {category}
-                    <button onClick={() => { setCategory(''); setPage(1); }} className="hover:text-[#FF6B9D]">
-                      <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
-                    </button>
-                  </span>
-                )}
-                {selectedTag && (
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F0E6F6] text-xs text-[#2D3436]/70">
-                    #{selectedTag}
-                    <button onClick={() => { setSelectedTag(''); setPage(1); }} className="hover:text-[#FF6B9D]">
-                      <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
-                    </button>
-                  </span>
-                )}
-                <button onClick={clearAllFilters} className="text-xs text-[#FF6B9D] hover:underline ml-1">Clear all</button>
-              </div>
-            )}
-
-            {isLoading ? (
-              <LoadingSpinner size="lg" className="py-20" />
-            ) : posts.length === 0 ? (
-              <EmptyState
-                title="No blog posts yet"
-                description="Check back soon for stories and updates!"
-                icon={<svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" /></svg>}
-              />
-            ) : (
-              <>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-6 gap-y-8">
-                  {posts.map((post) => <BlogCard key={post._id} post={post} />)}
-                </div>
-                
-                {posts.length > 0 && (
-                  <div className="mt-12 mb-8 flex justify-center">
-                    <button className="gradient-btn-pink text-white px-8 py-3 rounded-xl font-bold shadow-md hover:shadow-lg transition-all">
-                      View All Articles
-                    </button>
-                  </div>
-                )}
-              </>
-            )}
-
-            <Pagination page={page} totalPages={totalPages} onPageChange={setPage} />
+      <div className="max-w-7xl mx-auto px-4 py-8 md:py-12">
+        {/* Top Horizontal Filter Bar */}
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 bg-white p-3 rounded-2xl border border-gray-100 shadow-sm">
+          {/* Quick Categories */}
+          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 md:pb-0">
+            <button
+              onClick={() => { setCategory(''); setPage(1); }}
+              className={`px-4 py-1.5 rounded-full text-sm font-semibold whitespace-nowrap transition-all ${
+                !category ? 'bg-[#2D3436] text-white shadow-md' : 'bg-gray-50 text-gray-500 hover:bg-gray-100'
+              }`}
+            >
+              All
+            </button>
+            {categories.slice(0, 5).map(cat => (
+              <button
+                key={cat._id}
+                onClick={() => { setCategory(cat.name); setPage(1); }}
+                className={`px-4 py-1.5 rounded-full text-sm font-semibold whitespace-nowrap transition-all ${
+                  category === cat.name ? 'bg-[#ff4f8b] text-white shadow-md' : 'bg-gray-50 text-gray-500 hover:bg-gray-100'
+                }`}
+              >
+                {cat.name}
+              </button>
+            ))}
           </div>
 
-          {/* Right Column: Sidebar */}
-          <div className="w-full lg:w-[340px] flex flex-col gap-8 lg:-mt-[112px]">
-            {/* Search and Filter */}
-            <div className="flex items-center gap-2 z-20">
-              <form onSubmit={handleSearch} className="relative flex-1">
-                <input
-                  type="text"
-                  value={searchInput}
-                  onChange={(e) => setSearchInput(e.target.value)}
-                  placeholder="Search posts..."
-                  className="w-full pl-10 pr-4 py-2.5 text-sm rounded-full border border-gray-100 shadow-sm bg-white text-[#2D3436] placeholder:text-gray-400 focus:outline-none focus:border-[#FF6B9D]/50 focus:ring-1 focus:ring-[#FF6B9D]/20 transition-all"
-                />
-                <svg className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-                {search && (
-                  <button type="button" onClick={() => { setSearch(''); setSearchInput(''); setPage(1); }} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[#FF6B9D]">
-                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
-                  </button>
-                )}
-              </form>
+          <div className="flex items-center gap-3 w-full md:w-auto">
+            {/* Search */}
+            <form onSubmit={handleSearch} className="relative flex-1 md:w-64">
+              <input
+                type="text"
+                value={searchInput}
+                onChange={(e) => setSearchInput(e.target.value)}
+                placeholder="Search articles..."
+                className="w-full pl-10 pr-4 py-2 text-sm rounded-full border border-gray-200 bg-white text-[#2D3436] focus:outline-none focus:border-[#ff4f8b] focus:ring-2 focus:ring-[#ff4f8b]/10 transition-all"
+              />
+              <svg className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </form>
+          </div>
+        </div>
 
-              {/* Filter dropdown */}
-              <div className="relative" ref={filterRef}>
-                <button
-                  onClick={() => setFilterOpen(!filterOpen)}
-                  className={`inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-medium rounded-full shadow-sm transition-all ${
-                    activeCount > 0
-                      ? 'gradient-btn-pink text-white'
-                      : 'bg-white border border-gray-100 text-gray-600 hover:border-[#FF6B9D]/40'
-                  }`}
-                >
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
-                  </svg>
-                  Filter
+        {/* Active Filters Display */}
+        {activeCount > 0 && (
+          <div className="flex items-center gap-2 mb-8 flex-wrap">
+            <span className="text-sm font-bold text-gray-500 mr-2">Active Filters:</span>
+            {search && (
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#ff4f8b]/10 text-xs font-bold text-[#ff4f8b]">
+                Search: "{search}"
+                <button onClick={() => { setSearch(''); setSearchInput(''); setPage(1); }} className="hover:text-[#2D3436]">
+                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
                 </button>
+              </span>
+            )}
+            {category && (
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#ff4f8b]/10 text-xs font-bold text-[#ff4f8b]">
+                Category: {category}
+                <button onClick={() => { setCategory(''); setPage(1); }} className="hover:text-[#2D3436]">
+                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                </button>
+              </span>
+            )}
+            <button onClick={clearAllFilters} className="text-xs font-bold text-gray-400 hover:text-[#2D3436] ml-2">Clear all</button>
+          </div>
+        )}
 
-                {filterOpen && (
-                  <div className="absolute right-0 top-full mt-2 w-72 bg-white rounded-2xl shadow-xl border border-gray-100 p-5 z-50">
-                    {/* Sort */}
-                    <div className="mb-4">
-                      <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">Sort by</label>
-                      <select
-                        value={sort}
-                        onChange={(e) => { setSort(e.target.value); setPage(1); }}
-                        className="w-full px-3 py-2 text-sm rounded-lg border border-gray-100 bg-white text-gray-700 focus:outline-none focus:border-[#FF6B9D]/50 cursor-pointer"
-                      >
-                        <option value="newest">Newest first</option>
-                        <option value="oldest">Oldest first</option>
-                      </select>
-                    </div>
-
-                    {/* Category */}
-                    <div className="mb-4">
-                      <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">Category</label>
-                      <select
-                        value={category}
-                        onChange={(e) => { setCategory(e.target.value); setPage(1); }}
-                        className="w-full px-3 py-2 text-sm rounded-lg border border-gray-100 bg-white text-gray-700 focus:outline-none focus:border-[#FF6B9D]/50 cursor-pointer"
-                      >
-                        <option value="">All Categories</option>
-                        {categories.map((cat) => (
-                          <option key={cat._id} value={cat.name}>{cat.name}</option>
-                        ))}
-                      </select>
-                    </div>
-
-                    {/* Tags */}
-                    {tags.length > 0 && (
-                      <div className="mb-5">
-                        <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">Tag</label>
-                        <div className="flex flex-wrap gap-1.5">
-                          {tags.map((t) => (
-                            <button
-                              key={t._id}
-                              onClick={() => { setSelectedTag(selectedTag === t.name ? '' : t.name); setPage(1); }}
-                              className={`px-3 py-1 rounded-full text-xs font-medium transition-all ${
-                                selectedTag === t.name
-                                  ? 'text-white shadow-sm'
-                                  : 'bg-gray-50 text-gray-500 hover:bg-gray-100'
-                              }`}
-                              style={selectedTag === t.name ? { backgroundColor: t.color || '#FF6B9D' } : {}}
-                            >
-                              {t.name}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Footer */}
-                    <div className="flex items-center justify-between pt-4 border-t border-gray-50">
-                      <button
-                        onClick={clearAllFilters}
-                        className="text-xs text-[#FF6B9D] font-medium hover:underline disabled:opacity-30 disabled:no-underline"
-                        disabled={activeCount === 0 && sort === 'newest'}
-                      >
-                        Clear all
-                      </button>
-                      <button
-                        onClick={() => setFilterOpen(false)}
-                        className="px-4 py-2 text-xs font-bold rounded-full gradient-btn-pink text-white"
-                      >
-                        Apply
-                      </button>
-                    </div>
+        {/* Blog Grid */}
+        <div className="w-full">
+          {isLoading ? (
+            <LoadingSpinner size="lg" className="py-20" />
+          ) : posts.length === 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[1, 2, 3].map((i) => (
+                <div key={i} className="bg-white border border-gray-100 rounded-2xl overflow-hidden h-full flex flex-col">
+                  <div className="aspect-[16/11] bg-gradient-to-br from-gray-100 to-gray-50 animate-pulse flex items-center justify-center">
+                    <span className="text-gray-300 font-bold tracking-widest text-sm uppercase">Coming Soon</span>
                   </div>
-                )}
-              </div>
-            </div>
-
-            {/* Popular Posts */}
-            <div className="bg-white rounded-[24px] shadow-sm border border-gray-100/80 p-6 pt-5">
-              <h3 className="font-bold text-gray-800 text-[15px] mb-5">Popular Posts</h3>
-              <div className="flex flex-col gap-5">
-                {popularPosts.length > 0 ? popularPosts.map(post => (
-                  <Link key={`pop-${post._id}`} to={`/blog/${post.slug}`} className="flex gap-4 group items-center">
-                    <img src={post.coverImage || 'https://via.placeholder.com/150'} alt="" className="w-[72px] h-[72px] rounded-[16px] object-cover bg-gray-50 flex-shrink-0" />
-                    <div>
-                      <h4 className="text-sm font-bold text-gray-800 line-clamp-2 leading-snug group-hover:text-[#FF6B9D] transition-colors">{post.title}</h4>
-                      <p className="text-xs text-gray-400 mt-1.5 font-medium">
-                        {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'Just now'}
-                      </p>
-                    </div>
-                  </Link>
-                )) : (
-                  <p className="text-sm text-gray-400">No popular posts yet.</p>
-                )}
-              </div>
-            </div>
-            
-            {/* Stay Inspired */}
-            <div className="bg-[#FFF5F8] rounded-[24px] p-6 pb-7">
-              <div className="flex items-center justify-between mb-3">
-                <h3 className="font-bold text-gray-800 text-[15px]">Stay Inspired</h3>
-                <div className="w-9 h-9 rounded-full bg-pink-100 text-[#FF6B9D] flex items-center justify-center">
-                  <svg className="w-[18px] h-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                  <div className="p-6">
+                    <div className="h-4 bg-gray-200 rounded w-3/4 mb-4 animate-pulse"></div>
+                    <div className="h-3 bg-gray-100 rounded w-full mb-2 animate-pulse"></div>
+                    <div className="h-3 bg-gray-100 rounded w-5/6 mb-4 animate-pulse"></div>
+                  </div>
                 </div>
-              </div>
-              <p className="text-sm text-gray-500 leading-relaxed mb-5 pr-4">Get the latest stories and tips delivered to your inbox.</p>
-              <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
-                <input type="email" placeholder="Enter your email" className="w-full px-4 py-2.5 text-sm rounded-xl border border-transparent focus:outline-none focus:border-[#FF6B9D]/30 focus:ring-2 focus:ring-[#FF6B9D]/10" />
-                <button type="submit" className="gradient-btn-pink text-white px-5 py-2.5 text-sm rounded-xl font-bold shadow-md whitespace-nowrap hover:shadow-lg transition-all">Subscribe</button>
-              </form>
+              ))}
             </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {posts.map((post) => <BlogCard key={post._id} post={post} />)}
+            </div>
+          )}
+
+          <div className="mt-10">
+            <Pagination page={page} totalPages={totalPages} onPageChange={setPage} />
+          </div>
+        </div>
+
+        {/* Bottom Section: Popular & Newsletter (Moved from sidebar) */}
+        <div className="mt-20 pt-16 border-t border-gray-100 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Popular Posts Mini List */}
+          <div>
+            <h3 className="font-display font-bold text-2xl text-[#2D3436] mb-6">Trending Topics</h3>
+            <div className="flex flex-col gap-4">
+              {popularPosts.length > 0 ? popularPosts.map(post => (
+                <Link key={`pop-${post._id}`} to={`/blog/${post.slug}`} className="flex gap-4 group items-center p-3 rounded-2xl hover:bg-gray-50 transition-colors">
+                  <img src={post.coverImage || 'https://via.placeholder.com/150'} alt="" className="w-20 h-20 rounded-xl object-cover bg-gray-100 shadow-sm flex-shrink-0" />
+                  <div>
+                    <h4 className="text-base font-bold text-[#2D3436] line-clamp-2 leading-snug group-hover:text-[#ff4f8b] transition-colors">{post.title}</h4>
+                    <p className="text-xs text-gray-400 mt-2 font-bold uppercase tracking-wide">
+                      {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'Just now'}
+                    </p>
+                  </div>
+                </Link>
+              )) : (
+                <p className="text-sm text-gray-400 italic">More trending posts coming soon.</p>
+              )}
+            </div>
+          </div>
+
+          {/* Newsletter Box */}
+          <div className="bg-gradient-to-br from-[#FFF5F8] to-white border border-[#F0E6F6] rounded-3xl p-10 text-center shadow-sm">
+            <div className="w-16 h-16 rounded-2xl bg-white text-[#ff4f8b] flex items-center justify-center mx-auto mb-6 shadow-sm">
+              <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+            </div>
+            <h3 className="font-display font-bold text-2xl text-[#2D3436] mb-3">Stay Inspired</h3>
+            <p className="text-[#2D3436]/60 leading-relaxed mb-8 max-w-sm mx-auto">Get the latest stories, tips, and safety guides delivered straight to your inbox.</p>
+            <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onSubmit={(e) => e.preventDefault()}>
+              <input type="email" placeholder="Enter your email" className="w-full px-5 py-3 text-sm rounded-full border border-gray-200 focus:outline-none focus:border-[#ff4f8b] focus:ring-2 focus:ring-[#ff4f8b]/10 transition-all shadow-sm" />
+              <button type="submit" className="bg-gradient-to-r from-[#ff4f8b] to-[#FF8E71] text-white px-8 py-3 text-sm rounded-full font-bold shadow-lg shadow-[#ff4f8b]/20 hover:shadow-xl hover:-translate-y-0.5 transition-all">Subscribe</button>
+            </form>
           </div>
         </div>
       </div>

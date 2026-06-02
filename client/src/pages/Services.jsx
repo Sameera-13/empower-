@@ -359,12 +359,12 @@ export default function Services() {
   return (
     <PageContainer>
       {/* SECTION 1 — HERO SECTION */}
-      <section className="pt-4 pb-8 md:pt-6 md:pb-10 px-4 relative overflow-hidden bg-gradient-to-b from-[#FFFDF7] to-white">
+      <section className="pt-8 pb-16 md:pt-12 md:pb-24 px-4 relative overflow-hidden bg-gradient-to-b from-[#FFFDF7] to-white">
         {/* Floating background blur shapes for SaaS aesthetic */}
         <div className="absolute top-10 left-10 w-44 h-44 rounded-full bg-[#FF6B9D]/5 blur-3xl -z-10 animate-pulse" />
         <div className="absolute bottom-10 right-1/3 w-64 h-64 rounded-full bg-[#6BCB77]/5 blur-3xl -z-10" />
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Text & Content */}
           <div className="lg:col-span-6 relative z-10 text-left">
             {/* Sparkle Star icon decoration */}
@@ -374,10 +374,10 @@ export default function Services() {
               EMPOWERSTOP SERVICES
             </span>
             
-            <h1 className="font-display text-[#2D3436] mb-2 leading-[1.08] text-5xl md:text-7xl font-normal tracking-tight">
+            <h1 className="text-5xl md:text-7xl font-display font-bold text-gray-800 mb-6 tracking-tight leading-[1.08]">
               Empowering Women <br />
-              Through <span className="text-[#ff4f8b] font-bold">Skills &</span> <br />
-              <span className="text-[#ff4f8b] font-bold">Creativity</span>
+              Through <span className="text-[#ff4f8b]">Skills &</span> <br />
+              <span className="text-[#ff4f8b]">Creativity</span>
             </h1>
 
             <p className="text-xl md:text-2xl text-[#2D3436]/65 max-w-lg leading-relaxed mb-4">
@@ -401,12 +401,6 @@ export default function Services() {
                 </svg>
                 Join Community
               </button>
-            </div>
-            
-            {/* dot matrix pattern decoration */}
-            <div className="pt-3 text-[#F0E6F6] select-none text-xl font-mono opacity-50 tracking-[0.3em] flex flex-col gap-1.5">
-              <div>••••••</div>
-              <div>••••••</div>
             </div>
           </div>
 
@@ -445,7 +439,7 @@ export default function Services() {
         <div className="absolute top-20 -left-20 w-80 h-80 rounded-full bg-[#FF6B9D]/5 blur-3xl -z-10" />
         <div className="absolute bottom-20 -right-20 w-80 h-80 rounded-full bg-[#6BCB77]/5 blur-3xl -z-10" />
 
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           {/* Centered Heading */}
           <div className="text-center mb-12">
             <span className="text-xs font-bold uppercase tracking-widest text-[#ff4f8b] bg-[#ff4f8b]/10 px-4 py-1.5 rounded-full border border-[#ff4f8b]/20">
@@ -575,7 +569,7 @@ export default function Services() {
           </div>
 
           {/* Dedicated Horizontal Stats Divider Bar */}
-          <div className="mt-20 max-w-6xl mx-auto bg-white border border-[#F0E6F6] rounded-3xl p-8 shadow-sm hover:shadow-md transition-all duration-300">
+          <div className="mt-20 max-w-7xl mx-auto bg-white border border-[#F0E6F6] rounded-3xl p-8 shadow-sm hover:shadow-md transition-all duration-300">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {/* Stat 1 */}
               <div className="flex items-center gap-4 px-2">

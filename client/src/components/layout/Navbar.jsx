@@ -20,18 +20,25 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-40 bg-[#FFFDF7]/95 backdrop-blur-md border-b border-[#F0E6F6]">
-      <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
-          <span className="text-lg font-bold text-[#2D3436]">Empower<span className="gradient-text-pink-green">Stop</span></span>
+      <div className="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
+        <Link to="/" className="flex items-center gap-3 group">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#ff4f8b] to-[#FF8E71] text-white flex items-center justify-center shadow-md shadow-[#ff4f8b]/20 group-hover:shadow-lg group-hover:-translate-y-0.5 transition-all duration-300">
+            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <span className="font-display text-2xl md:text-3xl tracking-tight font-bold text-[#2D3436]">
+            Empower<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4f8b] to-[#FF8E71]">Stop</span>
+          </span>
         </Link>
 
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden md:flex items-center gap-2">
           {navLinks.map((link) => (
             <NavLink
               key={link.to}
               to={link.to}
               className={({ isActive }) =>
-                `px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200 ${
+                `px-4 py-2 rounded-lg text-base font-semibold transition-all duration-200 ${
                   isActive ? 'text-[#2D3436] nav-active-bright' : 'text-[#2D3436]/60 hover:text-[#2D3436] hover:bg-[#F0E6F6]/50'
                 }`
               }
