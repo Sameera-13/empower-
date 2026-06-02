@@ -4,13 +4,13 @@ const Input = forwardRef(({ label, error, className = '', ...props }, ref) => {
   return (
     <div className={`w-full ${className}`}>
       {label && (
-        <label className="block text-sm font-medium text-[#2D3436] mb-1.5">
+        <label className="block text-base font-medium text-[#2D3436] mb-2">
           {label}
         </label>
       )}
       <input
         ref={ref}
-        className={`w-full h-10 px-3 rounded-xl border text-sm text-[#2D3436] bg-white placeholder:text-[#B2BEC3] transition-all duration-200 outline-none
+        className={`w-full h-12 px-4 rounded-xl border text-base text-[#2D3436] bg-[#FAFAFA] focus:bg-white placeholder:text-[#B2BEC3] transition-all duration-200 outline-none
           ${error
             ? 'border-[#EF5350] focus:ring-2 focus:ring-[#EF5350]/20 focus:shadow-lg focus:shadow-[#EF5350]/10'
             : 'border-[#F0E6F6] focus:border-[#FF6B9D] focus:ring-2 focus:ring-[#FF6B9D]/15 focus:shadow-lg focus:shadow-[#FF6B9D]/8'}

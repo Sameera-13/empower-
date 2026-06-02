@@ -7,16 +7,16 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div className="col-span-2 md:col-span-1">
               <div className="flex items-center gap-2 mb-2">
-                <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#ff4f8b] to-[#FF8E71] text-white flex items-center justify-center shadow-md shadow-[#ff4f8b]/20">
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#ff4f8b] to-[#FF8E71] text-white flex items-center justify-center shadow-md shadow-[#ff4f8b]/20">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h3 className="font-display text-lg tracking-tight font-bold text-[#2D3436]">
+                <h3 className="font-display text-2xl tracking-tight font-bold text-[#2D3436]">
                   Empower<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4f8b] to-[#FF8E71]">Stop</span>
                 </h3>
               </div>
-            <p className="text-sm text-[#2D3436]/50 leading-relaxed mb-4">
+            <p className="text-base text-[#2D3436]/60 leading-relaxed mb-6 mt-4">
               Resources, community, and support for every woman.
             </p>
             <div className="flex items-center gap-3">
@@ -39,35 +39,35 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-[#FF6B9D]/60 mb-3">Platform</h4>
-            <div className="flex flex-col gap-2">
-              <Link to="/services" className="text-sm text-[#2D3436]/60 hover:text-[#ff4f8b] transition-colors">Services</Link>
-              <Link to="/shop" className="text-sm text-[#2D3436]/60 hover:text-[#FF6B9D] transition-colors">Shop</Link>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-[#FF6B9D]/60 mb-4">Platform</h4>
+            <div className="flex flex-col gap-3">
+              <Link to="/services" className="text-base text-[#2D3436]/60 hover:text-[#ff4f8b] transition-colors">Services</Link>
+              <Link to="/shop" className="text-base text-[#2D3436]/60 hover:text-[#FF6B9D] transition-colors">Shop</Link>
             </div>
           </div>
 
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-[#6BCB77]/60 mb-3">Company</h4>
-            <div className="flex flex-col gap-2">
-              <Link to="/about" className="text-sm text-[#2D3436]/60 hover:text-[#FF6B9D] transition-colors">About Us</Link>
-              <Link to="/blog" className="text-sm text-[#2D3436]/60 hover:text-[#6BCB77] transition-colors">Blog</Link>
-              <Link to="/contact" className="text-sm text-[#2D3436]/60 hover:text-[#2D3436] transition-colors">Contact Us</Link>
-              <Link to="/privacy-policy" className="text-sm text-[#2D3436]/60 hover:text-[#FF6B9D] transition-colors">Privacy Policy</Link>
-              <Link to="/return-policy" className="text-sm text-[#2D3436]/60 hover:text-[#6BCB77] transition-colors">Return Policy</Link>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-[#6BCB77]/60 mb-4">Company</h4>
+            <div className="flex flex-col gap-3">
+              <Link to="/about" className="text-base text-[#2D3436]/60 hover:text-[#FF6B9D] transition-colors">About Us</Link>
+              <Link to="/blog" className="text-base text-[#2D3436]/60 hover:text-[#6BCB77] transition-colors">Blog</Link>
+              <Link to="/contact" className="text-base text-[#2D3436]/60 hover:text-[#2D3436] transition-colors">Contact Us</Link>
+              <Link to="/privacy-policy" className="text-base text-[#2D3436]/60 hover:text-[#FF6B9D] transition-colors">Privacy Policy</Link>
+              <Link to="/return-policy" className="text-base text-[#2D3436]/60 hover:text-[#6BCB77] transition-colors">Return Policy</Link>
             </div>
           </div>
 
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-[#EF5350]/60 mb-3">Emergency</h4>
-            <a href="tel:181" className="inline-flex items-center gap-2 text-[#2D3436] font-semibold text-lg">
-              <span className="w-8 h-8 rounded-full bg-[#EF5350]/15 flex items-center justify-center shrink-0">
-                <svg className="w-4 h-4 text-[#EF5350]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-[#EF5350]/60 mb-4">Emergency</h4>
+            <a href="tel:181" className="inline-flex items-center gap-3 text-[#2D3436] font-semibold text-2xl">
+              <span className="w-10 h-10 rounded-full bg-[#EF5350]/15 flex items-center justify-center shrink-0">
+                <svg className="w-5 h-5 text-[#EF5350]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
               </span>
               181
             </a>
-            <p className="text-xs text-[#2D3436]/40 mt-1 ml-10">Women Helpline (24/7)</p>
+            <p className="text-sm text-[#2D3436]/50 mt-1.5 ml-12">Women Helpline (24/7)</p>
           </div>
         </div>
 

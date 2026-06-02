@@ -503,24 +503,24 @@ export default function Services() {
                       <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md shadow-[#F0E6F6] border border-[#F0E6F6]">
                         <div className="scale-90">{service.icon}</div>
                       </div>
-                      <span className={`text-[9px] font-bold uppercase tracking-widest px-3 py-1 rounded-full ${service.tagColor}`}>
+                      <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full ${service.tagColor}`}>
                         Premium
                       </span>
                     </div>
 
                     {/* Title & Description */}
-                    <h3 className="font-display text-lg md:text-xl font-bold text-[#2D3436] mb-1.5">{service.title}</h3>
-                    <p className="text-[11px] text-[#2D3436]/60 leading-relaxed mb-4 pb-4 border-b border-[#F0E6F6]">{service.description}</p>
+                    <h3 className="font-display text-xl md:text-2xl font-bold text-[#2D3436] mb-2">{service.title}</h3>
+                    <p className="text-sm text-[#2D3436]/60 leading-relaxed mb-5 pb-5 border-b border-[#F0E6F6]">{service.description}</p>
                     
                     {/* Popular Packages */}
-                    <div className="mb-4">
-                      <h4 className="text-[9px] font-extrabold uppercase tracking-wider text-[#2D3436]/40 mb-2">
+                    <div className="mb-5">
+                      <h4 className="text-xs font-extrabold uppercase tracking-wider text-[#2D3436]/40 mb-3">
                         {service.id === 'social' ? 'Popular Services' : 'Popular Packages'}
                       </h4>
-                      <div className="bg-[#FFFDF7]/50 rounded-xl p-3 border border-[#F0E6F6] grid grid-cols-2 gap-x-3 gap-y-1.5">
+                      <div className="bg-[#FFFDF7]/50 rounded-xl p-4 border border-[#F0E6F6] grid grid-cols-2 gap-x-4 gap-y-2.5">
                         {service.packages.map((pkg, i) => (
-                          <div key={i} className="flex items-center gap-2 text-[10px] text-[#2D3436]/80 font-bold truncate">
-                            <span className={`w-1.5 h-1.5 rounded-full ${dotColorClass} shrink-0`} />
+                          <div key={i} className="flex items-center gap-2 text-sm text-[#2D3436]/80 font-bold truncate">
+                            <span className={`w-2 h-2 rounded-full ${dotColorClass} shrink-0`} />
                             <span className="truncate">{pkg.name}</span>
                           </div>
                         ))}
@@ -528,13 +528,13 @@ export default function Services() {
                     </div>
 
                     {/* Included Features */}
-                    <div className="mb-5">
-                      <h4 className="text-[9px] font-extrabold uppercase tracking-wider text-[#2D3436]/40 mb-2">Included Features</h4>
-                      <ul className="grid grid-cols-2 gap-x-3 gap-y-1.5">
+                    <div className="mb-6">
+                      <h4 className="text-xs font-extrabold uppercase tracking-wider text-[#2D3436]/40 mb-3">Included Features</h4>
+                      <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5">
                         {service.features.map((feat, i) => (
-                          <li key={i} className="flex items-center gap-2 text-[10px] text-[#2D3436]/70 font-semibold">
-                            <span className="w-3.5 h-3.5 rounded-full bg-[#6BCB77]/15 flex items-center justify-center shrink-0 border border-[#6BCB77]/20">
-                              <svg className="w-2 h-2 text-[#6BCB77]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={5}>
+                          <li key={i} className="flex items-center gap-2 text-sm text-[#2D3436]/70 font-semibold">
+                            <span className="w-4 h-4 rounded-full bg-[#6BCB77]/15 flex items-center justify-center shrink-0 border border-[#6BCB77]/20">
+                              <svg className="w-2.5 h-2.5 text-[#6BCB77]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={5}>
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                               </svg>
                             </span>
@@ -548,7 +548,7 @@ export default function Services() {
                   {/* CTA Button */}
                   <button
                     onClick={() => navigate(service.buttonLink)}
-                    className={`w-full py-2.5 px-5 rounded-xl text-xs font-bold transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center justify-center gap-1.5 mt-2 ${
+                    className={`w-full py-3 px-5 rounded-xl text-sm font-bold transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center justify-center gap-1.5 mt-3 ${
                       service.btnVariant === 'golden'
                         ? 'bg-[#FFD93D] text-[#2D3436] hover:bg-[#FFD93D]/90 shadow-md shadow-[#FFD93D]/25'
                         : service.btnVariant === 'pink'
@@ -561,7 +561,7 @@ export default function Services() {
                     }`}
                   >
                     {service.buttonText}
-                    <span className="text-sm">→</span>
+                    <span className="text-base">→</span>
                   </button>
                 </div>
               );

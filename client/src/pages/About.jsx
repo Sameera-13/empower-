@@ -71,8 +71,8 @@ export default function About() {
              <div className="w-12 h-12 rounded-2xl bg-white text-[#ff4f8b] flex items-center justify-center shadow-sm mb-6 group-hover:scale-110 transition-transform">
                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
              </div>
-             <h3 className="text-xl font-bold text-[#2D3436] mb-3">Our Mission</h3>
-             <p className="text-[#2D3436]/60 text-sm leading-relaxed">
+             <h3 className="text-2xl font-bold text-[#2D3436] mb-3">Our Mission</h3>
+             <p className="text-[#2D3436]/70 text-lg leading-relaxed">
                To empower women by providing accessible resources, guidance, and a supportive community to help them thrive in every aspect of life.
              </p>
           </div>
@@ -80,8 +80,8 @@ export default function About() {
              <div className="w-12 h-12 rounded-2xl bg-white text-[#6BCB77] flex items-center justify-center shadow-sm mb-6 group-hover:scale-110 transition-transform">
                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
              </div>
-             <h3 className="text-xl font-bold text-[#2D3436] mb-3">Our Vision</h3>
-             <p className="text-[#2D3436]/60 text-sm leading-relaxed">
+             <h3 className="text-2xl font-bold text-[#2D3436] mb-3">Our Vision</h3>
+             <p className="text-[#2D3436]/70 text-lg leading-relaxed">
                A world where every woman has the confidence, tools, and support to achieve her dreams and create positive change.
              </p>
           </div>
@@ -89,31 +89,31 @@ export default function About() {
 
         {/* 3. Our Story (Moved Image to hero, keep text focused) */}
         <div id="story" className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-display font-bold text-[#2D3436] mb-6">Our Story</h2>
-          <div className="text-[#2D3436]/60 text-base leading-relaxed space-y-4 mb-8">
+          <h2 className="text-4xl font-display font-bold text-[#2D3436] mb-8">Our Story</h2>
+          <div className="text-[#2D3436]/70 text-lg leading-relaxed space-y-6 mb-10">
             <p>EmpowerStop was founded with a simple belief: every woman deserves access to the right resources, community, and opportunities to succeed.</p>
             <p>What started as a small initiative has grown into a platform that inspires and supports women around the world.</p>
-            <p className="font-bold text-[#2D3436]">We're so glad you're here!</p>
+            <p className="font-bold text-[#2D3436] text-xl">We're so glad you're here!</p>
           </div>
           <Link to="/contact">
-            <button className="h-11 px-8 rounded-full border-2 border-[#ff4f8b] text-[#ff4f8b] font-bold text-sm hover:bg-[#ff4f8b] hover:text-white transition-colors duration-300">
+            <button className="h-12 px-10 rounded-full border-2 border-[#ff4f8b] text-[#ff4f8b] font-bold text-base hover:bg-[#ff4f8b] hover:text-white transition-colors duration-300">
               Get in Touch
             </button>
           </Link>
         </div>
 
         {/* 5. Our Values */}
-        <div className="bg-white rounded-[32px] shadow-sm border border-gray-100 p-10 mb-16 text-center">
-          <h2 className="text-2xl font-bold text-gray-800 mb-10">Our Values</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-left divide-y sm:divide-y-0 sm:divide-x divide-gray-100">
+        <div className="bg-white rounded-[32px] shadow-sm border border-gray-100 p-10 md:p-12 mb-16 text-center">
+          <h2 className="text-3xl font-bold text-gray-800 mb-12">Our Values</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-left divide-y sm:divide-y-0 sm:divide-x divide-gray-100">
              
              <div className="flex flex-col gap-4 lg:px-4">
                <div className="w-12 h-12 rounded-full bg-pink-50 text-[#FF6B9D] flex items-center justify-center">
                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
                </div>
                <div>
-                 <h4 className="font-bold text-gray-800 text-sm mb-1.5">Empowerment</h4>
-                 <p className="text-[12px] text-gray-500 leading-relaxed">We uplift and inspire women to reach their full potential.</p>
+                 <h4 className="font-bold text-gray-800 text-lg md:text-xl mb-3">Empowerment</h4>
+                 <p className="text-base text-gray-500 leading-relaxed">We uplift and inspire women to reach their full potential.</p>
                </div>
              </div>
              
@@ -122,8 +122,8 @@ export default function About() {
                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
                </div>
                <div>
-                 <h4 className="font-bold text-gray-800 text-sm mb-1.5">Community</h4>
-                 <p className="text-[12px] text-gray-500 leading-relaxed">We build a safe and inclusive space for connection.</p>
+                 <h4 className="font-bold text-gray-800 text-lg md:text-xl mb-3">Community</h4>
+                 <p className="text-base text-gray-500 leading-relaxed">We build a safe and inclusive space for connection.</p>
                </div>
              </div>
 
@@ -132,8 +132,8 @@ export default function About() {
                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
                </div>
                <div>
-                 <h4 className="font-bold text-gray-800 text-sm mb-1.5">Growth</h4>
-                 <p className="text-[12px] text-gray-500 leading-relaxed">We encourage continuous learning and self-improvement.</p>
+                 <h4 className="font-bold text-gray-800 text-lg md:text-xl mb-3">Growth</h4>
+                 <p className="text-base text-gray-500 leading-relaxed">We encourage continuous learning and self-improvement.</p>
                </div>
              </div>
 
@@ -142,8 +142,8 @@ export default function About() {
                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
                </div>
                <div>
-                 <h4 className="font-bold text-gray-800 text-sm mb-1.5">Integrity</h4>
-                 <p className="text-[12px] text-gray-500 leading-relaxed">We are honest, transparent, and committed to our mission.</p>
+                 <h4 className="font-bold text-gray-800 text-lg md:text-xl mb-3">Integrity</h4>
+                 <p className="text-base text-gray-500 leading-relaxed">We are honest, transparent, and committed to our mission.</p>
                </div>
              </div>
 

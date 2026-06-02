@@ -48,8 +48,8 @@ export default function Contact() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-display text-[#2D3436] mb-1">Message Sent!</h3>
-                <p className="text-sm text-[#2D3436]/50">Thank you for reaching out. We'll get back to you as soon as possible.</p>
+                <h3 className="text-2xl font-display text-[#2D3436] mb-2">Message Sent!</h3>
+                <p className="text-base text-[#2D3436]/60">Thank you for reaching out. We'll get back to you as soon as possible.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="bg-white border border-[#F0E6F6] rounded-2xl p-6 md:p-8 space-y-5">
@@ -63,15 +63,15 @@ export default function Contact() {
                     placeholder="Your full name"
                   />
                   <div>
-                    <label className="block text-sm font-medium text-[#2D3436] mb-1">Phone Number</label>
+                    <label className="block text-base font-medium text-[#2D3436] mb-2">Phone Number</label>
                     <div className="flex">
-                      <span className="inline-flex items-center px-3 rounded-l-lg border border-r-0 border-[#F0E6F6] bg-[#FAFAFA] text-sm text-[#2D3436]/50">+91</span>
+                      <span className="inline-flex items-center px-4 rounded-l-xl border border-r-0 border-[#F0E6F6] bg-[#FAFAFA] text-base text-[#2D3436]/60">+91</span>
                       <input
                         type="tel"
                         value={form.phone}
                         onChange={(e) => handleChange('phone', e.target.value)}
                         placeholder="99 50 99 3330"
-                        className="flex-1 h-10 px-3 rounded-r-lg text-sm bg-white border border-[#F0E6F6] text-[#2D3436] placeholder:text-[#2D3436]/30 outline-none focus:border-[#FF6B9D] focus:ring-2 focus:ring-[#FF6B9D]/20 transition-all"
+                        className="flex-1 h-12 px-4 rounded-r-xl text-base bg-[#FAFAFA] focus:bg-white border border-[#F0E6F6] text-[#2D3436] placeholder:text-[#2D3436]/30 outline-none focus:border-[#FF6B9D] focus:ring-2 focus:ring-[#FF6B9D]/20 transition-all"
                       />
                     </div>
                   </div>
@@ -135,8 +135,8 @@ export default function Contact() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
-              <h4 className="font-semibold text-[#2D3436] text-sm mb-1">Office Address</h4>
-              <p className="text-sm text-[#2D3436]/50 leading-relaxed">
+              <h4 className="font-semibold text-[#2D3436] text-base mb-2">Office Address</h4>
+              <p className="text-base text-[#2D3436]/60 leading-relaxed">
                 Ghatkopar West,<br />
                 Mumbai - 400086
               </p>
@@ -149,8 +149,8 @@ export default function Contact() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
               </div>
-              <h4 className="font-semibold text-[#2D3436] text-sm mb-1">Phone</h4>
-              <a href="tel:+919950993330" className="text-sm text-[#2D3436]/70 hover:text-[#6BCB77] transition-colors">
+              <h4 className="font-semibold text-[#2D3436] text-base mb-2">Phone</h4>
+              <a href="tel:+919950993330" className="text-base text-[#2D3436]/70 hover:text-[#6BCB77] transition-colors">
                 +91 99 50 99 3330
               </a>
             </div>
@@ -162,15 +162,15 @@ export default function Contact() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h4 className="font-semibold text-[#2D3436] text-sm mb-1">Email</h4>
-              <a href="mailto:support@empowerstop.com" className="text-sm text-[#2D3436]/70 hover:text-[#FF6B9D] transition-colors">
+              <h4 className="font-semibold text-[#2D3436] text-base mb-2">Email</h4>
+              <a href="mailto:support@empowerstop.com" className="text-base text-[#2D3436]/70 hover:text-[#FF6B9D] transition-colors">
                 support@empowerstop.com
               </a>
             </div>
 
             {/* Social Links Card */}
             <div className="bg-white border border-[#F0E6F6] rounded-2xl p-6">
-              <h4 className="font-semibold text-[#2D3436] text-sm mb-3">Follow Us</h4>
+              <h4 className="font-semibold text-[#2D3436] text-base mb-3">Follow Us</h4>
               <div className="flex items-center gap-3">
                 <a href="https://www.facebook.com/gullyclasses" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-[#F0E6F6] flex items-center justify-center text-[#2D3436]/50 hover:bg-[#FF6B9D]/15 hover:text-[#FF6B9D] transition-colors" aria-label="Facebook">
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
@@ -198,10 +198,10 @@ export default function Contact() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </span>
-                <h4 className="font-semibold text-[#EF5350] text-sm">Emergency Helpline</h4>
+                <h4 className="font-semibold text-[#EF5350] text-base">Emergency Helpline</h4>
               </div>
-              <a href="tel:181" className="text-2xl font-bold text-[#EF5350] ml-11">181</a>
-              <p className="text-xs text-[#2D3436]/40 ml-11 mt-0.5">Women Helpline (24/7)</p>
+              <a href="tel:181" className="text-3xl font-bold text-[#EF5350] ml-11">181</a>
+              <p className="text-sm text-[#2D3436]/50 ml-11 mt-1">Women Helpline (24/7)</p>
             </div>
           </div>
         </div>
