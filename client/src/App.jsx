@@ -22,6 +22,8 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import ReturnPolicy from './pages/ReturnPolicy';
+import Partners from './pages/Partners';
+import MediaCoverage from './pages/MediaCoverage';
 
 // Admin Pages
 import Dashboard from './pages/admin/Dashboard';
@@ -71,6 +73,8 @@ export default function App() {
       <Route path="/contact" element={<Contact />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/return-policy" element={<ReturnPolicy />} />
+      <Route path="/partners" element={<Partners />} />
+      <Route path="/media-coverage" element={<MediaCoverage />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />

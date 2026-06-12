@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import Button from '../common/Button';
@@ -6,11 +7,18 @@ const navLinks = [
   { to: '/services', label: 'Services' },
   { to: '/shop', label: 'Shop' },
   { to: '/blog', label: 'Blog' },
+];
+
+const aboutItems = [
   { to: '/about', label: 'About Us' },
+  { to: '/partners', label: 'Partners' },
+  { to: '/media-coverage', label: 'Media Coverage' },
 ];
 
 export default function MobileDrawer({ isOpen, onClose }) {
   const { isAuthenticated, isAdmin, user, logout } = useAuth();
+  const [aboutOpen, setAboutOpen] = useState(false);
+  
   if (!isOpen) return null;
 
   return (
@@ -34,6 +42,23 @@ export default function MobileDrawer({ isOpen, onClose }) {
               {link.label}
             </NavLink>
           ))}
+
+          <button onClick={() => setAboutOpen(!aboutOpen)} className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 mb-0.5 text-[#2D3436]/60 hover:bg-[#F0E6F6]/50">
+            About Us
+            <svg className={`w-4 h-4 transition-transform ${aboutOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          
+          {aboutOpen && (
+            <div className="pl-4 pr-2 space-y-0.5 mb-2 border-l-2 border-[#F0E6F6] ml-4 mt-1">
+              {aboutItems.map(item => (
+                <NavLink key={item.to} to={item.to} onClick={onClose} className="block px-3 py-2 rounded-lg text-sm text-[#2D3436]/60 hover:text-[#2D3436] hover:bg-[#F0E6F6]/50">
+                  {item.label}
+                </NavLink>
+              ))}
+            </div>
+          )}
           {isAuthenticated && (
             <>
               <hr className="my-2 border-[#F0E6F6]" />
