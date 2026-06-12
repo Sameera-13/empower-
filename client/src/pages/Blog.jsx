@@ -112,12 +112,12 @@ export default function Blog() {
   return (
     <PageContainer title="Blog — Empower Stop">
       {/* Full-bleed Banner */}
-      <div className="bg-gradient-to-br from-[#FFFDF7] to-white w-full border-b border-[#F0E6F6] relative overflow-hidden">
+      <div className="bg-transparent w-full border-b border-white/50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 py-12 md:py-16 flex items-center justify-between relative z-10">
           <div className="max-w-2xl relative z-10">
             <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-[#ff4f8b] bg-[#ff4f8b]/10 px-3 py-1 rounded-full mb-4 border border-[#ff4f8b]/20">Stories & Tips</span>
-            <h1 className="text-4xl md:text-6xl font-display font-bold text-[#2D3436] mb-4">Our Blog</h1>
-            <p className="text-[#2D3436]/60 text-lg md:text-xl leading-relaxed">Inspiring stories, practical tips, and expert advice to empower your everyday life.</p>
+            <h1 className="text-4xl md:text-[56px] font-serif font-bold text-[#1a202c] mb-4 leading-tight tracking-tight">Our Blog</h1>
+            <p className="text-[#4a5568] text-[17px] font-medium leading-[1.8]">Inspiring stories, practical tips, and expert advice to empower your everyday life.</p>
           </div>
           {/* Abstract illustration elements */}
           <div className="absolute right-0 top-0 bottom-0 w-1/2 hidden md:flex items-center justify-center opacity-90 pointer-events-none">
@@ -136,7 +136,7 @@ export default function Blog() {
 
       <div className="max-w-7xl mx-auto px-4 py-8 md:py-12">
         {/* Top Horizontal Filter Bar */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 bg-white p-3 rounded-2xl border border-gray-100 shadow-sm">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 bg-white/80 backdrop-blur-md p-3 rounded-2xl border border-white/50 shadow-sm">
           {/* Quick Categories */}
           <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 md:pb-0">
             <button
@@ -254,7 +254,7 @@ export default function Blog() {
           </div>
 
           {/* Newsletter Box */}
-          <div className="bg-gradient-to-br from-[#FFF5F8] to-white border border-[#F0E6F6] rounded-3xl p-10 text-center shadow-sm">
+          <div className="bg-white/80 backdrop-blur-md border border-white/50 rounded-3xl p-10 text-center shadow-sm">
             <div className="w-16 h-16 rounded-2xl bg-white text-[#ff4f8b] flex items-center justify-center mx-auto mb-6 shadow-sm">
               <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
             </div>

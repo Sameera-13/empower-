@@ -359,10 +359,10 @@ export default function Services() {
   return (
     <PageContainer>
       {/* SECTION 1 — HERO SECTION */}
-      <section className="pt-8 pb-16 md:pt-12 md:pb-24 px-4 relative overflow-hidden bg-gradient-to-b from-[#FFFDF7] to-white">
+      <section className="pt-8 pb-12 md:pt-10 md:pb-16 px-4 relative overflow-hidden bg-transparent">
         {/* Floating background blur shapes for SaaS aesthetic */}
-        <div className="absolute top-10 left-10 w-44 h-44 rounded-full bg-[#FF6B9D]/5 blur-3xl -z-10 animate-pulse" />
-        <div className="absolute bottom-10 right-1/3 w-64 h-64 rounded-full bg-[#6BCB77]/5 blur-3xl -z-10" />
+        <div className="absolute top-10 left-10 w-44 h-44 rounded-full bg-[#FF6B9D]/10 blur-3xl -z-10 animate-pulse" />
+        <div className="absolute bottom-10 right-1/3 w-64 h-64 rounded-full bg-[#6BCB77]/10 blur-3xl -z-10" />
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Text & Content */}
@@ -374,13 +374,13 @@ export default function Services() {
               EMPOWERSTOP SERVICES
             </span>
             
-            <h1 className="text-5xl md:text-7xl font-display font-bold text-gray-800 mb-6 tracking-tight leading-[1.08]">
+            <h1 className="text-5xl lg:text-[56px] font-serif font-bold text-gray-800 mb-6 tracking-tight leading-tight">
               Empowering Women <br />
               Through <span className="text-[#ff4f8b]">Skills &</span> <br />
               <span className="text-[#ff4f8b]">Creativity</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-[#2D3436]/65 max-w-lg leading-relaxed mb-4">
+            <p className="text-[17px] text-[#4a5568] font-medium leading-[1.8] max-w-lg mb-8">
               Helping women grow through beauty, traditional art, digital opportunities, and professional services.
             </p>
 
@@ -434,26 +434,26 @@ export default function Services() {
       </section>
 
       {/* SECTION 2 — SERVICES CARDS */}
-      <section id="services-section" className="py-20 px-4 bg-gradient-to-b from-[#FFFDF7] via-[#FDF8FF] to-[#FFFDF7] relative overflow-hidden">
+      <section id="services-section" className="py-12 md:py-16 px-4 bg-transparent relative overflow-hidden">
         {/* Floating background blur shapes for SaaS aesthetic */}
-        <div className="absolute top-20 -left-20 w-80 h-80 rounded-full bg-[#FF6B9D]/5 blur-3xl -z-10" />
-        <div className="absolute bottom-20 -right-20 w-80 h-80 rounded-full bg-[#6BCB77]/5 blur-3xl -z-10" />
+        <div className="absolute top-20 -left-20 w-80 h-80 rounded-full bg-[#FF6B9D]/10 blur-3xl -z-10" />
+        <div className="absolute bottom-20 -right-20 w-80 h-80 rounded-full bg-[#6BCB77]/10 blur-3xl -z-10" />
 
         <div className="max-w-7xl mx-auto">
           {/* Centered Heading */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <span className="text-xs font-bold uppercase tracking-widest text-[#ff4f8b] bg-[#ff4f8b]/10 px-4 py-1.5 rounded-full border border-[#ff4f8b]/20">
               BROWSE BY CATEGORY
             </span>
-            <h2 className="font-display text-4xl md:text-5xl text-[#2D3436] mt-5 mb-3 font-normal leading-[1.15]">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#1a202c] mt-5 mb-4 leading-tight tracking-tight">
               Professional Services We Offer
             </h2>
-            <div className="text-center text-xs text-[#ff4f8b]/60 tracking-widest mb-6 font-semibold select-none flex items-center justify-center gap-1">
-              <span className="w-12 h-px bg-gradient-to-r from-transparent to-[#ff4f8b]/30"></span>
-              <span>💖</span>
-              <span className="w-12 h-px bg-gradient-to-l from-transparent to-[#ff4f8b]/30"></span>
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="w-12 h-px bg-pink-200" />
+              <div className="text-[14px] text-[#ff4f8b]">♥</div>
+              <div className="w-12 h-px bg-pink-200" />
             </div>
-            <p className="text-[#2D3436]/50 max-w-xl mx-auto text-sm leading-relaxed md:text-base">
+            <p className="text-[17px] text-[#4a5568] font-medium max-w-xl mx-auto leading-[1.8]">
               We provide premium beauty care, professional mehndi artistry, and modern website development solutions at affordable pricing.
             </p>
           </div>
@@ -509,8 +509,8 @@ export default function Services() {
                     </div>
 
                     {/* Title & Description */}
-                    <h3 className="font-display text-xl md:text-2xl font-bold text-[#2D3436] mb-2">{service.title}</h3>
-                    <p className="text-sm text-[#2D3436]/60 leading-relaxed mb-5 pb-5 border-b border-[#F0E6F6]">{service.description}</p>
+                    <h3 className="font-serif text-xl md:text-2xl font-bold text-[#1a202c] mb-2">{service.title}</h3>
+                    <p className="text-[15px] font-medium text-[#4a5568] leading-[1.7] mb-5 pb-5 border-b border-pink-100/50">{service.description}</p>
                     
                     {/* Popular Packages */}
                     <div className="mb-5">
@@ -636,18 +636,18 @@ export default function Services() {
       </section>
 
       {/* SECTION 3 — TESTIMONIALS */}
-      <section ref={statsRef} className="py-20 px-4 bg-gradient-to-b from-[#FFFDF7] to-white border-t border-[#F0E6F6]">
+      <section ref={statsRef} className="py-12 md:py-16 px-4 bg-transparent border-t border-pink-100/30">
         <div className="max-w-4xl mx-auto">
           {/* Centered Heading */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <span className="text-xs font-bold uppercase tracking-widest text-[#ff4f8b] bg-[#ff4f8b]/10 px-4 py-1.5 rounded-full border border-[#ff4f8b]/20">
               IMPACT STORIES
             </span>
-            <h2 className="font-display text-4xl text-[#2D3436] mt-4 mb-3 font-normal">Stories of Change</h2>
-            <div className="text-center text-xs text-[#ff4f8b]/60 tracking-widest mb-6 font-semibold select-none flex items-center justify-center gap-1">
-              <span className="w-12 h-px bg-gradient-to-r from-transparent to-[#ff4f8b]/30"></span>
-              <span>💖</span>
-              <span className="w-12 h-px bg-gradient-to-l from-transparent to-[#ff4f8b]/30"></span>
+            <h2 className="font-serif text-4xl lg:text-5xl font-bold text-[#1a202c] mt-4 mb-4 leading-tight tracking-tight">Stories of Change</h2>
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="w-12 h-px bg-pink-200" />
+              <div className="text-[14px] text-[#ff4f8b]">♥</div>
+              <div className="w-12 h-px bg-pink-200" />
             </div>
           </div>
 
@@ -677,12 +677,12 @@ export default function Services() {
                   className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover ring-4 ring-[#ff4f8b]/10 shrink-0 shadow-sm"
                 />
                 <div className="flex-1">
-                  <p className="font-display text-base md:text-lg text-[#2D3436] mb-4 italic leading-relaxed">
+                  <p className="font-serif text-lg md:text-xl text-[#4a5568] font-medium mb-4 italic leading-relaxed">
                     "{testimonials[activeTestimonial].quote}"
                   </p>
                   <div>
-                    <h4 className="font-bold text-sm text-[#2D3436]">{testimonials[activeTestimonial].author}</h4>
-                    <span className="text-xs text-[#ff4f8b] font-semibold">{testimonials[activeTestimonial].role}</span>
+                    <h4 className="font-bold text-base text-[#1a202c]">{testimonials[activeTestimonial].author}</h4>
+                    <span className="text-[13px] text-[#ff4f8b] font-semibold">{testimonials[activeTestimonial].role}</span>
                   </div>
                 </div>
               </div>

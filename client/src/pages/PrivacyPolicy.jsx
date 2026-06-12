@@ -100,23 +100,23 @@ export default function PrivacyPolicy() {
   return (
     <PageContainer title="Privacy Policy — Empower Stop">
       {/* Hero */}
-      <section className="gradient-hero border-b border-[#F0E6F6]">
-        <div className="max-w-5xl mx-auto px-4 py-8 text-center">
-          <h1 className="text-2xl md:text-3xl font-display gradient-text-pink-green mb-2">Privacy Policy</h1>
+      <section className="bg-transparent border-b border-white/50">
+        <div className="max-w-5xl mx-auto px-4 py-8 md:py-12 text-center">
+          <h1 className="text-4xl md:text-[56px] font-serif font-bold text-[#1a202c] leading-tight tracking-tight">Privacy Policy</h1>
         </div>
       </section>
 
       <section className="max-w-4xl mx-auto px-4 py-12">
         {/* Intro */}
-        <div className="bg-white border border-[#F0E6F6] rounded-2xl p-6 md:p-8 mb-8">
-          <p className="text-sm text-[#2D3436]/60 leading-relaxed">
+        <div className="bg-white/80 backdrop-blur-md border border-white/50 rounded-2xl p-6 md:p-8 mb-8 shadow-sm">
+          <p className="text-[17px] text-[#4a5568] font-medium leading-[1.8]">
             We at Empower Stop ("Company," "we," "us," "our") know that our users ("you," "your") care about how your personal information is used and shared, and we take your privacy seriously. Please read the following to learn more about our Privacy Policy. By visiting or using the Website or Services in any manner, you acknowledge that you accept the practices and policies outlined in this Privacy Policy, and you hereby consent that we will collect, use, and share your information in the following ways. Any capitalized terms used herein without definition shall have the meaning given to them in the Company Terms of Use.
           </p>
         </div>
 
         {/* Table of Contents */}
-        <div className="bg-white border border-[#F0E6F6] rounded-2xl p-6 md:p-8 mb-8">
-          <h2 className="text-lg font-display text-[#2D3436] mb-4">Contents</h2>
+        <div className="bg-white/80 backdrop-blur-md border border-white/50 rounded-2xl p-6 md:p-8 mb-8 shadow-sm">
+          <h2 className="text-2xl font-serif font-bold text-[#1a202c] mb-4">Contents</h2>
           <nav className="space-y-2">
             {sections.map((s) => (
               <a
@@ -136,18 +136,18 @@ export default function PrivacyPolicy() {
             <div
               key={section.id}
               id={section.id}
-              className="bg-white border border-[#F0E6F6] rounded-2xl p-6 md:p-8 scroll-mt-20"
+              className="bg-white/80 backdrop-blur-md border border-white/50 rounded-2xl p-6 md:p-8 scroll-mt-20 shadow-sm"
             >
-              <h2 className="text-lg font-display text-[#2D3436] mb-4 leading-snug">{section.title}</h2>
+              <h2 className="text-2xl font-serif font-bold text-[#1a202c] mb-4 leading-snug">{section.title}</h2>
 
               {section.content && (
-                <div className="text-sm text-[#2D3436]/60 leading-relaxed whitespace-pre-line mb-4">
+                <div className="text-[17px] text-[#4a5568] font-medium leading-[1.8] whitespace-pre-line mb-4">
                   {section.content}
                 </div>
               )}
 
               {section.list && (
-                <ul className="list-disc list-inside text-sm text-[#2D3436]/60 space-y-1 mb-4 ml-2">
+                <ul className="list-disc list-inside text-[17px] text-[#4a5568] font-medium space-y-2 mb-4 ml-2">
                   {section.list.map((item, idx) => (
                     <li key={idx}>{item}</li>
                   ))}
@@ -155,9 +155,9 @@ export default function PrivacyPolicy() {
               )}
 
               {section.subsections?.map((sub, idx) => (
-                <div key={idx} className="mt-5">
-                  <h3 className="text-sm font-semibold text-[#2D3436] mb-2">{sub.title}</h3>
-                  <p className="text-sm text-[#2D3436]/60 leading-relaxed whitespace-pre-line">{sub.content}</p>
+                <div key={idx} className="mt-6">
+                  <h3 className="text-xl font-serif font-bold text-[#1a202c] mb-3">{sub.title}</h3>
+                  <p className="text-[17px] text-[#4a5568] font-medium leading-[1.8] whitespace-pre-line">{sub.content}</p>
                 </div>
               ))}
             </div>

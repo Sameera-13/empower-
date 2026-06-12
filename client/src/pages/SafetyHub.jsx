@@ -12,7 +12,7 @@ function AccordionCategory({ category, tips }) {
     <div className="border border-border rounded-xl overflow-hidden">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between p-4 bg-white hover:bg-[#FFF0F5] transition-colors text-left"
+        className="w-full flex items-center justify-between p-4 bg-white/80 backdrop-blur-md hover:bg-white/95 transition-colors text-left"
         aria-expanded={open}
       >
         <span className="font-semibold text-dark">{category}</span>
@@ -21,7 +21,7 @@ function AccordionCategory({ category, tips }) {
         </span>
       </button>
       {open && (
-        <div className="px-4 pb-4 bg-white space-y-3">
+        <div className="px-4 pb-4 bg-white/80 backdrop-blur-md space-y-3">
           {tips.map((tip) => (
             <div key={tip.title} className="pl-4 border-l-2 border-[#FF6B9D]/30">
               <h4 className="text-sm font-medium text-dark mb-1">
@@ -266,9 +266,9 @@ export default function SafetyHub() {
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 py-8">
-        <h1 className="text-3xl font-display text-dark mb-2">Safety Hub</h1>
-        <p className="text-gray-500 mb-8">
+      <div className="max-w-4xl mx-auto px-4 py-12 md:py-16">
+        <h1 className="text-4xl md:text-[56px] font-serif font-bold text-[#1a202c] mb-4 leading-tight tracking-tight">Safety Hub</h1>
+        <p className="text-[17px] text-[#4a5568] font-medium leading-[1.8] mb-10">
           Your safety matters. Access emergency contacts, safety tips, and
           helpful organizations all in one place.
         </p>

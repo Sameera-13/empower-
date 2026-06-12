@@ -26,10 +26,18 @@ export default function Contact() {
   return (
     <PageContainer title="Contact Us — Empower Stop">
       {/* Hero */}
-      <section className="gradient-hero border-b border-[#F0E6F6]">
-        <div className="max-w-5xl mx-auto px-4 py-8 text-center">
-          <h1 className="text-2xl md:text-3xl font-display gradient-text-pink-green mb-2">Contact Us</h1>
-          <p className="text-[#2D3436]/50 max-w-lg mx-auto leading-relaxed">
+      <section className="bg-transparent border-b border-white/50">
+        <div className="max-w-5xl mx-auto px-4 py-8 md:py-12 text-center">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#ff4f8b] bg-[#ff4f8b]/10 px-4 py-1.5 rounded-full border border-[#ff4f8b]/20 mb-4 inline-block">
+            GET IN TOUCH
+          </span>
+          <h1 className="text-4xl md:text-[56px] font-serif font-bold text-[#1a202c] mb-4 leading-tight tracking-tight">Contact Us</h1>
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <div className="w-12 h-px bg-pink-200" />
+            <div className="text-[14px] text-[#ff4f8b]">♥</div>
+            <div className="w-12 h-px bg-pink-200" />
+          </div>
+          <p className="text-[17px] text-[#4a5568] font-medium max-w-lg mx-auto leading-[1.8]">
             Contact us about anything related to our company or services.<br />
             We'll do our best to get back to you as soon as possible.
           </p>
@@ -52,7 +60,7 @@ export default function Contact() {
                 <p className="text-base text-[#2D3436]/60">Thank you for reaching out. We'll get back to you as soon as possible.</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="bg-white border border-[#F0E6F6] rounded-2xl p-6 md:p-8 space-y-5">
+              <form onSubmit={handleSubmit} className="bg-white/80 backdrop-blur-md border border-white/50 shadow-sm rounded-2xl p-6 md:p-8 space-y-5">
                 {/* Row 1: Name & Phone */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <Input
@@ -128,7 +136,7 @@ export default function Contact() {
           {/* Contact Info — Right side */}
           <div className="lg:col-span-1 space-y-5">
             {/* Address Card */}
-            <div className="bg-white border border-[#F0E6F6] rounded-2xl p-6">
+            <div className="bg-white/80 backdrop-blur-md border border-white/50 shadow-sm rounded-2xl p-6">
               <div className="w-10 h-10 rounded-lg bg-[#FF6B9D] text-white flex items-center justify-center mb-4">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -143,7 +151,7 @@ export default function Contact() {
             </div>
 
             {/* Phone Card */}
-            <div className="bg-white border border-[#F0E6F6] rounded-2xl p-6">
+            <div className="bg-white/80 backdrop-blur-md border border-white/50 shadow-sm rounded-2xl p-6">
               <div className="w-10 h-10 rounded-lg bg-[#6BCB77] text-white flex items-center justify-center mb-4">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -156,7 +164,7 @@ export default function Contact() {
             </div>
 
             {/* Email Card */}
-            <div className="bg-white border border-[#F0E6F6] rounded-2xl p-6">
+            <div className="bg-white/80 backdrop-blur-md border border-white/50 shadow-sm rounded-2xl p-6">
               <div className="w-10 h-10 rounded-lg bg-[#FFD93D] text-[#2D3436] flex items-center justify-center mb-4">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -169,7 +177,7 @@ export default function Contact() {
             </div>
 
             {/* Social Links Card */}
-            <div className="bg-white border border-[#F0E6F6] rounded-2xl p-6">
+            <div className="bg-white/80 backdrop-blur-md border border-white/50 shadow-sm rounded-2xl p-6">
               <h4 className="font-semibold text-[#2D3436] text-base mb-3">Follow Us</h4>
               <div className="flex items-center gap-3">
                 <a href="https://www.facebook.com/gullyclasses" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-[#F0E6F6] flex items-center justify-center text-[#2D3436]/50 hover:bg-[#FF6B9D]/15 hover:text-[#FF6B9D] transition-colors" aria-label="Facebook">
@@ -191,7 +199,7 @@ export default function Contact() {
             </div>
 
             {/* Emergency Card */}
-            <div className="bg-[#EF5350]/5 border border-[#EF5350]/20 rounded-2xl p-6">
+            <div className="bg-white/90 backdrop-blur-md border border-[#EF5350]/30 shadow-sm rounded-2xl p-6">
               <div className="flex items-center gap-3 mb-2">
                 <span className="w-8 h-8 rounded-full bg-[#EF5350]/15 flex items-center justify-center shrink-0">
                   <svg className="w-4 h-4 text-[#EF5350]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

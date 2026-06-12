@@ -54,8 +54,8 @@ export default function OpportunityBoard() {
 
   return (
     <PageContainer>
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        <h1 className="text-3xl font-display text-dark mb-6">
+      <div className="max-w-7xl mx-auto px-4 py-12 md:py-16">
+        <h1 className="text-4xl md:text-[56px] font-serif font-bold text-[#1a202c] mb-6 leading-tight tracking-tight">
           Opportunity Board
         </h1>
 
@@ -67,8 +67,8 @@ export default function OpportunityBoard() {
               onClick={() => handleTypeChange(t.value)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                 type === t.value
-                  ? 'bg-primary text-white'
-                  : 'bg-white text-gray-600 border border-border hover:bg-gray-50'
+                  ? 'bg-primary text-white shadow-sm'
+                  : 'bg-white/80 backdrop-blur-md text-gray-600 border border-white/50 hover:bg-white shadow-sm'
               }`}
             >
               {t.label}

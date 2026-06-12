@@ -24,7 +24,12 @@ body {
   margin: 0;
   font-family: var(--font-sans);
   color: #2D3436;
-  background: #FFFDF7;
+  background-color: #FFFDF7;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('/site-bg.png');
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

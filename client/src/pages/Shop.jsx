@@ -138,12 +138,12 @@ export default function Shop() {
 
   return (
     <PageContainer title="Shop — Empower Stop">
-      <div className="max-w-7xl mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto px-4 py-12 md:py-16">
         {/* Banner - Reduced Height */}
-        <div className="relative overflow-hidden bg-gradient-to-br from-[#FFFDF7] to-white rounded-[2rem] py-8 px-8 md:py-10 md:px-12 mb-8 flex items-center justify-between border border-[#F0E6F6] shadow-sm">
+        <div className="relative overflow-hidden bg-white/60 backdrop-blur-xl rounded-[2.5rem] py-10 px-8 md:py-12 md:px-16 mb-12 flex items-center justify-between border border-white shadow-sm hover:shadow-md transition-shadow">
           <div className="max-w-xl relative z-10">
-            <h1 className="text-3xl md:text-5xl font-display font-bold text-[#2D3436] mb-3">Artisan Shop</h1>
-            <p className="text-[#2D3436]/60 text-base md:text-lg">Discover empowering products designed for you.</p>
+            <h1 className="text-4xl md:text-[56px] font-serif font-bold text-[#1a202c] mb-4 leading-tight tracking-tight">Artisan Shop</h1>
+            <p className="text-[#4a5568] text-[17px] font-medium leading-[1.8]">Discover empowering products designed for you.</p>
           </div>
           {/* Abstract illustrations */}
           <div className="absolute right-0 top-0 bottom-0 w-1/3 hidden md:block opacity-90 pointer-events-none">
@@ -161,7 +161,7 @@ export default function Shop() {
         </div>
 
         {/* Compact Horizontal Filter Row */}
-        <div className="bg-white rounded-[1.25rem] shadow-[0_2px_10px_rgb(0,0,0,0.02)] border border-gray-100 p-2 mb-8 flex flex-wrap items-center gap-2 relative z-20">
+        <div className="bg-white/80 backdrop-blur-md rounded-[1.25rem] shadow-[0_2px_10px_rgb(0,0,0,0.02)] border border-white/50 p-2 mb-10 flex flex-wrap items-center gap-2 relative z-20">
           <SearchBar value={search} onChange={handleSearch} placeholder="Search products..." className="flex-1 min-w-[200px] h-10" />
 
           {/* Category Dropdown */}
@@ -236,7 +236,7 @@ export default function Shop() {
         {isLoading ? (
           <LoadingSpinner size="lg" className="py-20" />
         ) : products.length === 0 ? (
-          <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-16 flex flex-col items-center justify-center text-center">
+          <div className="bg-white/60 backdrop-blur-md rounded-3xl shadow-sm border border-white/50 p-16 flex flex-col items-center justify-center text-center">
             <div className="w-32 h-32 relative mb-6">
               <div className="absolute inset-0 bg-[#ff4f8b]/10 rounded-full blur-xl"></div>
               {/* Pink Bag Illustration */}
@@ -246,8 +246,8 @@ export default function Shop() {
                 <path d="M70 70V50C70 33.4315 83.4315 20 100 20C116.569 20 130 33.4315 130 50V70" stroke="#FF8E71" strokeWidth="8" strokeLinecap="round"/>
               </svg>
             </div>
-            <h3 className="text-2xl font-display font-bold text-[#2D3436] mb-2">No products found</h3>
-            <p className="text-[#2D3436]/50 mb-8 max-w-sm">We couldn't find anything matching your filters. Try adjusting them or clear them all to see our full collection.</p>
+            <h3 className="text-3xl font-serif font-bold text-[#1a202c] mb-3">No products found</h3>
+            <p className="text-[17px] text-[#4a5568] font-medium mb-8 max-w-sm">We couldn't find anything matching your filters. Try adjusting them or clear them all to see our full collection.</p>
             <button
               onClick={() => { setCategory(''); setSelectedTags([]); setPriceRange(null); setSearch(''); setPage(1); }}
               className="bg-gradient-to-r from-[#ff4f8b] to-[#FF8E71] text-white px-8 py-3 rounded-full font-bold shadow-lg shadow-[#ff4f8b]/20 hover:shadow-xl hover:-translate-y-0.5 transition-all"

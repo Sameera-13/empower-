@@ -49,23 +49,23 @@ export default function ReturnPolicy() {
   return (
     <PageContainer title="Return, Refund & Cancellation Policy — Empower Stop">
       {/* Hero */}
-      <section className="gradient-hero border-b border-[#F0E6F6]">
-        <div className="max-w-5xl mx-auto px-4 py-8 text-center">
-          <h1 className="text-2xl md:text-3xl font-display gradient-text-pink-green mb-2">Return, Refund &amp; Cancellation Policy</h1>
+      <section className="bg-transparent border-b border-white/50">
+        <div className="max-w-5xl mx-auto px-4 py-8 md:py-12 text-center">
+          <h1 className="text-4xl md:text-[56px] font-serif font-bold text-[#1a202c] leading-tight tracking-tight">Return, Refund &amp; Cancellation Policy</h1>
         </div>
       </section>
 
       <section className="max-w-4xl mx-auto px-4 py-12">
         {/* Intro */}
-        <div className="bg-white border border-[#F0E6F6] rounded-2xl p-6 md:p-8 mb-8">
-          <p className="text-sm text-[#2D3436]/60 leading-relaxed">
+        <div className="bg-white/80 backdrop-blur-md border border-white/50 rounded-2xl p-6 md:p-8 mb-8 shadow-sm">
+          <p className="text-[17px] text-[#4a5568] font-medium leading-[1.8]">
             Thank you for shopping with Empower Stop, an initiative by Gully Classes Foundation to empower women artisans. Please read the following policy carefully before making a purchase. By placing an order, you agree to the terms outlined below.
           </p>
         </div>
 
         {/* Table of Contents */}
-        <div className="bg-white border border-[#F0E6F6] rounded-2xl p-6 md:p-8 mb-8">
-          <h2 className="text-lg font-display text-[#2D3436] mb-4">Contents</h2>
+        <div className="bg-white/80 backdrop-blur-md border border-white/50 rounded-2xl p-6 md:p-8 mb-8 shadow-sm">
+          <h2 className="text-2xl font-serif font-bold text-[#1a202c] mb-4">Contents</h2>
           <nav className="space-y-2">
             {sections.map((s) => (
               <a
@@ -85,18 +85,18 @@ export default function ReturnPolicy() {
             <div
               key={section.id}
               id={section.id}
-              className="bg-white border border-[#F0E6F6] rounded-2xl p-6 md:p-8 scroll-mt-20"
+              className="bg-white/80 backdrop-blur-md border border-white/50 rounded-2xl p-6 md:p-8 scroll-mt-20 shadow-sm"
             >
-              <h2 className="text-lg font-display text-[#2D3436] mb-4 leading-snug">{section.title}</h2>
+              <h2 className="text-2xl font-serif font-bold text-[#1a202c] mb-4 leading-snug">{section.title}</h2>
 
               {section.content && (
-                <div className="text-sm text-[#2D3436]/60 leading-relaxed whitespace-pre-line mb-4">
+                <div className="text-[17px] text-[#4a5568] font-medium leading-[1.8] whitespace-pre-line mb-4">
                   {section.content}
                 </div>
               )}
 
               {section.list && (
-                <ul className="list-disc list-inside text-sm text-[#2D3436]/60 space-y-1 mb-4 ml-2">
+                <ul className="list-disc list-inside text-[17px] text-[#4a5568] font-medium space-y-2 mb-4 ml-2">
                   {section.list.map((item, idx) => (
                     <li key={idx}>{item}</li>
                   ))}
@@ -104,9 +104,9 @@ export default function ReturnPolicy() {
               )}
 
               {section.subsections?.map((sub, idx) => (
-                <div key={idx} className="mt-5">
-                  <h3 className="text-sm font-semibold text-[#2D3436] mb-2">{sub.title}</h3>
-                  <p className="text-sm text-[#2D3436]/60 leading-relaxed whitespace-pre-line">{sub.content}</p>
+                <div key={idx} className="mt-6">
+                  <h3 className="text-xl font-serif font-bold text-[#1a202c] mb-3">{sub.title}</h3>
+                  <p className="text-[17px] text-[#4a5568] font-medium leading-[1.8] whitespace-pre-line">{sub.content}</p>
                 </div>
               ))}
             </div>
