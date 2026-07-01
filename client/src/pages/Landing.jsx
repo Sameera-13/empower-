@@ -8,9 +8,11 @@ import FeaturedProducts from '../components/domain/FeaturedProducts';
 import MediaCoverageSlider from '../components/domain/MediaCoverageSlider';
 import PartnerCarousel from '../components/domain/PartnerCarousel';
 import { useSubscribeNewsletter } from '../hooks/useNewsletter';
+import workshopGirlsImg from '../assets/workshop-girls.jpg';
 
 /* ── Hero images (auto-rotate) ── */
 const heroImages = [
+  workshopGirlsImg,
   'https://www.empowerstop.com/web/image/3906-a00d891f/Untitled%20design%20%282%29.webp',
   'https://www.empowerstop.com/web/image/1704-6e9b1b32/Rj%20Stall%208.webp',
   'https://www.empowerstop.com/web/image/2168-70101d90/ChatGPT%20Image%20Apr%202%2C%202025%2C%2009_13_45%20AM.webp',
