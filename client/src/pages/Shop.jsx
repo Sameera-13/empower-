@@ -2,8 +2,6 @@ import { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import phoneCaseImg from '../assets/phone-case-product.jpg';
 import bowKeychainImg from '../assets/bow-keychain-product.jpg';
-import workshopGirlsImg from '../assets/workshop-girls.jpg';
-import womenEmpoweredImg from '../assets/women-empowered.png';
 import PageContainer from '../components/layout/PageContainer';
 import SearchBar from '../components/common/SearchBar';
 import Pagination from '../components/common/Pagination';
@@ -116,22 +114,6 @@ const FEATURED_PRODUCTS = [
     compareAtPrice: 349,
     stock: 25,
     images: [bowKeychainImg],
-  },
-  {
-    _id: 'featured-patchwork-bags',
-    title: 'Handmade Patchwork Drawstring Bags — Artisan Collection',
-    price: 349,
-    compareAtPrice: 599,
-    stock: 15,
-    images: [workshopGirlsImg],
-  },
-  {
-    _id: 'featured-empowerment-workshop',
-    title: 'Women Empowerment Workshop — Skill Development Kit',
-    price: 999,
-    compareAtPrice: 1499,
-    stock: 20,
-    images: [womenEmpoweredImg],
   },
 ];
 
