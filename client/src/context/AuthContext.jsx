@@ -14,7 +14,7 @@ export function AuthProvider({ children }) {
   const silentRefresh = async () => {
     try {
       const { data } = await api.post('/auth/refresh');
-      setAccessToken(data.accessToken);
+      setAccessToken(data.data.accessToken);
       const { data: userData } = await api.get('/users/me');
       setUser(userData.data);
     } catch {

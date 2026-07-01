@@ -1,5 +1,9 @@
 import { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
+import phoneCaseImg from '../assets/phone-case-product.jpg';
+import bowKeychainImg from '../assets/bow-keychain-product.jpg';
+import workshopGirlsImg from '../assets/workshop-girls.jpg';
+import womenEmpoweredImg from '../assets/women-empowered.png';
 import PageContainer from '../components/layout/PageContainer';
 import SearchBar from '../components/common/SearchBar';
 import Pagination from '../components/common/Pagination';
@@ -96,6 +100,41 @@ function PriceSlider({ min, max, value, onChange }) {
   );
 }
 
+const FEATURED_PRODUCTS = [
+  {
+    _id: 'featured-phone-case',
+    title: 'Handcrafted Crochet Phone Case — Blue & Black',
+    price: 499,
+    compareAtPrice: 799,
+    stock: 10,
+    images: [phoneCaseImg],
+  },
+  {
+    _id: 'featured-bow-keychain',
+    title: 'Crochet Bow Keychain — Peach',
+    price: 199,
+    compareAtPrice: 349,
+    stock: 25,
+    images: [bowKeychainImg],
+  },
+  {
+    _id: 'featured-patchwork-bags',
+    title: 'Handmade Patchwork Drawstring Bags — Artisan Collection',
+    price: 349,
+    compareAtPrice: 599,
+    stock: 15,
+    images: [workshopGirlsImg],
+  },
+  {
+    _id: 'featured-empowerment-workshop',
+    title: 'Women Empowerment Workshop — Skill Development Kit',
+    price: 999,
+    compareAtPrice: 1499,
+    stock: 20,
+    images: [womenEmpoweredImg],
+  },
+];
+
 export default function Shop() {
   const [search, setSearch] = useState('');
   const [category, setCategory] = useState('');
@@ -145,18 +184,25 @@ export default function Shop() {
             <h1 className="text-4xl md:text-[56px] font-serif font-bold text-[#1a202c] mb-4 leading-tight tracking-tight">Artisan Shop</h1>
             <p className="text-[#4a5568] text-[17px] font-medium leading-[1.8]">Discover empowering products designed for you.</p>
           </div>
-          {/* Abstract illustrations */}
-          <div className="absolute right-0 top-0 bottom-0 w-1/3 hidden md:block opacity-90 pointer-events-none">
-            {/* Outline Circle */}
-            <div className="absolute bottom-[20%] left-[30%] w-12 h-12 rounded-full border-[4px] border-[#FFD1DA] opacity-80" />
-            <div className="absolute top-[15%] right-[15%] w-8 h-8 rounded-full border-[5px] border-[#FFE4E8] opacity-80" />
-            {/* SVG Bag Illustration */}
-            <svg className="absolute bottom-[-20%] right-[10%] w-56 h-56 opacity-90 drop-shadow-sm" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M70 70L50 180H150L130 70H70Z" fill="#ff4f8b" fillOpacity="0.2"/>
-              <path d="M80 70V50C80 38.9543 88.9543 30 100 30C111.046 30 120 38.9543 120 50V70" stroke="#ff4f8b" strokeWidth="4" strokeLinecap="round" strokeOpacity="0.3"/>
-              <path d="M120 70L100 180H170L150 70H120Z" fill="#FF8E71" fillOpacity="0.1"/>
-              <path d="M180 140C180 140 170 130 160 140C150 150 140 130 140 130" stroke="#FF5C8A" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+          {/* Featured Product Images */}
+          <div className="absolute right-4 top-1/2 -translate-y-1/2 hidden md:flex items-center justify-center w-2/5 pointer-events-none">
+            {/* Decorative circles */}
+            <div className="absolute w-56 h-56 rounded-full bg-gradient-to-br from-[#FF6B9D]/15 to-[#FF8E71]/10 blur-2xl" />
+            <div className="absolute w-6 h-6 rounded-full bg-[#FFD1DA] top-0 right-16 opacity-70" />
+            <div className="absolute w-4 h-4 rounded-full bg-[#FFE4E8] bottom-2 left-12 opacity-60" />
+            <div className="absolute w-3 h-3 rounded-full bg-[#FF6B9D]/30 top-4 left-4 opacity-50" />
+            {/* Phone Case - left, tilted back */}
+            <img
+              src={phoneCaseImg}
+              alt="Handcrafted Phone Case — Featured Product"
+              className="relative z-10 w-32 h-auto rounded-2xl shadow-2xl shadow-[#FF6B9D]/20 rotate-[-8deg] translate-y-2 ring-4 ring-white/60"
+            />
+            {/* Bow Keychain - right, tilted forward, overlapping slightly */}
+            <img
+              src={bowKeychainImg}
+              alt="Crochet Bow Keychain — Featured Product"
+              className="relative z-20 w-28 h-auto rounded-2xl shadow-2xl shadow-[#FF8E71]/20 rotate-[6deg] -translate-x-4 -translate-y-3 ring-4 ring-white/60"
+            />
           </div>
         </div>
 
@@ -235,34 +281,17 @@ export default function Shop() {
 
         {isLoading ? (
           <LoadingSpinner size="lg" className="py-20" />
-        ) : products.length === 0 ? (
-          <div className="bg-white/60 backdrop-blur-md rounded-3xl shadow-sm border border-white/50 p-16 flex flex-col items-center justify-center text-center">
-            <div className="w-32 h-32 relative mb-6">
-              <div className="absolute inset-0 bg-[#ff4f8b]/10 rounded-full blur-xl"></div>
-              {/* Pink Bag Illustration */}
-              <svg className="absolute inset-0 w-full h-full p-4 drop-shadow-md" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M50 70H150V160C150 165.523 145.523 170 140 170H60C54.4772 170 50 165.523 50 160V70Z" fill="#ff4f8b" fillOpacity="0.8"/>
-                <path d="M60 70H140V160C140 165.523 135.523 170 130 170H70C64.4772 170 60 165.523 60 160V70Z" fill="#FF8E71"/>
-                <path d="M70 70V50C70 33.4315 83.4315 20 100 20C116.569 20 130 33.4315 130 50V70" stroke="#FF8E71" strokeWidth="8" strokeLinecap="round"/>
-              </svg>
-            </div>
-            <h3 className="text-3xl font-serif font-bold text-[#1a202c] mb-3">No products found</h3>
-            <p className="text-[17px] text-[#4a5568] font-medium mb-8 max-w-sm">We couldn't find anything matching your filters. Try adjusting them or clear them all to see our full collection.</p>
-            <button
-              onClick={() => { setCategory(''); setSelectedTags([]); setPriceRange(null); setSearch(''); setPage(1); }}
-              className="bg-gradient-to-r from-[#ff4f8b] to-[#FF8E71] text-white px-8 py-3 rounded-full font-bold shadow-lg shadow-[#ff4f8b]/20 hover:shadow-xl hover:-translate-y-0.5 transition-all"
-            >
-              Browse All Products
-            </button>
-          </div>
         ) : (
           <>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+              {FEATURED_PRODUCTS.map((p) => <ProductCard key={p._id} product={p} />)}
               {products.map((p) => <ProductCard key={p._id} product={p} />)}
             </div>
-            <div className="mt-12 flex justify-center">
-               <Pagination page={page} totalPages={totalPages} onPageChange={setPage} />
-            </div>
+            {totalPages > 1 && (
+              <div className="mt-12 flex justify-center">
+                <Pagination page={page} totalPages={totalPages} onPageChange={setPage} />
+              </div>
+            )}
           </>
         )}
 

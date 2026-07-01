@@ -182,6 +182,222 @@ export default function About() {
           </div>
         </div>
 
+        {/* 4. Our Projects — What We Are Working On */}
+        <div className="relative py-16 -mx-4 px-4 overflow-hidden">
+          {/* Decorative floral/leaf SVGs */}
+          <svg className="absolute top-0 left-0 w-40 h-40 text-pink-100 opacity-60 -translate-x-1/3 -translate-y-1/4 pointer-events-none" viewBox="0 0 200 200" fill="currentColor">
+            <ellipse cx="80" cy="60" rx="60" ry="40" transform="rotate(-30 80 60)" />
+            <ellipse cx="50" cy="100" rx="40" ry="25" transform="rotate(20 50 100)" />
+            <ellipse cx="100" cy="120" rx="35" ry="20" transform="rotate(-15 100 120)" />
+            <circle cx="30" cy="50" r="6" className="text-pink-200" />
+            <circle cx="120" cy="40" r="4" className="text-pink-200" />
+          </svg>
+          <svg className="absolute top-10 right-0 w-48 h-48 text-green-100 opacity-50 translate-x-1/4 pointer-events-none" viewBox="0 0 200 200" fill="currentColor">
+            <path d="M100 10 C130 30, 160 80, 140 120 C120 160, 80 170, 60 140 C40 110, 50 60, 80 30 Z" />
+            <path d="M150 60 C170 70, 180 100, 170 130 C160 160, 140 150, 130 130 C120 110, 130 70, 150 60 Z" opacity="0.5" />
+            <circle cx="160" cy="30" r="4" className="text-green-200" />
+          </svg>
+          <svg className="absolute bottom-0 left-10 w-32 h-32 text-pink-100 opacity-40 translate-y-1/3 pointer-events-none" viewBox="0 0 100 100" fill="currentColor">
+            <path d="M50 0 C70 20, 80 50, 60 70 C40 90, 10 70, 20 50 C30 30, 30 10, 50 0 Z" />
+          </svg>
+          <svg className="absolute bottom-20 right-20 w-20 h-20 text-[#FFD93D] opacity-30 pointer-events-none" viewBox="0 0 100 100" fill="currentColor">
+            <circle cx="50" cy="50" r="4" />
+            <circle cx="30" cy="30" r="3" />
+            <circle cx="70" cy="35" r="3" />
+            <circle cx="40" cy="70" r="2" />
+            <circle cx="65" cy="65" r="2" />
+          </svg>
+
+          {/* Section Header */}
+          <div className="text-center mb-14 relative z-10">
+            <span className="inline-block text-xs font-bold tracking-[0.25em] uppercase text-[#ff4f8b] bg-[#ff4f8b]/10 px-5 py-1.5 rounded-full mb-5 border border-[#ff4f8b]/20">
+              Our Projects
+            </span>
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-[#1a202c] mb-4">
+              What We Are Working On
+            </h2>
+            <p className="text-[#4a5568] text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+              We are creating real impact in women's lives through practical skills,
+              <br className="hidden md:block" /> creativity, and opportunities for independence.
+            </p>
+          </div>
+
+          {/* Project Cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16 relative z-10">
+
+            {/* Stitching Classes Card */}
+            <div className="bg-white rounded-3xl shadow-[0_8px_40px_rgba(0,0,0,0.06)] border border-gray-100/60 overflow-hidden hover:-translate-y-1 transition-all duration-400 group">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-0">
+                {/* Image */}
+                <div className="relative h-64 sm:h-full min-h-[260px] overflow-hidden">
+                  <img
+                    src="/about/stitching-classes.png"
+                    alt="Stitching Classes - Women learning tailoring"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                  <div className="absolute top-4 left-4 bg-black/40 backdrop-blur-sm rounded-lg px-3 py-2">
+                    <p className="text-white text-xs font-bold leading-tight">Skill Today<br />Independent<br />Tomorrow</p>
+                  </div>
+                </div>
+                {/* Content */}
+                <div className="p-6 sm:p-7 flex flex-col justify-center">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#FFF0F5] to-[#FFE0EC] flex items-center justify-center mb-4 shadow-sm border border-pink-100/50">
+                    <svg className="w-6 h-6 text-[#FF6B9D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-[#1a202c] mb-1">Stitching Classes</h3>
+                  <p className="text-sm font-semibold text-[#FF6B9D] italic mb-3">Empowering through skills</p>
+                  <p className="text-[#4a5568] text-sm leading-relaxed mb-5">
+                    We conduct regular stitching classes to help women learn tailoring, garment making, and basic fashion designing.
+                  </p>
+                  <ul className="space-y-2">
+                    <li className="flex items-center gap-2.5 text-sm text-[#2D3436]">
+                      <svg className="w-4 h-4 text-[#FF6B9D] flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span>Beginners to Advanced Level</span>
+                    </li>
+                    <li className="flex items-center gap-2.5 text-sm text-[#2D3436]">
+                      <svg className="w-4 h-4 text-[#FF6B9D] flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span>Practical & Hands-on Training</span>
+                    </li>
+                    <li className="flex items-center gap-2.5 text-sm text-[#2D3436]">
+                      <svg className="w-4 h-4 text-[#FF6B9D] flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span>Certificate on Completion</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Mehndi Art Classes Card */}
+            <div className="bg-white rounded-3xl shadow-[0_8px_40px_rgba(0,0,0,0.06)] border border-gray-100/60 overflow-hidden hover:-translate-y-1 transition-all duration-400 group">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-0">
+                {/* Image */}
+                <div className="relative h-64 sm:h-full min-h-[260px] overflow-hidden">
+                  <img
+                    src="/about/mehndi-classes.png"
+                    alt="Mehndi Art Classes - Women learning henna design"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                  <div className="absolute top-4 left-4 bg-black/40 backdrop-blur-sm rounded-lg px-3 py-2">
+                    <p className="text-white text-xs font-bold leading-tight">Creativity<br />Independence</p>
+                  </div>
+                </div>
+                {/* Content */}
+                <div className="p-6 sm:p-7 flex flex-col justify-center">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#FFF0F5] to-[#FFE0EC] flex items-center justify-center mb-4 shadow-sm border border-pink-100/50">
+                    <svg className="w-6 h-6 text-[#FF6B9D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-[#1a202c] mb-1">Mehndi Art Classes</h3>
+                  <p className="text-sm font-semibold text-[#FF6B9D] italic mb-3">Creativity that empowers</p>
+                  <p className="text-[#4a5568] text-sm leading-relaxed mb-5">
+                    We teach beautiful mehndi designs to help women build a creative skill and earn through their talent.
+                  </p>
+                  <ul className="space-y-2">
+                    <li className="flex items-center gap-2.5 text-sm text-[#2D3436]">
+                      <svg className="w-4 h-4 text-[#FF6B9D] flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span>Traditional to Modern Designs</span>
+                    </li>
+                    <li className="flex items-center gap-2.5 text-sm text-[#2D3436]">
+                      <svg className="w-4 h-4 text-[#FF6B9D] flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span>Practice & Portfolio Building</span>
+                    </li>
+                    <li className="flex items-center gap-2.5 text-sm text-[#2D3436]">
+                      <svg className="w-4 h-4 text-[#FF6B9D] flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span>Opportunities for Events</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Stats Bar */}
+          <div className="bg-white rounded-2xl shadow-[0_4px_25px_rgba(0,0,0,0.06)] border border-gray-100/60 p-6 md:p-8 mb-10 relative z-10">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4">
+              {/* Stat 1 */}
+              <div className="flex items-center gap-4 justify-center md:justify-start">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#FFF0F5] to-[#FFE0EC] flex items-center justify-center shadow-sm flex-shrink-0 border border-pink-100/50">
+                  <svg className="w-7 h-7 text-[#FF6B9D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <div className="text-2xl md:text-3xl font-bold text-[#1a202c]">350+</div>
+                  <div className="text-sm font-bold text-[#2D3436]">Women Trained</div>
+                  <div className="text-xs text-[#2D3436]/50">Through our programs</div>
+                </div>
+              </div>
+              {/* Stat 2 */}
+              <div className="flex items-center gap-4 justify-center md:justify-start">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#FFF0F5] to-[#FFE0EC] flex items-center justify-center shadow-sm flex-shrink-0 border border-pink-100/50">
+                  <svg className="w-7 h-7 text-[#FF6B9D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                  </svg>
+                </div>
+                <div>
+                  <div className="text-2xl md:text-3xl font-bold text-[#1a202c]">40+</div>
+                  <div className="text-sm font-bold text-[#2D3436]">Training Batches</div>
+                  <div className="text-xs text-[#2D3436]/50">Completed successfully</div>
+                </div>
+              </div>
+              {/* Stat 3 */}
+              <div className="flex items-center gap-4 justify-center md:justify-start">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#FFF0F5] to-[#FFE0EC] flex items-center justify-center shadow-sm flex-shrink-0 border border-pink-100/50">
+                  <svg className="w-7 h-7 text-[#6BCB77]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                  </svg>
+                </div>
+                <div>
+                  <div className="text-2xl md:text-3xl font-bold text-[#1a202c]">20+</div>
+                  <div className="text-sm font-bold text-[#2D3436]">Community Partners</div>
+                  <div className="text-xs text-[#2D3436]/50">Supporting our mission</div>
+                </div>
+              </div>
+              {/* Stat 4 */}
+              <div className="flex items-center gap-4 justify-center md:justify-start">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#F0FFF4] to-[#DCFFE4] flex items-center justify-center shadow-sm flex-shrink-0 border border-green-100/50">
+                  <svg className="w-7 h-7 text-[#6BCB77]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                  </svg>
+                </div>
+                <div>
+                  <div className="text-2xl md:text-3xl font-bold text-[#1a202c]">95%</div>
+                  <div className="text-sm font-bold text-[#2D3436]">Success Stories</div>
+                  <div className="text-xs text-[#2D3436]/50">Women are earning now</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Inspirational Quote */}
+          <div className="text-center relative z-10 py-4">
+            <div className="flex items-center justify-center gap-3">
+              <span className="text-[#FF6B9D] text-xl">♥</span>
+              <p className="text-[#4a5568] text-base md:text-lg italic font-medium max-w-2xl">
+                "When a woman learns a skill, she builds a better tomorrow for herself and her family."
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* 5. Our Values */}
         <div className="bg-[#FFFDF7] rounded-[32px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-pink-50 p-10 md:p-16 mb-16 text-center relative overflow-hidden">
           

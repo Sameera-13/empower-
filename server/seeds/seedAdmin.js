@@ -22,15 +22,6 @@ const seedAdmin = async () => {
       process.exit(1);
     }
 
-    // Clean up legacy dotted email address if it exists to avoid conflicts
-    const dottedEmail = 'sameera.chauhan.13@gmail.com';
-    if (adminEmail.toLowerCase() !== dottedEmail) {
-      const deletedDotted = await User.deleteMany({ email: dottedEmail });
-      if (deletedDotted.deletedCount > 0) {
-        console.log(`Cleaned up ${deletedDotted.deletedCount} legacy dotted admin accounts.`);
-      }
-    }
-
     const existing = await User.findOne({ email: adminEmail.toLowerCase() });
 
     if (existing) {
