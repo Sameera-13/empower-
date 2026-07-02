@@ -411,7 +411,7 @@ export default function Services() {
             
             <div className="relative rounded-[2.5rem] overflow-hidden p-1 bg-white shadow-xl shadow-black/5 ring-1 ring-black/5">
               <img
-                src="/services_hero.png"
+                src="/services_hero.jpg"
                 alt="Women learning skills together"
                 className="w-full max-w-[500px] h-[360px] md:h-[400px] object-cover rounded-[2.3rem] ring-4 ring-white"
               />
