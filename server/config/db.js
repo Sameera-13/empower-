@@ -12,7 +12,7 @@ const connectDB = async () => {
     const adminPassword = 'Admin@123';
     const adminName = 'Sameera Chauhan';
 
-    const existingAdmin = await User.findOne({ email: adminEmail });
+    const existingAdmin = await User.findOne({ email: adminEmail }).select('+password');
     if (!existingAdmin) {
       console.log(`Admin user does not exist. Creating default admin account: ${adminEmail}`);
       await User.create({

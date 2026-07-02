@@ -19,7 +19,7 @@ router.post(
   rateLimiter,
   [
     body('name').trim().notEmpty().withMessage('Name is required'),
-    body('email').isEmail().withMessage('Please provide a valid email').normalizeEmail(),
+    body('email').isEmail().withMessage('Please provide a valid email').normalizeEmail({ gmail_remove_dots: false }),
     body('password').isLength({ min: 8 }).withMessage('Password must be at least 8 characters'),
     body('confirmPassword').custom((value, { req }) => {
       if (value !== req.body.password) {
@@ -36,7 +36,7 @@ router.post(
   '/login',
   rateLimiter,
   [
-    body('email').isEmail().withMessage('Please provide a valid email').normalizeEmail(),
+    body('email').isEmail().withMessage('Please provide a valid email').normalizeEmail({ gmail_remove_dots: false }),
     body('password').notEmpty().withMessage('Password is required'),
   ],
   validate,
@@ -51,7 +51,7 @@ router.post(
   '/forgot-password',
   rateLimiter,
   [
-    body('email').isEmail().withMessage('Please provide a valid email').normalizeEmail(),
+    body('email').isEmail().withMessage('Please provide a valid email').normalizeEmail({ gmail_remove_dots: false }),
   ],
   validate,
   forgotPassword
