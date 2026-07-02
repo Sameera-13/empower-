@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 
 export default function AdminLogin() {
@@ -14,8 +14,7 @@ export default function AdminLogin() {
 
   // If already logged in as admin, redirect to dashboard
   if (isAuthenticated && isAdmin) {
-    navigate('/admin/dashboard', { replace: true });
-    return null;
+    return <Navigate to="/admin/dashboard" replace />;
   }
 
   const validate = () => {
@@ -42,7 +41,11 @@ export default function AdminLogin() {
         setApiError('Access denied. Admin privileges required.');
       }
     } catch (err) {
-      setApiError(err.response?.data?.message || 'Login failed. Please try again.');
+      if (!err.response) {
+        setApiError('Unable to connect to the server. Please check your network connection or ensure the backend is running.');
+      } else {
+        setApiError(err.response.data?.message || 'Login failed. Please try again.');
+      }
     } finally {
       setLoading(false);
     }
