@@ -12,7 +12,9 @@ dotenv.config();
 const app = express();
 
 // Connect to MongoDB
-connectDB();
+connectDB().catch((err) => {
+  console.error('Failed to connect to MongoDB on startup:', err.message);
+});
 
 // Security middleware
 app.use(helmet());

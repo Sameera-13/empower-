@@ -1,7 +1,13 @@
 const mongoose = require('mongoose');
 const User = require('../models/User');
 
+let cachedConnection = null;
+
 const connectDB = async () => {
+  if (cachedConnection && mongoose.connection.readyState >= 1) {
+    return cachedConnection;
+  }
+
   try {
     const uri = process.env.MONGO_URI || 'mongodb://localhost:27017/womenrise';
     const conn = await mongoose.connect(uri);
@@ -40,9 +46,16 @@ const connectDB = async () => {
         console.log(`Admin user already exists and has correct credentials.`);
       }
     }
+
+    cachedConnection = conn;
+    return cachedConnection;
   } catch (error) {
     console.error(`MongoDB connection error: ${error.message}`);
-    process.exit(1);
+    if (process.env.VERCEL || process.env.NODE_ENV === 'production') {
+      throw error;
+    } else {
+      process.exit(1);
+    }
   }
 };
 
