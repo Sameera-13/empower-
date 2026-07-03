@@ -10,7 +10,9 @@ const connectDB = async () => {
 
   try {
     const uri = process.env.MONGO_URI || 'mongodb://localhost:27017/womenrise';
-    const conn = await mongoose.connect(uri);
+    const conn = await mongoose.connect(uri, {
+      serverSelectionTimeoutMS: 5000,
+    });
     console.log(`MongoDB connected: ${conn.connection.host}`);
 
     // Auto-seed default admin user
