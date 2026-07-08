@@ -22,8 +22,11 @@ let storage;
 if (uploadToCloudinary) {
   // Cloudinary is configured - use memory storage so we can upload the buffer
   storage = multer.memoryStorage();
+} else if (process.env.VERCEL) {
+  // On Vercel serverless - filesystem is read-only, use memory storage
+  storage = multer.memoryStorage();
 } else {
-  // Fallback - save to disk
+  // Fallback - save to disk (local development)
   const uploadsDir = path.join(__dirname, '..', 'uploads');
   if (!fs.existsSync(uploadsDir)) {
     fs.mkdirSync(uploadsDir, { recursive: true });

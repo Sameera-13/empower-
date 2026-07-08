@@ -4,7 +4,6 @@ const cors = require('cors');
 const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
 const path = require('path');
-const cron = require('node-cron');
 const connectDB = require('./config/db');
 
 dotenv.config({ path: path.join(__dirname, '.env') });
@@ -82,31 +81,33 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Soft-delete purge cron job — runs daily at 2:00 AM
-// Permanently removes Resource and Opportunity documents where deletedAt is older than 30 days
-cron.schedule('0 2 * * *', async () => {
-  try {
-    const Resource = require('./models/Resource');
-    const Opportunity = require('./models/Opportunity');
-    const Product = require('./models/Product');
-
-    const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
-
-    const [resourceResult, opportunityResult, productResult] = await Promise.all([
-      Resource.deleteMany({ deletedAt: { $ne: null, $lte: thirtyDaysAgo } }),
-      Opportunity.deleteMany({ deletedAt: { $ne: null, $lte: thirtyDaysAgo } }),
-      Product.deleteMany({ deletedAt: { $ne: null, $lte: thirtyDaysAgo } }),
-    ]);
-
-    console.log(
-      `[CRON] Purge complete — Resources: ${resourceResult.deletedCount}, Opportunities: ${opportunityResult.deletedCount}, Products: ${productResult.deletedCount}`
-    );
-  } catch (error) {
-    console.error('[CRON] Purge failed:', error.message);
-  }
-});
-
+// Only start cron jobs and listen when running as standalone server (not serverless)
 if (require.main === module) {
+  const cron = require('node-cron');
+
+  // Soft-delete purge cron job — runs daily at 2:00 AM
+  cron.schedule('0 2 * * *', async () => {
+    try {
+      const Resource = require('./models/Resource');
+      const Opportunity = require('./models/Opportunity');
+      const Product = require('./models/Product');
+
+      const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
+
+      const [resourceResult, opportunityResult, productResult] = await Promise.all([
+        Resource.deleteMany({ deletedAt: { $ne: null, $lte: thirtyDaysAgo } }),
+        Opportunity.deleteMany({ deletedAt: { $ne: null, $lte: thirtyDaysAgo } }),
+        Product.deleteMany({ deletedAt: { $ne: null, $lte: thirtyDaysAgo } }),
+      ]);
+
+      console.log(
+        `[CRON] Purge complete — Resources: ${resourceResult.deletedCount}, Opportunities: ${opportunityResult.deletedCount}, Products: ${productResult.deletedCount}`
+      );
+    } catch (error) {
+      console.error('[CRON] Purge failed:', error.message);
+    }
+  });
+
   const PORT = process.env.PORT || 5000;
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
