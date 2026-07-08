@@ -10,7 +10,7 @@ const {
 
 const router = express.Router();
 
-const storage = uploadToCloudinary ? multer.memoryStorage() : multer.diskStorage({
+const storage = (uploadToCloudinary || process.env.VERCEL) ? multer.memoryStorage() : multer.diskStorage({
   destination: 'uploads/',
   filename: (req, file, cb) => cb(null, 'product-' + Date.now() + '-' + Math.round(Math.random() * 1e9) + require('path').extname(file.originalname)),
 });
