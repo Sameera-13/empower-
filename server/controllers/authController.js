@@ -79,7 +79,14 @@ const register = asyncHandler(async (req, res) => {
 const login = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
-  const user = await User.findOne({ email }).select('+password');
+  let user;
+  try {
+    user = await User.findOne({ email }).select('+password');
+  } catch (dbErr) {
+    console.error('Login DB error:', dbErr.message);
+    return res.status(503).json({ success: false, message: 'Service temporarily unavailable. Please try again later.' });
+  }
+
   if (!user) {
     return res.status(401).json({ success: false, message: 'Invalid credentials' });
   }

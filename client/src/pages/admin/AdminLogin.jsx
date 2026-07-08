@@ -33,8 +33,10 @@ export default function AdminLogin() {
     if (Object.keys(errs).length > 0) return;
     setLoading(true);
     try {
-      const data = await login(form.email, form.password);
-      const user = data?.data?.user || data?.user;
+      const result = await login(form.email, form.password);
+      // The login function in AuthContext already sets the user state.
+      // Extract the user from the returned data to check role.
+      const user = result?.data?.user;
       if (user?.role === 'admin') {
         navigate('/admin/dashboard', { replace: true });
       } else {
@@ -43,6 +45,10 @@ export default function AdminLogin() {
     } catch (err) {
       if (!err.response) {
         setApiError('Unable to connect to the server. Please check your network connection or ensure the backend is running.');
+      } else if (err.response.status === 503) {
+        setApiError('Server is temporarily unavailable. Please try again later.');
+      } else if (err.response.status === 429) {
+        setApiError('Too many login attempts. Please wait a few minutes and try again.');
       } else {
         setApiError(err.response.data?.message || 'Login failed. Please try again.');
       }

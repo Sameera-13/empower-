@@ -36,7 +36,15 @@ export default function Login() {
       await login(form.email, form.password);
       navigate(from, { replace: true });
     } catch (err) {
-      setApiError(err.response?.data?.message || 'Login failed. Please try again.');
+      if (!err.response) {
+        setApiError('Unable to connect to the server. Please check your network connection.');
+      } else if (err.response.status === 503) {
+        setApiError('Server is temporarily unavailable. Please try again later.');
+      } else if (err.response.status === 429) {
+        setApiError('Too many login attempts. Please wait a few minutes and try again.');
+      } else {
+        setApiError(err.response?.data?.message || 'Login failed. Please try again.');
+      }
     } finally {
       setLoading(false);
     }
