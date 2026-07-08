@@ -11,11 +11,6 @@ dotenv.config({ path: path.join(__dirname, '.env') });
 
 const app = express();
 
-// Connect to MongoDB
-connectDB().catch((err) => {
-  console.error('Failed to connect to MongoDB on startup:', err.message);
-});
-
 // Security middleware
 app.use(helmet());
 const allowedOrigins = (process.env.CLIENT_URL || 'http://localhost:5173')
@@ -23,7 +18,6 @@ const allowedOrigins = (process.env.CLIENT_URL || 'http://localhost:5173')
   .map((o) => o.trim());
 app.use(cors({
   origin: function (origin, callback) {
-    // Allow requests with no origin (mobile apps, curl, etc.)
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
@@ -37,6 +31,25 @@ app.use(cors({
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+
+// Health check (placed above DB connection so it is always fast and doesn't require DB)
+app.get('/api/health', (req, res) => {
+  res.json({ success: true, message: 'Empower Stop API is running' });
+});
+
+// Database connection middleware (established lazily per request)
+app.use(async (req, res, next) => {
+  try {
+    await connectDB();
+    next();
+  } catch (err) {
+    console.error('Database connection failed:', err.message);
+    res.status(503).json({
+      success: false,
+      message: 'Database connection failed. Please ensure MONGO_URI is set correctly.',
+    });
+  }
+});
 
 // Serve uploaded files locally (fallback when Cloudinary not configured)
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
@@ -65,11 +78,6 @@ app.use('/api/partners', require('./routes/partners'));
 app.use('/api/contact', require('./routes/contact'));
 app.use('/api/newsletter', require('./routes/newsletter'));
 app.use('/api/notifications', require('./routes/notifications'));
-
-// Health check
-app.get('/api/health', (req, res) => {
-  res.json({ success: true, message: 'Empower Stop API is running' });
-});
 
 // Global error handler
 app.use((err, req, res, next) => {
