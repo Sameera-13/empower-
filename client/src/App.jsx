@@ -54,7 +54,7 @@ function AdminRoute({ children }) {
   const { isAuthenticated, isAdmin, loading } = useAuth();
   if (loading) return null;
   if (!isAuthenticated) {
-    return <Navigate to="/admin" replace />;
+    return <Navigate to="/admin/login" replace />;
   }
   return isAdmin ? children : <Navigate to="/" replace />;
 }
@@ -86,8 +86,9 @@ export default function App() {
       <Route path="/wishlist" element={<ProtectedRoute><Wishlist /></ProtectedRoute>} />
       <Route path="/notifications" element={<ProtectedRoute><Notifications /></ProtectedRoute>} />
       <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
-      <Route path="/admin" element={<AdminLogin />} />
-      <Route path="/admin/dashboard" element={<AdminRoute><Dashboard /></AdminRoute>} />
+      <Route path="/admin" element={<AdminRoute><Dashboard /></AdminRoute>} />
+      <Route path="/admin/login" element={<AdminLogin />} />
+      <Route path="/admin/dashboard" element={<Navigate to="/admin" replace />} />
       <Route path="/admin/users" element={<AdminRoute><UserManagement /></AdminRoute>} />
       <Route path="/admin/posts" element={<AdminRoute><PostManagement /></AdminRoute>} />
       <Route path="/admin/resources" element={<AdminRoute><ResourceManagement /></AdminRoute>} />

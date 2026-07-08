@@ -9,7 +9,13 @@ const connectDB = async () => {
   }
 
   try {
-    const uri = process.env.MONGO_URI || 'mongodb://localhost:27017/womenrise';
+    let uri = process.env.MONGO_URI;
+    if (!uri) {
+      if (process.env.VERCEL || process.env.NODE_ENV === 'production') {
+        throw new Error('MONGO_URI environment variable is missing.');
+      }
+      uri = 'mongodb://localhost:27017/womenrise';
+    }
     const conn = await mongoose.connect(uri, {
       serverSelectionTimeoutMS: 5000,
     });

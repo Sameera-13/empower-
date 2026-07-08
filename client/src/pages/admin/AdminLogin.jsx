@@ -14,7 +14,7 @@ export default function AdminLogin() {
 
   // If already logged in as admin, redirect to dashboard
   if (isAuthenticated && isAdmin) {
-    return <Navigate to="/admin/dashboard" replace />;
+    return <Navigate to="/admin" replace />;
   }
 
   const validate = () => {
@@ -38,7 +38,7 @@ export default function AdminLogin() {
       // Extract the user from the returned data to check role.
       const user = result?.data?.user;
       if (user?.role === 'admin') {
-        navigate('/admin/dashboard', { replace: true });
+        navigate('/admin', { replace: true });
       } else {
         setApiError('Access denied. Admin privileges required.');
       }

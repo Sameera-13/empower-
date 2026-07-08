@@ -63,7 +63,7 @@ export default function MobileDrawer({ isOpen, onClose }) {
             <>
               <hr className="my-2 border-[#F0E6F6]" />
               <NavLink to="/profile" onClick={onClose} className="block px-3 py-2.5 rounded-lg text-sm font-medium text-[#2D3436]/60 hover:bg-[#F0E6F6]/50">Profile</NavLink>
-              {isAdmin && <NavLink to="/admin/dashboard" onClick={onClose} className="block px-3 py-2.5 rounded-lg text-sm font-medium text-[#2D3436]/60 hover:bg-[#F0E6F6]/50">Admin</NavLink>}
+              {isAdmin && <NavLink to="/admin" onClick={onClose} className="block px-3 py-2.5 rounded-lg text-sm font-medium text-[#2D3436]/60 hover:bg-[#F0E6F6]/50">Admin</NavLink>}
             </>
           )}
         </div>

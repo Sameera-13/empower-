@@ -133,7 +133,7 @@ export default function Navbar() {
                   <div className="absolute right-0 mt-1 w-48 bg-[#FFFFFF] border border-[#F0E6F6] rounded-lg shadow-xl shadow-black/30 py-1 z-50">
                     <Link to="/profile" onClick={() => setDropdownOpen(false)} className="block px-4 py-2 text-sm text-[#2D3436]/70 hover:bg-[#F0E6F6] hover:text-[#2D3436]">Profile</Link>
                     {isAdmin && (
-                      <Link to="/admin/dashboard" onClick={() => setDropdownOpen(false)} className="block px-4 py-2 text-sm text-[#2D3436]/70 hover:bg-[#F0E6F6] hover:text-[#2D3436]">Admin Dashboard</Link>
+                      <Link to="/admin" onClick={() => setDropdownOpen(false)} className="block px-4 py-2 text-sm text-[#2D3436]/70 hover:bg-[#F0E6F6] hover:text-[#2D3436]">Admin Dashboard</Link>
                     )}
                     <hr className="my-1 border-[#F0E6F6]" />
                     <button onClick={() => { logout(); setDropdownOpen(false); }} className="w-full text-left px-4 py-2 text-sm text-[#EF5350] hover:bg-[#F0E6F6]">Sign Out</button>
