@@ -2,6 +2,11 @@ import { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import phoneCaseImg from '../assets/phone-case-product.jpg';
 import bowKeychainImg from '../assets/bow-keychain-product.jpg';
+import yellowBowKeychainImg from '../assets/yellow-bow-keychain.jpg';
+import daisyScrunchieImg from '../assets/daisy-scrunchie.jpg';
+import yellowRoseKeychainImg from '../assets/yellow-rose-keychain.jpg';
+import peachBowKeychainImg from '../assets/peach-bow-keychain.jpg';
+import pinkFlowerPinImg from '../assets/pink-flower-pin.jpg';
 import PageContainer from '../components/layout/PageContainer';
 import SearchBar from '../components/common/SearchBar';
 import Pagination from '../components/common/Pagination';
@@ -99,6 +104,46 @@ function PriceSlider({ min, max, value, onChange }) {
 }
 
 const FEATURED_PRODUCTS = [
+  {
+    _id: 'yellow-bow-keychain',
+    title: 'Handcrafted Yellow Bow Keychain',
+    price: 199,
+    compareAtPrice: 299,
+    stock: 15,
+    images: [yellowBowKeychainImg],
+  },
+  {
+    _id: 'daisy-scrunchie',
+    title: 'Handmade Crochet Daisy Scrunchie',
+    price: 149,
+    compareAtPrice: 249,
+    stock: 20,
+    images: [daisyScrunchieImg],
+  },
+  {
+    _id: 'yellow-rose-keychain',
+    title: 'Yellow Rose Crochet Keychain',
+    price: 229,
+    compareAtPrice: 399,
+    stock: 12,
+    images: [yellowRoseKeychainImg],
+  },
+  {
+    _id: 'peach-bow-keychain',
+    title: 'Peach Bow Crochet Keychain',
+    price: 199,
+    compareAtPrice: 299,
+    stock: 30,
+    images: [peachBowKeychainImg],
+  },
+  {
+    _id: 'pink-flower-pin',
+    title: 'Handwoven Pink Flower Pin Brooch',
+    price: 179,
+    compareAtPrice: 279,
+    stock: 25,
+    images: [pinkFlowerPinImg],
+  },
   {
     _id: 'featured-phone-case',
     title: 'Handcrafted Crochet Phone Case — Blue & Black',

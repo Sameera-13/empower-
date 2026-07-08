@@ -2,13 +2,52 @@ import { Link } from 'react-router-dom';
 import { useProducts } from '../../hooks/useProducts';
 import { useCart } from '../../context/CartContext';
 import LoadingSpinner from '../common/LoadingSpinner';
+import phoneCaseImg from '../../assets/phone-case-product.jpg';
+import bowKeychainImg from '../../assets/bow-keychain-product.jpg';
+import yellowBowKeychainImg from '../../assets/yellow-bow-keychain.jpg';
+import daisyScrunchieImg from '../../assets/daisy-scrunchie.jpg';
+import yellowRoseKeychainImg from '../../assets/yellow-rose-keychain.jpg';
+import peachBowKeychainImg from '../../assets/peach-bow-keychain.jpg';
+import pinkFlowerPinImg from '../../assets/pink-flower-pin.jpg';
+
+const STATIC_PRODUCTS = [
+  {
+    _id: 'yellow-bow-keychain',
+    title: 'Handcrafted Yellow Bow Keychain',
+    price: 199,
+    images: [yellowBowKeychainImg],
+    stock: 15,
+  },
+  {
+    _id: 'daisy-scrunchie',
+    title: 'Handmade Crochet Daisy Scrunchie',
+    price: 149,
+    images: [daisyScrunchieImg],
+    stock: 20,
+  },
+  {
+    _id: 'yellow-rose-keychain',
+    title: 'Yellow Rose Crochet Keychain',
+    price: 229,
+    images: [yellowRoseKeychainImg],
+    stock: 12,
+  },
+  {
+    _id: 'peach-bow-keychain',
+    title: 'Peach Bow Crochet Keychain',
+    price: 199,
+    images: [peachBowKeychainImg],
+    stock: 30,
+  },
+];
 
 export default function FeaturedProducts() {
   const { data, isLoading } = useProducts({ featured: 'true', limit: 4 });
   const { addToCart } = useCart();
-  const products = data?.data || [];
+  
+  const products = data?.data && data.data.length > 0 ? data.data : STATIC_PRODUCTS;
 
-  if (isLoading) {
+  if (isLoading && products === STATIC_PRODUCTS) {
     return (
       <section className="py-16 border-b border-[#F0E6F6]">
         <div className="max-w-6xl mx-auto px-4">
@@ -17,8 +56,6 @@ export default function FeaturedProducts() {
       </section>
     );
   }
-
-  if (products.length === 0) return null;
 
   return (
     <section className="py-16 border-b border-[#F0E6F6]">
