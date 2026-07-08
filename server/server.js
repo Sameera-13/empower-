@@ -64,7 +64,7 @@ app.use(async (req, res, next) => {
     console.error('Database connection failed:', err.message);
     res.status(503).json({
       success: false,
-      message: 'Database connection failed. Please ensure MONGO_URI is set correctly.',
+      message: 'Database connection failed: ' + err.message + '. Please ensure MONGO_URI is set correctly.',
     });
   }
 });
