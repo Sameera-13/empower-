@@ -4,6 +4,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
 const path = require('path');
+const cron = require('node-cron');
 const connectDB = require('./config/db');
 
 dotenv.config({ path: path.join(__dirname, '.env') });
@@ -81,11 +82,9 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Only start cron jobs and listen when running as standalone server (not serverless)
 if (require.main === module) {
-  const cron = require('node-cron');
-
   // Soft-delete purge cron job — runs daily at 2:00 AM
+  // Permanently removes Resource and Opportunity documents where deletedAt is older than 30 days
   cron.schedule('0 2 * * *', async () => {
     try {
       const Resource = require('./models/Resource');

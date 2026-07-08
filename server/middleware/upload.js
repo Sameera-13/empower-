@@ -26,7 +26,7 @@ if (uploadToCloudinary) {
   // On Vercel serverless - filesystem is read-only, use memory storage
   storage = multer.memoryStorage();
 } else {
-  // Fallback - save to disk (local development)
+  // Fallback - save to disk
   const uploadsDir = path.join(__dirname, '..', 'uploads');
   if (!fs.existsSync(uploadsDir)) {
     fs.mkdirSync(uploadsDir, { recursive: true });
