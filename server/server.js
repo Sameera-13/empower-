@@ -16,15 +16,33 @@ app.use(helmet());
 const allowedOrigins = (process.env.CLIENT_URL || 'http://localhost:5173')
   .split(',')
   .map((o) => o.trim());
-app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
+app.use(cors((req, callback) => {
+  const origin = req.header('Origin');
+  let allowed = false;
+
+  if (!origin) {
+    allowed = true;
+  } else {
+    if (allowedOrigins.includes(origin)) {
+      allowed = true;
     } else {
-      callback(new Error('Not allowed by CORS'));
+      try {
+        const originHost = new URL(origin).host;
+        const requestHost = req.header('Host');
+        if (originHost === requestHost) {
+          allowed = true;
+        }
+      } catch (err) {
+        // ignore invalid URL parsing
+      }
     }
-  },
-  credentials: true,
+  }
+
+  if (allowed) {
+    callback(null, { origin: true, credentials: true });
+  } else {
+    callback(new Error('Not allowed by CORS'));
+  }
 }));
 
 // Body parsing
