@@ -136,6 +136,13 @@ export default function BlogManagement() {
                 <button onClick={closeSlide} className="p-1 rounded-lg hover:bg-gray-100" aria-label="Close"><svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg></button>
               </div>
               <form onSubmit={handleSubmit} className="space-y-4">
+                {(createPost.error || updatePost.error) && (
+                  <div className="p-3 bg-red-50 text-red-600 rounded-lg text-sm border border-red-200">
+                    {createPost.error?.response?.data?.message || createPost.error?.message ||
+                     updatePost.error?.response?.data?.message || updatePost.error?.message ||
+                     'Failed to save article. Please check your network connection or ensure the backend is running.'}
+                  </div>
+                )}
                 <Input label="Title" value={form.title} onChange={(e) => setForm(f => ({...f, title: e.target.value}))} required />
                 <div>
                   <label className="block text-sm font-medium text-dark mb-1">Body</label>
