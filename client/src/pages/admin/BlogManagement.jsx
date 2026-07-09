@@ -3,7 +3,6 @@ import AdminLayout from '../../components/layout/AdminLayout';
 import Badge from '../../components/common/Badge';
 import Button from '../../components/common/Button';
 import Input from '../../components/common/Input';
-import Textarea from '../../components/common/Textarea';
 import Select from '../../components/common/Select';
 import Pagination from '../../components/common/Pagination';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
@@ -20,7 +19,7 @@ const CATEGORY_OPTIONS = [
   { value: 'guides', label: 'Guides' },
 ];
 
-const INITIAL_FORM = { title: '', excerpt: '', body: '', category: 'news', tags: '', isPublished: false };
+const INITIAL_FORM = { title: '', body: '', category: 'news', tags: '', isPublished: false };
 
 export default function BlogManagement() {
   const [page, setPage] = useState(1);
@@ -41,7 +40,7 @@ export default function BlogManagement() {
   const openAdd = () => { setForm(INITIAL_FORM); setEditingId(null); setCoverFile(null); setSlideOpen(true); };
   const openEdit = (p) => {
     setForm({
-      title: p.title || '', excerpt: p.excerpt || '', body: p.body || '',
+      title: p.title || '', body: p.body || '',
       category: p.category || 'news', tags: p.tags?.join(', ') || '', isPublished: p.isPublished || false,
     });
     setEditingId(p._id); setCoverFile(null); setSlideOpen(true);
@@ -138,7 +137,6 @@ export default function BlogManagement() {
               </div>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <Input label="Title" value={form.title} onChange={(e) => setForm(f => ({...f, title: e.target.value}))} required />
-                <Textarea label="Excerpt" value={form.excerpt} onChange={(e) => setForm(f => ({...f, excerpt: e.target.value}))} rows={2} placeholder="Brief summary (max 300 chars)" />
                 <div>
                   <label className="block text-sm font-medium text-dark mb-1">Body</label>
                   <RichTextEditor content={form.body} onChange={(html) => setForm(f => ({...f, body: html}))} />

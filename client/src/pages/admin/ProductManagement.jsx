@@ -11,49 +11,25 @@ import LoadingSpinner from '../../components/common/LoadingSpinner';
 import EmptyState from '../../components/common/EmptyState';
 import ConfirmDialog from '../../components/common/ConfirmDialog';
 import { useAdminProducts, useCreateProduct, useUpdateProduct, useDeleteProduct } from '../../hooks/useProducts';
-import { useCategories, useCreateCategory } from '../../hooks/useCategories';
-import { useTags, useCreateTag } from '../../hooks/useTags';
 
 const INITIAL_FORM = {
-  title: '', description: '', price: '', compareAtPrice: '',
-  category: '', tags: [], stock: '0', isFeatured: false, isActive: true,
+  title: '', description: '', price: '', stock: '0', isFeatured: false, isActive: true, images: [],
 };
 
 export default function ProductManagement() {
   const [search, setSearch] = useState('');
-  const [categoryFilter, setCategoryFilter] = useState('');
   const [page, setPage] = useState(1);
   const [slideOpen, setSlideOpen] = useState(false);
   const [editingId, setEditingId] = useState(null);
   const [form, setForm] = useState(INITIAL_FORM);
   const [files, setFiles] = useState([]);
   const [confirmDialog, setConfirmDialog] = useState({ open: false, id: null });
-  const [newCatName, setNewCatName] = useState('');
-  const [showNewCat, setShowNewCat] = useState(false);
-  const [newTagName, setNewTagName] = useState('');
-  const [newTagColor, setNewTagColor] = useState('#E53E3E');
-  const [showNewTag, setShowNewTag] = useState(false);
-
-  const { data: categoriesData } = useCategories();
-  const { data: tagsData } = useTags();
-  const createCategory = useCreateCategory();
-  const createTag = useCreateTag();
-
-  const categories = categoriesData?.data || [];
-  const allTags = tagsData?.data || [];
-
-  const categoryOptions = [
-    { value: '', label: 'All Categories' },
-    ...categories.map((c) => ({ value: c._id, label: c.name })),
-  ];
-  const categoryFormOptions = categories.map((c) => ({ value: c._id, label: c.name }));
 
   const params = useMemo(() => {
     const p = { page, limit: 20 };
     if (search) p.search = search;
-    if (categoryFilter) p.category = categoryFilter;
     return p;
-  }, [search, categoryFilter, page]);
+  }, [search, page]);
 
   const { data, isLoading } = useAdminProducts(params);
   const createProduct = useCreateProduct();
@@ -67,14 +43,12 @@ export default function ProductManagement() {
   const openEdit = (p) => {
     setForm({
       title: p.title || '', description: p.description || '', price: String(p.price || ''),
-      compareAtPrice: String(p.compareAtPrice || ''),
-      category: p.category?._id || p.category || '',
-      tags: (p.tags || []).map((t) => t._id || t),
       stock: String(p.stock || '0'), isFeatured: p.isFeatured || false, isActive: p.isActive !== false,
+      images: p.images || [],
     });
     setEditingId(p._id); setFiles([]); setSlideOpen(true);
   };
-  const closeSlide = () => { setSlideOpen(false); setEditingId(null); setForm(INITIAL_FORM); setFiles([]); setShowNewCat(false); setShowNewTag(false); };
+  const closeSlide = () => { setSlideOpen(false); setEditingId(null); setForm(INITIAL_FORM); setFiles([]); };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -82,15 +56,12 @@ export default function ProductManagement() {
     fd.append('title', form.title);
     fd.append('description', form.description);
     fd.append('price', form.price);
-    fd.append('compareAtPrice', form.compareAtPrice);
-    fd.append('category', form.category);
-    fd.append('tags', JSON.stringify(form.tags));
     fd.append('stock', form.stock);
     fd.append('isFeatured', form.isFeatured);
     fd.append('isActive', form.isActive);
     files.forEach((f) => fd.append('images', f));
     if (editingId) {
-      fd.append('keepExistingImages', 'true');
+      fd.append('keepExistingImages', (form.images && form.images.length > 0) ? 'true' : 'false');
       updateProduct.mutate({ id: editingId, formData: fd }, { onSuccess: closeSlide });
     } else {
       createProduct.mutate(fd, { onSuccess: closeSlide });
@@ -100,36 +71,6 @@ export default function ProductManagement() {
   const handleDelete = () => {
     if (!confirmDialog.id) return;
     deleteProduct.mutate(confirmDialog.id, { onSuccess: () => setConfirmDialog({ open: false, id: null }) });
-  };
-
-  const handleAddCategory = () => {
-    if (!newCatName.trim()) return;
-    createCategory.mutate(newCatName.trim(), {
-      onSuccess: (data) => {
-        setForm((f) => ({ ...f, category: data.data._id }));
-        setNewCatName('');
-        setShowNewCat(false);
-      },
-    });
-  };
-
-  const handleAddTag = () => {
-    if (!newTagName.trim()) return;
-    createTag.mutate({ name: newTagName.trim(), color: newTagColor }, {
-      onSuccess: (data) => {
-        setForm((f) => ({ ...f, tags: [...f.tags, data.data._id] }));
-        setNewTagName('');
-        setNewTagColor('#E53E3E');
-        setShowNewTag(false);
-      },
-    });
-  };
-
-  const toggleFormTag = (tagId) => {
-    setForm((f) => ({
-      ...f,
-      tags: f.tags.includes(tagId) ? f.tags.filter((t) => t !== tagId) : [...f.tags, tagId],
-    }));
   };
 
   const isSaving = createProduct.isPending || updateProduct.isPending;
@@ -153,7 +94,6 @@ export default function ProductManagement() {
 
         <div className="flex flex-col sm:flex-row gap-3">
           <SearchBar value={search} onChange={(v) => { setSearch(v); setPage(1); }} placeholder="Search products..." className="flex-1" />
-          <Select options={categoryOptions} value={categoryFilter} onChange={(e) => { setCategoryFilter(e.target.value); setPage(1); }} className="sm:w-44" />
         </div>
 
         {isLoading ? <LoadingSpinner size="lg" className="py-20" /> : products.length === 0 ? (
@@ -168,8 +108,6 @@ export default function ProductManagement() {
                     <th className="px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">Product</th>
                     <th className="px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">Price</th>
                     <th className="px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">Stock</th>
-                    <th className="px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">Category</th>
-                    <th className="px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">Tags</th>
                     <th className="px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">Status</th>
                     <th className="px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider text-right">Actions</th>
                   </tr>
@@ -187,19 +125,6 @@ export default function ProductManagement() {
                       </td>
                       <td className="px-4 py-3 text-sm font-semibold text-[#FF6B9D]">&#8377;{p.price}</td>
                       <td className="px-4 py-3 text-sm text-gray-600">{p.stock}</td>
-                      <td className="px-4 py-3">
-                        <Badge>{p.category?.name || 'None'}</Badge>
-                      </td>
-                      <td className="px-4 py-3">
-                        <div className="flex flex-wrap gap-1">
-                          {(p.tags || []).map((t) => (
-                            <span key={t._id} className="inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-full bg-gray-100">
-                              <span className="w-2 h-2 rounded-full" style={{ backgroundColor: t.color }} />
-                              {t.name}
-                            </span>
-                          ))}
-                        </div>
-                      </td>
                       <td className="px-4 py-3">
                         <span className={`text-xs font-medium px-2 py-1 rounded-full ${p.isActive ? 'bg-green-50 text-green-700' : 'bg-gray-100 text-gray-500'}`}>
                           {p.isActive ? 'Active' : 'Inactive'}
@@ -235,95 +160,56 @@ export default function ProductManagement() {
                 <Textarea label="Description" value={form.description} onChange={(e) => setForm(f => ({...f, description: e.target.value}))} required />
                 <div className="grid grid-cols-2 gap-3">
                   <Input label="Price" type="number" min="0" step="0.01" value={form.price} onChange={(e) => setForm(f => ({...f, price: e.target.value}))} required />
-                  <Input label="Compare Price" type="number" min="0" step="0.01" value={form.compareAtPrice} onChange={(e) => setForm(f => ({...f, compareAtPrice: e.target.value}))} />
+                  <Input label="Stock" type="number" min="0" value={form.stock} onChange={(e) => setForm(f => ({...f, stock: e.target.value}))} />
                 </div>
 
-                {/* Category with inline create */}
+                {/* Product Image Option with visual preview and remove option */}
                 <div>
-                  <div className="flex items-center justify-between mb-1">
-                    <label className="block text-sm font-medium text-dark">Category</label>
-                    <button type="button" onClick={() => setShowNewCat(!showNewCat)} className="text-xs text-[#FF6B9D] hover:underline">+ New</button>
-                  </div>
-                  {showNewCat && (
-                    <div className="flex gap-2 mb-2">
-                      <input
-                        value={newCatName}
-                        onChange={(e) => setNewCatName(e.target.value)}
-                        placeholder="Category name"
-                        className="flex-1 h-9 px-3 rounded-lg border border-border text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B9D]/40"
-                        onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), handleAddCategory())}
-                      />
-                      <button type="button" onClick={handleAddCategory} disabled={createCategory.isPending}
-                        className="h-9 px-3 rounded-lg bg-[#FF6B9D] text-white text-sm font-medium hover:bg-[#e85a8a] disabled:opacity-50">
-                        Add
-                      </button>
-                    </div>
-                  )}
-                  <select
-                    value={form.category}
-                    onChange={(e) => setForm(f => ({...f, category: e.target.value}))}
-                    className="w-full h-10 px-3 rounded-lg border border-border bg-white text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#FF6B9D]/40"
-                  >
-                    <option value="">Select category</option>
-                    {categoryFormOptions.map((o) => (
-                      <option key={o.value} value={o.value}>{o.label}</option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* Tags with inline create */}
-                <div>
-                  <div className="flex items-center justify-between mb-1">
-                    <label className="block text-sm font-medium text-dark">Tags</label>
-                    <button type="button" onClick={() => setShowNewTag(!showNewTag)} className="text-xs text-[#FF6B9D] hover:underline">+ New</button>
-                  </div>
-                  {showNewTag && (
-                    <div className="flex gap-2 mb-2">
-                      <input
-                        value={newTagName}
-                        onChange={(e) => setNewTagName(e.target.value)}
-                        placeholder="Tag name"
-                        className="flex-1 h-9 px-3 rounded-lg border border-border text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B9D]/40"
-                        onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), handleAddTag())}
-                      />
-                      <input
-                        type="color"
-                        value={newTagColor}
-                        onChange={(e) => setNewTagColor(e.target.value)}
-                        className="w-9 h-9 rounded-lg border border-border cursor-pointer"
-                      />
-                      <button type="button" onClick={handleAddTag} disabled={createTag.isPending}
-                        className="h-9 px-3 rounded-lg bg-[#FF6B9D] text-white text-sm font-medium hover:bg-[#e85a8a] disabled:opacity-50">
-                        Add
-                      </button>
-                    </div>
-                  )}
-                  <div className="flex flex-wrap gap-2 p-2 border border-border rounded-lg min-h-[40px]">
-                    {allTags.length === 0 ? (
-                      <span className="text-sm text-gray-400">No tags yet — create one above</span>
-                    ) : allTags.map((tag) => (
+                  <label className="block text-sm font-medium text-dark mb-1">Product Image</label>
+                  {form.images && form.images.length > 0 && (
+                    <div className="mb-3 relative w-32 h-32 rounded-xl overflow-hidden border border-border group shadow-sm bg-gray-50">
+                      <img src={form.images[0]} alt="Product preview" className="w-full h-full object-cover" />
                       <button
-                        key={tag._id}
                         type="button"
-                        onClick={() => toggleFormTag(tag._id)}
-                        className={`inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full border transition-colors ${
-                          form.tags.includes(tag._id)
-                            ? 'border-[#FF6B9D] bg-[#FF6B9D]/10 text-[#FF6B9D]'
-                            : 'border-gray-200 bg-white text-gray-600 hover:border-gray-300'
-                        }`}
+                        onClick={() => {
+                          setForm(f => ({ ...f, images: [] }));
+                          setFiles([]);
+                        }}
+                        className="absolute top-1.5 right-1.5 p-1 bg-red-500 hover:bg-red-600 text-white rounded-full transition-all shadow-md opacity-90 hover:scale-105"
+                        title="Remove image"
                       >
-                        <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: tag.color }} />
-                        {tag.name}
+                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
                       </button>
-                    ))}
+                    </div>
+                  )}
+                  <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-dashed border-gray-300 rounded-xl hover:border-[#FF6B9D] transition-colors relative cursor-pointer group">
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={(e) => {
+                        if (e.target.files?.[0]) {
+                          const file = e.target.files[0];
+                          setFiles([file]);
+                          const previewUrl = URL.createObjectURL(file);
+                          setForm(f => ({ ...f, images: [previewUrl] }));
+                        }
+                      }}
+                      className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
+                    />
+                    <div className="space-y-1 text-center">
+                      <svg className="mx-auto h-10 w-10 text-gray-400 group-hover:text-[#FF6B9D] transition-colors" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                        <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                      <div className="flex text-sm text-gray-600 justify-center">
+                        <span className="relative rounded-md font-semibold text-[#FF6B9D] group-hover:underline">
+                          Upload product image
+                        </span>
+                      </div>
+                      <p className="text-xs text-gray-500">PNG, JPG, JPEG up to 5MB</p>
+                    </div>
                   </div>
-                </div>
-
-                <Input label="Stock" type="number" min="0" value={form.stock} onChange={(e) => setForm(f => ({...f, stock: e.target.value}))} />
-
-                <div>
-                  <label className="block text-sm font-medium text-dark mb-1">Images</label>
-                  <input type="file" accept="image/*" multiple onChange={(e) => setFiles(Array.from(e.target.files))} className="text-sm text-gray-500" />
                 </div>
                 <div className="flex items-center gap-4">
                   <label className="flex items-center gap-2 text-sm">

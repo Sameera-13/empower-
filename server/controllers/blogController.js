@@ -94,8 +94,15 @@ const createBlogPost = asyncHandler(async (req, res) => {
   const slug = generateSlug(title);
   const parsedTags = typeof tags === 'string' ? tags.split(',').map(t => t.trim()).filter(Boolean) : (tags || []);
 
+  // Generate excerpt from body if not explicitly provided
+  let finalExcerpt = excerpt;
+  if (!finalExcerpt && body) {
+    const text = body.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+    finalExcerpt = text.length > 150 ? text.substring(0, 150) + '...' : text;
+  }
+
   const post = await BlogPost.create({
-    title, slug, body, excerpt, coverImage, category,
+    title, slug, body, excerpt: finalExcerpt, coverImage, category,
     tags: parsedTags,
     author: req.user._id,
     isPublished: isPublished === 'true' || isPublished === true,
@@ -131,6 +138,12 @@ const updateBlogPost = asyncHandler(async (req, res) => {
     if (!post.publishedAt) updates.publishedAt = new Date();
   } else if (updates.isPublished === 'false' || updates.isPublished === false) {
     updates.isPublished = false;
+  }
+
+  // Auto-generate/update excerpt if body is modified and excerpt is not provided
+  if (updates.body && (!updates.excerpt || updates.excerpt === '')) {
+    const text = updates.body.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+    updates.excerpt = text.length > 150 ? text.substring(0, 150) + '...' : text;
   }
 
   const updated = await BlogPost.findByIdAndUpdate(req.params.id, updates, { new: true, runValidators: true });
