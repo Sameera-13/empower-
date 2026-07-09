@@ -17,6 +17,10 @@ import orangeBowImg from '../assets/orange-bow.jpg';
 import giantSunflowerImg from '../assets/giant-sunflower.jpg';
 import cherryKeychainImg from '../assets/cherry-keychain.jpg';
 import maroonBowImg from '../assets/maroon-bow.jpg';
+import yellowFlowerKeychainImg from '../assets/yellow-flower-keychain.jpg';
+import redRoseKeychainImg from '../assets/red-rose-keychain.jpg';
+import daisyKeychainImg from '../assets/daisy-keychain.jpg';
+import pinkBowImg from '../assets/pink-bow.jpg';
 import PageContainer from '../components/layout/PageContainer';
 import SearchBar from '../components/common/SearchBar';
 import Pagination from '../components/common/Pagination';
@@ -249,6 +253,38 @@ const FEATURED_PRODUCTS = [
     compareAtPrice: 199,
     stock: 25,
     images: [maroonBowImg],
+  },
+  {
+    _id: 'yellow-flower-keychain',
+    title: 'Bright Yellow Flower Crochet Keychain',
+    price: 159,
+    compareAtPrice: 229,
+    stock: 20,
+    images: [yellowFlowerKeychainImg],
+  },
+  {
+    _id: 'red-rose-keychain',
+    title: 'Mini Red Rose Crochet Keychain',
+    price: 169,
+    compareAtPrice: 249,
+    stock: 15,
+    images: [redRoseKeychainImg],
+  },
+  {
+    _id: 'daisy-keychain',
+    title: 'Crochet Daisy Flower Keychain',
+    price: 159,
+    compareAtPrice: 229,
+    stock: 25,
+    images: [daisyKeychainImg],
+  },
+  {
+    _id: 'pink-bow',
+    title: 'Pretty Pink Crochet Bow Ornament',
+    price: 149,
+    compareAtPrice: 199,
+    stock: 20,
+    images: [pinkBowImg],
   },
 ];
 
