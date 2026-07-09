@@ -90,7 +90,7 @@ const nationalOrgs = [
 
 const seedContent = async () => {
   try {
-    const mongoUri = process.env.MONGO_URI || 'mongodb://localhost:27017/womenrise';
+    const mongoUri = process.env.MONGO_URI || process.env.MONGODB_URI || 'mongodb://localhost:27017/womenrise';
     await mongoose.connect(mongoUri);
     console.log('Connected to MongoDB');
 
