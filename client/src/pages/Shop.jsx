@@ -7,6 +7,11 @@ import daisyScrunchieImg from '../assets/daisy-scrunchie.jpg';
 import yellowRoseKeychainImg from '../assets/yellow-rose-keychain.jpg';
 import peachBowKeychainImg from '../assets/peach-bow-keychain.jpg';
 import pinkFlowerPinImg from '../assets/pink-flower-pin.jpg';
+import gajraImg from '../assets/gajra-product.jpg';
+import earringsImg from '../assets/crochet-earrings.jpg';
+import sunflowerImg from '../assets/sunflower-keychain.jpg';
+import bowImg from '../assets/white-bow.jpg';
+import scrunchieImg from '../assets/red-green-scrunchie.jpg';
 import PageContainer from '../components/layout/PageContainer';
 import SearchBar from '../components/common/SearchBar';
 import Pagination from '../components/common/Pagination';
@@ -159,6 +164,46 @@ const FEATURED_PRODUCTS = [
     compareAtPrice: 349,
     stock: 25,
     images: [bowKeychainImg],
+  },
+  {
+    _id: 'crochet-gajra',
+    title: 'Handcrafted Red & White Gajra Crochet Bands',
+    price: 249,
+    compareAtPrice: 349,
+    stock: 15,
+    images: [gajraImg],
+  },
+  {
+    _id: 'crochet-earrings',
+    title: 'Elegant Pink Flower Crochet Earrings',
+    price: 199,
+    compareAtPrice: 299,
+    stock: 20,
+    images: [earringsImg],
+  },
+  {
+    _id: 'sunflower-keychain',
+    title: 'Sunflower Crochet Keychain',
+    price: 179,
+    compareAtPrice: 249,
+    stock: 25,
+    images: [sunflowerImg],
+  },
+  {
+    _id: 'white-bow',
+    title: 'Charming White Crochet Bow Ornament',
+    price: 149,
+    compareAtPrice: 199,
+    stock: 30,
+    images: [bowImg],
+  },
+  {
+    _id: 'red-green-scrunchie',
+    title: 'Red & Green Crochet Scrunchie',
+    price: 129,
+    compareAtPrice: 189,
+    stock: 20,
+    images: [scrunchieImg],
   },
 ];
 
