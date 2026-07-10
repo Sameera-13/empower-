@@ -9,6 +9,12 @@ import MediaCoverageSlider from '../components/domain/MediaCoverageSlider';
 import PartnerCarousel from '../components/domain/PartnerCarousel';
 import { useSubscribeNewsletter } from '../hooks/useNewsletter';
 import workshopGirlsImg from '../assets/workshop-girls.jpg';
+import crochetEarringsImg from '../assets/crochet-earrings.jpg';
+import daisyKeychainImg from '../assets/daisy-keychain.jpg';
+import pinkFlowerPinImg from '../assets/pink-flower-pin.jpg';
+import cherryKeychainImg from '../assets/cherry-keychain.jpg';
+import giantSunflowerImg from '../assets/giant-sunflower.jpg';
+
 
 /* ── Hero images (auto-rotate) ── */
 const heroImages = [
@@ -327,7 +333,179 @@ function CTABanner() {
   );
 }
 
+const instagramPosts = [
+  {
+    id: 1,
+    image: workshopGirlsImg,
+    likes: '342',
+    comments: '45',
+    caption: 'Creating safe, equal, and confident communities through skill training workshops! 🛠️💪 #womenempowerment'
+  },
+  {
+    id: 2,
+    image: crochetEarringsImg,
+    likes: '286',
+    comments: '38',
+    caption: 'Crafted with precision, worn with pride. Check out our latest handmade crochet earrings collection! 🌸✨'
+  },
+  {
+    id: 3,
+    image: daisyKeychainImg,
+    likes: '194',
+    comments: '29',
+    caption: 'Little daisies of joy. Hand-knit keychain by our master artisan, Meena. 🌻💛 #handmadewithlove'
+  },
+  {
+    id: 4,
+    image: pinkFlowerPinImg,
+    likes: '215',
+    comments: '31',
+    caption: 'Adding a touch of hope to every outfit. Shop our new flower pins today! 🎀🌷 #artisanmade'
+  },
+  {
+    id: 5,
+    image: cherryKeychainImg,
+    likes: '260',
+    comments: '34',
+    caption: 'Life is sweet, especially when it supports a cause! Hand-crocheted cherries. 🍒🧶'
+  },
+  {
+    id: 6,
+    image: giantSunflowerImg,
+    likes: '312',
+    comments: '42',
+    caption: 'Blooming together. Standing tall, proud, and confident. 🌻✨ #empowerstop'
+  }
+];
+
+function InstagramSection() {
+  const instagramUrl = "https://www.instagram.com/empowerstop?igsh=dzNteXR0bW1vNjFz";
+
+  return (
+    <section className="py-20 relative bg-gradient-to-br from-white via-pink-50/20 to-orange-50/10 overflow-hidden">
+      {/* Decorative blurred backgrounds */}
+      <div className="absolute top-20 left-1/4 w-[400px] h-[400px] bg-pink-100/40 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-10 right-1/4 w-[400px] h-[400px] bg-purple-100/30 rounded-full blur-[100px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 lg:px-8 relative z-10">
+        <div className="text-center mb-12">
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="w-12 h-px bg-pink-300" />
+            <span className="text-3xl filter drop-shadow-sm">📸</span>
+            <div className="w-12 h-px bg-pink-300" />
+          </div>
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#ff4f8b] via-[#E8457A] to-[#FF8E71] mb-4 inline-block">
+            Follow Our Journey
+          </h2>
+          <p className="text-gray-500 max-w-lg mx-auto text-base">
+            See the real stories, artisan spotlights, and behind-the-scenes moments of our community on Instagram.
+          </p>
+        </div>
+
+        {/* Instagram Profile Header Box */}
+        <div className="bg-white/90 backdrop-blur-xl border border-pink-100/60 shadow-[0_8px_30px_rgb(255,79,139,0.04)] rounded-[2.5rem] p-6 md:p-8 mb-12 max-w-3xl mx-auto flex flex-col sm:flex-row items-center gap-6 md:gap-8">
+          {/* Profile Picture with Instagram Circle Gradient */}
+          <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="relative group shrink-0">
+            <div className="absolute -inset-1.5 bg-gradient-to-tr from-[#fccc63] via-[#fbad50] to-[#cd486b] rounded-full blur-sm opacity-75 group-hover:opacity-100 transition duration-300" />
+            <div className="relative w-20 h-20 rounded-full bg-white p-1">
+              <div className="w-full h-full rounded-full bg-gradient-to-br from-[#ff758c] to-[#ff4f8b] text-white flex items-center justify-center shadow-md">
+                <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 12v6M9 15h6" />
+                </svg>
+              </div>
+            </div>
+          </a>
+
+          {/* Profile Details */}
+          <div className="flex-1 text-center sm:text-left">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-3 justify-center sm:justify-start">
+              <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="font-serif text-xl font-bold text-gray-800 hover:text-[#ff4f8b] transition-colors flex items-center justify-center sm:justify-start gap-1">
+                empowerstop
+                {/* Verified Check Icon */}
+                <svg className="w-5 h-5 text-blue-500 fill-current" viewBox="0 0 24 24">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                </svg>
+              </a>
+              <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-1.5 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#ff4f8b] via-[#E8457A] to-[#FF8E71] shadow-md shadow-pink-500/20 hover:shadow-lg transition-all hover:scale-105 active:scale-95">
+                Follow
+              </a>
+            </div>
+
+            {/* Profile Stats */}
+            <div className="flex items-center justify-center sm:justify-start gap-6 mb-3 text-sm text-gray-600 font-medium">
+              <div><span className="font-bold text-gray-800">6</span> posts</div>
+              <div><span className="font-bold text-gray-800">5.4k</span> followers</div>
+              <div><span className="font-bold text-gray-800">189</span> following</div>
+            </div>
+
+            {/* Bio */}
+            <p className="text-sm text-gray-500 font-medium leading-relaxed">
+              <span className="font-semibold text-gray-700">EmpowerStop</span><br />
+              Empowering women. Building skills. Creating safe, equal, and confident communities.
+            </p>
+          </div>
+        </div>
+
+        {/* Spotlight Post Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-5 mb-12">
+          {instagramPosts.map((post) => (
+            <a
+              key={post.id}
+              href={instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative block aspect-square bg-gray-100 rounded-[2rem] overflow-hidden border border-pink-50 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+            >
+              <img
+                src={post.image}
+                alt={post.caption}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              {/* Overlay on hover */}
+              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-4 text-white">
+                {/* Top: Instagram Logo */}
+                <div className="flex justify-end">
+                  <svg className="w-5 h-5 text-white/90" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                  </svg>
+                </div>
+                {/* Middle: Caption */}
+                <p className="text-[11px] font-medium leading-relaxed line-clamp-4 text-gray-100 text-center px-1">
+                  {post.caption}
+                </p>
+                {/* Bottom: Likes & Comments */}
+                <div className="flex items-center justify-center gap-4 text-xs font-bold pt-2 border-t border-white/20">
+                  <span className="flex items-center gap-1">❤️ {post.likes}</span>
+                  <span className="flex items-center gap-1">💬 {post.comments}</span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        {/* Follow CTA Button */}
+        <div className="text-center">
+          <a
+            href={instagramUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm font-bold text-white bg-gradient-to-r from-[#ff4f8b] via-[#E8457A] to-[#FF8E71] shadow-lg shadow-pink-500/20 hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300"
+          >
+            {/* Instagram Glyph */}
+            <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+            </svg>
+            Follow @empowerstop on Instagram
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Landing() {
+
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
   const subscribeMutation = useSubscribeNewsletter();
@@ -371,6 +549,9 @@ export default function Landing() {
 
       {/* 10. Partners */}
       <PartnerCarousel />
+
+      {/* Instagram Spotlight */}
+      <InstagramSection />
 
       {/* 11. Newsletter */}
       {/* 11. Newsletter */}

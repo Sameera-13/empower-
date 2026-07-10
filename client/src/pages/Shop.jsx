@@ -159,22 +159,6 @@ const FEATURED_PRODUCTS = [
     images: [pinkFlowerPinImg],
   },
   {
-    _id: 'featured-phone-case',
-    title: 'Handcrafted Crochet Phone Case — Blue & Black',
-    price: 499,
-    compareAtPrice: 799,
-    stock: 10,
-    images: [phoneCaseImg],
-  },
-  {
-    _id: 'featured-bow-keychain',
-    title: 'Crochet Bow Keychain — Peach',
-    price: 199,
-    compareAtPrice: 349,
-    stock: 25,
-    images: [bowKeychainImg],
-  },
-  {
     _id: 'crochet-gajra',
     title: 'Handcrafted Red & White Gajra Crochet Bands',
     price: 249,

@@ -126,6 +126,41 @@ export default function About() {
           </div>
         </div>
 
+        {/* 2.5 Skills & Opportunity (New Section) */}
+        <div className="bg-gradient-to-br from-[#FFFDF7] to-white rounded-[32px] shadow-[0_8px_30px_rgb(255,107,157,0.04)] border border-pink-50/50 p-8 md:p-12 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-32 h-32 bg-[#FF6B9D]/5 rounded-full blur-2xl pointer-events-none" />
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-7">
+              <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-[#ff4f8b] bg-[#ff4f8b]/10 px-3 py-1 rounded-full mb-4 border border-[#ff4f8b]/20">Skills & Opportunity</span>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#2D3436] mb-6 leading-tight">
+                Empowering Women Through Skills & Opportunity
+              </h2>
+              <div className="text-[#4a5568] text-[16px] leading-[1.8] space-y-5 font-medium">
+                <p>
+                  At <strong className="text-gray-800">EmpowerStop</strong>, we believe that every girl and woman deserves the opportunity to learn, grow, and become financially independent. Our mission is to empower women by providing practical, creative, and income-generating skill development programs.
+                </p>
+                <p>
+                  We train girls and women in <strong className="text-[#ff4f8b]">Mehndi (Henna) Art, Stitching and Tailoring, and other creative and professional skills</strong>. These programs are designed to help women build confidence, develop practical abilities, and create opportunities to earn an income through employment, freelancing, home-based work, or entrepreneurship.
+                </p>
+                <p>
+                  Our approach goes beyond skill training. We create a supportive environment where women can discover their potential, develop self-confidence, and take meaningful steps towards a more independent and secure future.
+                </p>
+              </div>
+            </div>
+            <div className="lg:col-span-5 flex flex-col justify-center">
+              <div className="relative p-6 md:p-8 bg-gradient-to-br from-[#FFF0F5] to-pink-50/40 rounded-3xl border border-pink-100 shadow-sm relative overflow-hidden">
+                <span className="absolute top-4 left-6 text-6xl text-pink-200 font-serif leading-none select-none pointer-events-none">“</span>
+                <div className="relative z-10 pt-4">
+                  <p className="font-serif italic font-bold text-[#ff4f8b] text-lg md:text-xl leading-relaxed text-center">
+                    We don’t just teach skills—we empower women to turn their talent and creativity into confidence, opportunity, and independence.
+                  </p>
+                </div>
+                <span className="absolute bottom-4 right-6 text-6xl text-pink-200 font-serif leading-none select-none pointer-events-none">”</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* 3. Our Story */}
         <div id="story" className="max-w-4xl mx-auto text-center relative pt-8">
           
@@ -231,8 +266,8 @@ export default function About() {
                 {/* Image */}
                 <div className="relative h-64 sm:h-full min-h-[260px] overflow-hidden">
                   <img
-                    src="/about/stitching-classes.png"
-                    alt="Stitching Classes - Women learning tailoring"
+                    src="/about/stitching-classes.jpg"
+                    alt="Stitching & Embroidery Classes - Artisan crafting a sunflower embroidery design"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
