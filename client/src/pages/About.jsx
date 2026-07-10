@@ -261,105 +261,71 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16 relative z-10">
 
             {/* Stitching Classes Card */}
-            <div className="bg-white rounded-3xl shadow-[0_8px_40px_rgba(0,0,0,0.06)] border border-gray-100/60 overflow-hidden hover:-translate-y-1 transition-all duration-400 group">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-0">
-                {/* Image */}
-                <div className="relative h-64 sm:h-full min-h-[260px] overflow-hidden">
-                  <img
-                    src="/about/stitching-classes.jpg"
-                    alt="Stitching & Embroidery Classes - Artisan crafting a sunflower embroidery design"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                  <div className="absolute top-4 left-4 bg-black/40 backdrop-blur-sm rounded-lg px-3 py-2">
-                    <p className="text-white text-xs font-bold leading-tight">Skill Today<br />Independent<br />Tomorrow</p>
-                  </div>
-                </div>
-                {/* Content */}
-                <div className="p-6 sm:p-7 flex flex-col justify-center">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#FFF0F5] to-[#FFE0EC] flex items-center justify-center mb-4 shadow-sm border border-pink-100/50">
-                    <svg className="w-6 h-6 text-[#FF6B9D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-bold text-[#1a202c] mb-1">Stitching Classes</h3>
-                  <p className="text-sm font-semibold text-[#FF6B9D] italic mb-3">Empowering through skills</p>
-                  <p className="text-[#4a5568] text-sm leading-relaxed mb-5">
-                    We conduct regular stitching classes to help women learn tailoring, garment making, and basic fashion designing.
-                  </p>
-                  <ul className="space-y-2">
-                    <li className="flex items-center gap-2.5 text-sm text-[#2D3436]">
-                      <svg className="w-4 h-4 text-[#FF6B9D] flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      <span>Beginners to Advanced Level</span>
-                    </li>
-                    <li className="flex items-center gap-2.5 text-sm text-[#2D3436]">
-                      <svg className="w-4 h-4 text-[#FF6B9D] flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      <span>Practical & Hands-on Training</span>
-                    </li>
-                    <li className="flex items-center gap-2.5 text-sm text-[#2D3436]">
-                      <svg className="w-4 h-4 text-[#FF6B9D] flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      <span>Certificate on Completion</span>
-                    </li>
-                  </ul>
-                </div>
+            <div className="bg-white rounded-3xl shadow-[0_8px_40px_rgba(0,0,0,0.06)] border border-gray-100/60 overflow-hidden hover:-translate-y-1 transition-all duration-400 group p-8 md:p-10">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#FFF0F5] to-[#FFE0EC] flex items-center justify-center mb-4 shadow-sm border border-pink-100/50">
+                <svg className="w-6 h-6 text-[#FF6B9D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                </svg>
               </div>
+              <h3 className="text-xl font-bold text-[#1a202c] mb-1">Stitching Classes</h3>
+              <p className="text-sm font-semibold text-[#FF6B9D] italic mb-3">Empowering through skills</p>
+              <p className="text-[#4a5568] text-sm leading-relaxed mb-5">
+                We conduct regular stitching classes to help women learn tailoring, garment making, and basic fashion designing.
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-center gap-2.5 text-sm text-[#2D3436]">
+                  <svg className="w-4 h-4 text-[#FF6B9D] flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Beginners to Advanced Level</span>
+                </li>
+                <li className="flex items-center gap-2.5 text-sm text-[#2D3436]">
+                  <svg className="w-4 h-4 text-[#FF6B9D] flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Practical & Hands-on Training</span>
+                </li>
+                <li className="flex items-center gap-2.5 text-sm text-[#2D3436]">
+                  <svg className="w-4 h-4 text-[#FF6B9D] flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Certificate on Completion</span>
+                </li>
+              </ul>
             </div>
 
             {/* Mehndi Art Classes Card */}
-            <div className="bg-white rounded-3xl shadow-[0_8px_40px_rgba(0,0,0,0.06)] border border-gray-100/60 overflow-hidden hover:-translate-y-1 transition-all duration-400 group">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-0">
-                {/* Image */}
-                <div className="relative h-64 sm:h-full min-h-[260px] overflow-hidden">
-                  <img
-                    src="/about/mehndi-classes.png"
-                    alt="Mehndi Art Classes - Women learning henna design"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                  <div className="absolute top-4 left-4 bg-black/40 backdrop-blur-sm rounded-lg px-3 py-2">
-                    <p className="text-white text-xs font-bold leading-tight">Creativity<br />Independence</p>
-                  </div>
-                </div>
-                {/* Content */}
-                <div className="p-6 sm:p-7 flex flex-col justify-center">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#FFF0F5] to-[#FFE0EC] flex items-center justify-center mb-4 shadow-sm border border-pink-100/50">
-                    <svg className="w-6 h-6 text-[#FF6B9D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-bold text-[#1a202c] mb-1">Mehndi Art Classes</h3>
-                  <p className="text-sm font-semibold text-[#FF6B9D] italic mb-3">Creativity that empowers</p>
-                  <p className="text-[#4a5568] text-sm leading-relaxed mb-5">
-                    We teach beautiful mehndi designs to help women build a creative skill and earn through their talent.
-                  </p>
-                  <ul className="space-y-2">
-                    <li className="flex items-center gap-2.5 text-sm text-[#2D3436]">
-                      <svg className="w-4 h-4 text-[#FF6B9D] flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      <span>Traditional to Modern Designs</span>
-                    </li>
-                    <li className="flex items-center gap-2.5 text-sm text-[#2D3436]">
-                      <svg className="w-4 h-4 text-[#FF6B9D] flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      <span>Practice & Portfolio Building</span>
-                    </li>
-                    <li className="flex items-center gap-2.5 text-sm text-[#2D3436]">
-                      <svg className="w-4 h-4 text-[#FF6B9D] flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      <span>Opportunities for Events</span>
-                    </li>
-                  </ul>
-                </div>
+            <div className="bg-white rounded-3xl shadow-[0_8px_40px_rgba(0,0,0,0.06)] border border-gray-100/60 overflow-hidden hover:-translate-y-1 transition-all duration-400 group p-8 md:p-10">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#FFF0F5] to-[#FFE0EC] flex items-center justify-center mb-4 shadow-sm border border-pink-100/50">
+                <svg className="w-6 h-6 text-[#FF6B9D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                </svg>
               </div>
+              <h3 className="text-xl font-bold text-[#1a202c] mb-1">Mehndi Art Classes</h3>
+              <p className="text-sm font-semibold text-[#FF6B9D] italic mb-3">Creativity that empowers</p>
+              <p className="text-[#4a5568] text-sm leading-relaxed mb-5">
+                We teach beautiful mehndi designs to help women build a creative skill and earn through their talent.
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-center gap-2.5 text-sm text-[#2D3436]">
+                  <svg className="w-4 h-4 text-[#FF6B9D] flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Traditional to Modern Designs</span>
+                </li>
+                <li className="flex items-center gap-2.5 text-sm text-[#2D3436]">
+                  <svg className="w-4 h-4 text-[#FF6B9D] flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Practice & Portfolio Building</span>
+                </li>
+                <li className="flex items-center gap-2.5 text-sm text-[#2D3436]">
+                  <svg className="w-4 h-4 text-[#FF6B9D] flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Opportunities for Events</span>
+                </li>
+              </ul>
             </div>
 
           </div>
